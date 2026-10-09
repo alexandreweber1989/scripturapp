@@ -10,6 +10,7 @@ import { ACHIEVEMENTS, type AchievementTier } from "@/domain/progression/achieve
 import { levelProgress } from "@/domain/progression/levels";
 import { useScriptura } from "@/lib/client/store";
 import { CompanionAvatar } from "../companion-avatar";
+import { ThemeSelector } from "../theme-toggle";
 import { Button, Card, ProgressBar, SectionTitle, Skeleton } from "../ui";
 
 const TIER_STYLE: Record<AchievementTier, string> = {
@@ -87,7 +88,7 @@ export function ProfileView() {
           {stats.map((s) => (
             <div key={s.label} className="rounded-2xl glass border border-line p-4">
               <dt className="text-xs text-muted">{s.label}</dt>
-              <dd className="font-display text-2xl font-bold">{s.value}</dd>
+              <dd className="font-mono text-2xl font-semibold">{s.value}</dd>
             </div>
           ))}
         </dl>
@@ -136,6 +137,11 @@ export function ProfileView() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section>
+        <SectionTitle title="Aparência" />
+        <ThemeSelector />
       </section>
 
       {(favorites.length > 0 || notes.length > 0) && (

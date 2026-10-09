@@ -10,6 +10,7 @@ import { effectiveStreak } from "@/domain/progression/streak";
 import { dayKey } from "@/domain/time";
 import { useScriptura } from "@/lib/client/store";
 import { RewardToast } from "./reward-toast";
+import { ThemeToggleButton } from "./theme-toggle";
 
 const NAV = [
   { href: "/", label: "Início", icon: House },
@@ -86,7 +87,10 @@ export function AppShell({ children }: { children: ReactNode }) {
           <div className="md:invisible">
             <Logo />
           </div>
-          <StatusChips />
+          <div className="flex items-center gap-2">
+            <StatusChips />
+            <ThemeToggleButton />
+          </div>
         </header>
 
         <main className={clsx("mx-auto w-full flex-1 px-4 pb-28 pt-6 md:px-8 md:pb-12", immersive ? "max-w-3xl" : "max-w-5xl")}>{children}</main>
