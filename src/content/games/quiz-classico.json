@@ -1,0 +1,4502 @@
+[
+  {
+    "id": "q1",
+    "prompt": "Quem construiu a arca?",
+    "options": [
+      "Moisés",
+      "Noé",
+      "Abraão",
+      "Davi"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Noé foi instruído por Deus a construir uma arca para salvar sua família e os animais do dilúvio.",
+    "reference": "Gênesis 6:13-22"
+  },
+  {
+    "id": "q2",
+    "prompt": "Em qual cidade Jesus nasceu?",
+    "options": [
+      "Nazaré",
+      "Jerusalém",
+      "Belém",
+      "Cafarnaum"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Jesus nasceu em Belém da Judéia, cumprindo a profecia de Miquéias.",
+    "reference": "Mateus 2:1"
+  },
+  {
+    "id": "q3",
+    "prompt": "Qual é o primeiro livro da Bíblia?",
+    "options": [
+      "Êxodo",
+      "Levítico",
+      "Gênesis",
+      "Números"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Curiosidades",
+    "explanation": "Gênesis narra a criação do mundo, a queda do homem e as promessas aos patriarcas.",
+    "reference": "Gênesis 1:1"
+  },
+  {
+    "id": "q4",
+    "prompt": "Quem traiu Jesus?",
+    "options": [
+      "Pedro",
+      "Tomé",
+      "Judas",
+      "Tiago"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Judas Iscariotes entregou Jesus aos principais dos sacerdotes por trinta moedas de prata.",
+    "reference": "Mateus 26:14-16"
+  },
+  {
+    "id": "q5",
+    "prompt": "Quantos apóstolos Jesus escolheu?",
+    "options": [
+      "7",
+      "10",
+      "12",
+      "14"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Jesus escolheu doze discípulos para serem seus apóstolos e testemunhas do seu ministério.",
+    "reference": "Mateus 10:1-4"
+  },
+  {
+    "id": "q6",
+    "prompt": "Com o que Davi matou Golias?",
+    "options": [
+      "Espada",
+      "Lança",
+      "Pedra e estilingue",
+      "Arco"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Davi, confiando no Senhor, derrubou o gigante filisteu com uma única pedra lançada por sua funda.",
+    "reference": "1 Samuel 17:49-50"
+  },
+  {
+    "id": "q7",
+    "prompt": "Quem batizou Jesus?",
+    "options": [
+      "Pedro",
+      "Paulo",
+      "João Batista",
+      "Ananias"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "João Batista batizou Jesus no rio Jordão para que se cumprisse toda a justiça.",
+    "reference": "Mateus 3:13-17"
+  },
+  {
+    "id": "q8",
+    "prompt": "Qual animal entrou na arca aos pares?",
+    "options": [
+      "Peixe",
+      "Todos os animais",
+      "Aves somente",
+      "Répteis"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Deus ordenou que casais de todos os seres vivos (limpos e imundos) entrassem na arca.",
+    "reference": "Gênesis 7:2-3"
+  },
+  {
+    "id": "q9",
+    "prompt": "Quem foi o primeiro homem, segundo a Bíblia?",
+    "options": [
+      "Caim",
+      "Abel",
+      "Adão",
+      "Sete"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Adão foi criado por Deus do pó da terra, sendo o primeiro ser humano e pai da humanidade.",
+    "reference": "Gênesis 2:7"
+  },
+  {
+    "id": "q10",
+    "prompt": "Qual era a profissão de José, pai de Jesus?",
+    "options": [
+      "Pescador",
+      "Carpinteiro",
+      "Médico",
+      "Pastor"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "José era carpinteiro em Nazaré e cuidou de Jesus como seu pai terreno.",
+    "reference": "Mateus 13:55"
+  },
+  {
+    "id": "q11",
+    "prompt": "Quantos dias Jesus ficou no deserto?",
+    "options": [
+      "7",
+      "20",
+      "30",
+      "40"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Após seu batismo, Jesus foi levado ao deserto pelo Espírito e jejuou durante quarenta dias.",
+    "reference": "Mateus 4:1-2"
+  },
+  {
+    "id": "q12",
+    "prompt": "Jesus transformou água em quê?",
+    "options": [
+      "Mel",
+      "Óleo",
+      "Vinho",
+      "Pão"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Este foi o primeiro milagre de Jesus, realizado em um casamento em Caná da Galileia.",
+    "reference": "João 2:1-11"
+  },
+  {
+    "id": "q13",
+    "prompt": "Quem foi o primeiro filho de Adão e Eva?",
+    "options": [
+      "Abel",
+      "Sete",
+      "Caim",
+      "Noé"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Caim foi o primeiro filho de Adão e Eva, seguido por Abel.",
+    "reference": "Gênesis 4:1"
+  },
+  {
+    "id": "q14",
+    "prompt": "Em qual rio Jesus foi batizado?",
+    "options": [
+      "Nilo",
+      "Jordão",
+      "Eufrates",
+      "Mar Morto"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Jesus foi batizado por João Batista nas águas do rio Jordão.",
+    "reference": "Marcos 1:9"
+  },
+  {
+    "id": "q15",
+    "prompt": "Quem escreveu os Salmos principalmente?",
+    "options": [
+      "Moisés",
+      "Salomão",
+      "Davi",
+      "Samuel"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Davi foi o principal autor do livro de Salmos, compondo hinos de louvor, oração e lamento.",
+    "reference": "2 Samuel 23:1"
+  },
+  {
+    "id": "q16",
+    "prompt": "Quantos dias Deus criou o mundo?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Deus criou todo o universo e a vida terrestre em seis dias, e no sétimo descansou.",
+    "reference": "Gênesis 1:1-31"
+  },
+  {
+    "id": "q17",
+    "prompt": "No sétimo dia da criação, Deus fez o quê?",
+    "options": [
+      "Criou o homem",
+      "Criou os peixes",
+      "Descansou",
+      "Criou as plantas"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Deus abençoou o sétimo dia e o santificou, porque nele descansou de toda a sua obra.",
+    "reference": "Gênesis 2:2-3"
+  },
+  {
+    "id": "q18",
+    "prompt": "Qual era o nome da mãe de Jesus?",
+    "options": [
+      "Marta",
+      "Maria",
+      "Ana",
+      "Elisabete"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Maria foi a virgem escolhida por Deus para dar à luz o Salvador através do Espírito Santo.",
+    "reference": "Lucas 1:30-31"
+  },
+  {
+    "id": "q19",
+    "prompt": "Quem foi lançado na cova dos leões?",
+    "options": [
+      "Jeremias",
+      "Ezequiel",
+      "Josué",
+      "Daniel"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Daniel foi lançado na cova por ser fiel a Deus e recusar-se a orar a outro soberano.",
+    "reference": "Daniel 6:16"
+  },
+  {
+    "id": "q20",
+    "prompt": "Quem era o pai de João Batista?",
+    "options": [
+      "José",
+      "Simeão",
+      "Zacarias",
+      "Ezequias"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Zacarias era um sacerdote que recebeu a promessa do nascimento de João mesmo em idade avançada.",
+    "reference": "Lucas 1:13"
+  },
+  {
+    "id": "q21",
+    "prompt": "Qual foi o pecado original?",
+    "options": [
+      "Roubo",
+      "Mentira",
+      "Comer o fruto proibido",
+      "Inveja"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "A desobediência de Adão e Eva ao comerem do fruto da árvore do conhecimento causou a queda da humanidade.",
+    "reference": "Gênesis 3:6"
+  },
+  {
+    "id": "q22",
+    "prompt": "Quem vendeu José como escravo?",
+    "options": [
+      "Seu pai",
+      "Seus irmãos",
+      "Os egípcios",
+      "Os filisteus"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Os irmãos de José, por inveja de seus sonhos e do favoritismo do pai, o venderam a mercadores.",
+    "reference": "Gênesis 37:28"
+  },
+  {
+    "id": "q23",
+    "prompt": "Em qual monte Moisés recebeu os Mandamentos?",
+    "options": [
+      "Carmelo",
+      "Das Oliveiras",
+      "Sinai",
+      "Sião"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Moisés subiu ao Monte Sinai, onde Deus escreveu a Lei em tábuas de pedra.",
+    "reference": "Êxodo 19:20; 20:1"
+  },
+  {
+    "id": "q24",
+    "prompt": "Quantas pragas houve no Egito?",
+    "options": [
+      "5",
+      "7",
+      "10",
+      "12"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Deus enviou dez pragas sobre o Egito para convencer o Faraó a libertar o povo de Israel.",
+    "reference": "Êxodo 12:12"
+  },
+  {
+    "id": "q25",
+    "prompt": "Quem foi o primeiro rei de Israel?",
+    "options": [
+      "Davi",
+      "Salomão",
+      "Samuel",
+      "Saul"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Saul foi ungido pelo profeta Samuel como o primeiro rei de Israel, atendendo ao pedido do povo.",
+    "reference": "1 Samuel 10:1"
+  },
+  {
+    "id": "q26",
+    "prompt": "Qual animal falou com Balaão?",
+    "options": [
+      "Serpente",
+      "Asna",
+      "Leão",
+      "Pomba"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "O Senhor abriu a boca da jumenta para advertir Balaão de que um anjo estava impedindo o caminho.",
+    "reference": "Números 22:28-30"
+  },
+  {
+    "id": "q27",
+    "prompt": "O que Sansão usava para ter força?",
+    "options": [
+      "Seu cinturão",
+      "Seu cabelo",
+      "Sua espada",
+      "Seus braços"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "A força de Sansão vinha de seu voto nazireu, simbolizado por seu cabelo que nunca fora cortado.",
+    "reference": "Juízes 16:17"
+  },
+  {
+    "id": "q28",
+    "prompt": "Quem foi engolido por um grande peixe?",
+    "options": [
+      "Elias",
+      "Isaías",
+      "Jonas",
+      "Ezequiel"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Jonas foi engolido por um grande peixe enviado por Deus após tentar fugir de sua missão em Nínive.",
+    "reference": "Jonas 1:17"
+  },
+  {
+    "id": "q29",
+    "prompt": "O que Jesus multiplicou para alimentar os 5.000?",
+    "options": [
+      "Peixes e mel",
+      "Pão e vinho",
+      "Pões e peixes",
+      "Frutas"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Jesus multiplicou cinco pães e dois peixes trazidos por um menino para alimentar a multidão.",
+    "reference": "Mateus 14:17-21"
+  },
+  {
+    "id": "q30",
+    "prompt": "Quem andou sobre a água com Jesus?",
+    "options": [
+      "João",
+      "Tiago",
+      "André",
+      "Pedro"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Ao ver Jesus vindo sobre as águas, Pedro pediu para ir ao seu encontro e caminhou por fé.",
+    "reference": "Mateus 14:28-29"
+  },
+  {
+    "id": "q31",
+    "prompt": "Qual é o último livro da Bíblia?",
+    "options": [
+      "Daniel",
+      "Judas",
+      "Apocalipse",
+      "Hebreus"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Curiosidades",
+    "explanation": "O Apocalipse foi escrito pelo apóstolo João e revela os eventos finais e a vitória de Cristo.",
+    "reference": "Apocalipse 1:1"
+  },
+  {
+    "id": "q32",
+    "prompt": "Qual era a profissão de Pedro antes de seguir Jesus?",
+    "options": [
+      "Cobrador",
+      "Médico",
+      "Pescador",
+      "Carpinteiro"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Pedro (Simão) e seu irmão André eram pescadores no mar da Galileia quando Jesus os chamou.",
+    "reference": "Mateus 4:18-19"
+  },
+  {
+    "id": "q33",
+    "prompt": "Qual era o nome da esposa de Abraão?",
+    "options": [
+      "Ester",
+      "Rute",
+      "Sara",
+      "Miriam"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Sara era a esposa de Abraão e, em sua velhice, milagrosamente deu à luz a Isaque.",
+    "reference": "Gênesis 17:15-16"
+  },
+  {
+    "id": "q34",
+    "prompt": "Quem construiu o Templo em Jerusalém?",
+    "options": [
+      "Moisés",
+      "Davi",
+      "Salomão",
+      "Ezequias"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Salomão cumpriu o desejo de seu pai Davi e construiu o primeiro grande Templo para o Senhor.",
+    "reference": "1 Reis 6:1"
+  },
+  {
+    "id": "q35",
+    "prompt": "Quantas festas há no cardápio levítico original?",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "12"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "As festas solenes do Senhor incluem a Páscoa, Pentecostes, Tabernáculos, entre outras.",
+    "reference": "Levítico 23:2-4"
+  },
+  {
+    "id": "q36",
+    "prompt": "Qual discípulo duvidou da ressurreição?",
+    "options": [
+      "Pedro",
+      "João",
+      "André",
+      "Tomé"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Tomé disse que só acreditaria se visse as marcas dos pregos nas mãos de Jesus.",
+    "reference": "João 20:25"
+  },
+  {
+    "id": "q37",
+    "prompt": "Quem foi transformada em estátua de sal?",
+    "options": [
+      "Esposa de Noé",
+      "Esposa de Ló",
+      "Sara",
+      "Rute"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "Ao fugir de Sodoma, a mulher de Ló olhou para trás contra o aviso dos anjos e pereceu.",
+    "reference": "Gênesis 19:26"
+  },
+  {
+    "id": "q38",
+    "prompt": "Qual animal Eva usou para ser tentada?",
+    "options": [
+      "Leão",
+      "Águia",
+      "Serpente",
+      "Dragão"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "A serpente enganou Eva persuadindo-a de que comer do fruto não a faria morrer.",
+    "reference": "Gênesis 3:1-4"
+  },
+  {
+    "id": "q39",
+    "prompt": "Quem era a rainha que visitou Salomão?",
+    "options": [
+      "Rainha de Sabá",
+      "Rainha do Egito",
+      "Rainha da Pérsia",
+      "Rute"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": "A Rainha de Sabá viajou de longe para testar a famosa sabedoria de Salomão com enigmas.",
+    "reference": "1 Reis 10:1-2"
+  },
+  {
+    "id": "q40",
+    "prompt": "Quem libertou Pedro da prisão?",
+    "options": [
+      "Paulo",
+      "Um anjo",
+      "Simão",
+      "João"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": "Um anjo do Senhor apareceu na cela de Pedro, as correntes caíram e os portões se abriram sozinhos.",
+    "reference": "Atos 12:7-10"
+  },
+  {
+    "id": "q41",
+    "prompt": "Em qual cidade Paulo nasceu?",
+    "options": [
+      "Roma",
+      "Atenas",
+      "Éfeso",
+      "Tarso"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q42",
+    "prompt": "Qual é o mandamento de amar ao próximo chamado?",
+    "options": [
+      "Primeiro",
+      "Sexto",
+      "Grande",
+      "Segundo"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q43",
+    "prompt": "Jesus ressuscitou qual amigo morto?",
+    "options": [
+      "Estêvão",
+      "Lázaro",
+      "Jairo",
+      "Nicodemus"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q44",
+    "prompt": "Quem sonhou com sete vacas gordas e sete magras?",
+    "options": [
+      "Jacó",
+      "Moisés",
+      "José",
+      "Faraó"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q45",
+    "prompt": "Onde Jesus foi crucificado?",
+    "options": [
+      "Monte das Oliveiras",
+      "Getsêmani",
+      "Gólgota",
+      "Monte Sião"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q46",
+    "prompt": "Qual é a primeira das Bem-aventuranças?",
+    "options": [
+      "Bem-aventurados os puros",
+      "Bem-aventurados os pobres de espírito",
+      "Bem-aventurados os misericordiosos",
+      "Bem-aventurados os pacificadores"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q47",
+    "prompt": "Qual era o nome hebreu de Paulo?",
+    "options": [
+      "Barnabé",
+      "Timóteo",
+      "Saulo",
+      "Silas"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q48",
+    "prompt": "Quem guiou Israel após Moisés?",
+    "options": [
+      "Calebe",
+      "Samuel",
+      "Josué",
+      "Gideão"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q49",
+    "prompt": "Qual é o versículo mais conhecido da Bíblia?",
+    "options": [
+      "Salmos 23:1",
+      "João 3:16",
+      "Gênesis 1:1",
+      "Romanos 8:28"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q50",
+    "prompt": "Quem curou a cegueira de um homem com lama e saliva?",
+    "options": [
+      "Pedro",
+      "Paulo",
+      "João",
+      "Jesus"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q51",
+    "prompt": "Em qual noite Jesus foi preso?",
+    "options": [
+      "Sexta-feira",
+      "Sábado",
+      "Quinta-feira santa",
+      "Domingo"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q52",
+    "prompt": "Quem é chamado de 'Pai da Fé'?",
+    "options": [
+      "Moisés",
+      "Noé",
+      "Davi",
+      "Abraão"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q53",
+    "prompt": "Onde Moisés encontrou Deus na sarça ardente?",
+    "options": [
+      "Monte Sinai",
+      "Monte Carmelo",
+      "Monte Horebe",
+      "Monte Sião"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q54",
+    "prompt": "Quem ungiu Davi como rei?",
+    "options": [
+      "Natã",
+      "Eli",
+      "Samuel",
+      "Gade"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q55",
+    "prompt": "Quem foi o primeiro mártir cristão?",
+    "options": [
+      "Pedro",
+      "Paulo",
+      "Estêvão",
+      "Tiago"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q56",
+    "prompt": "O que significa 'Apocalipse'?",
+    "options": [
+      "Destruição",
+      "Revelação",
+      "Punição",
+      "Fim"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q57",
+    "prompt": "Qual é o número da Besta no Apocalipse?",
+    "options": [
+      "444",
+      "616",
+      "666",
+      "777"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q58",
+    "prompt": "Quem foi a mãe de Moisés?",
+    "options": [
+      "Miriam",
+      "Joquebede",
+      "Séfora",
+      "Rebeca"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q59",
+    "prompt": "Qual é o livro dos Salmos no Antigo Testamento?",
+    "options": [
+      "Poético",
+      "Histórico",
+      "Profético",
+      "Lei"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q60",
+    "prompt": "Quem chorou ao ouvir o canto do galo?",
+    "options": [
+      "Judas",
+      "Tomé",
+      "Tiago",
+      "Pedro"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q61",
+    "prompt": "Quantos livros tem o Novo Testamento?",
+    "options": [
+      "21",
+      "25",
+      "27",
+      "30"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q62",
+    "prompt": "Quem resgatou Moisés bebê do rio Nilo?",
+    "options": [
+      "A rainha",
+      "A irmã dele",
+      "A filha do Faraó",
+      "As parteiras"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q63",
+    "prompt": "O que Elias pediu a um anjo para comer?",
+    "options": [
+      "Maná",
+      "Pão e água",
+      "Mel e leite",
+      "Frutos"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q64",
+    "prompt": "Quem escreveu o livro de Apocalipse?",
+    "options": [
+      "Paulo",
+      "Pedro",
+      "Lucas",
+      "João"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q65",
+    "prompt": "O que significa 'Aleluia'?",
+    "options": [
+      "Amém",
+      "Louvai ao Senhor",
+      "Glória a Deus",
+      "Paz"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q66",
+    "prompt": "Qual é o maior mandamento segundo Jesus?",
+    "options": [
+      "Honrar os pais",
+      "Não mentir",
+      "Amar a Deus",
+      "Não matar"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q67",
+    "prompt": "Quem foi o fariseu que visitou Jesus à noite?",
+    "options": [
+      "José de Arimatéia",
+      "Simão",
+      "Nicodemos",
+      "Gamaliel"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q68",
+    "prompt": "Onde o Espírito Santo desceu sobre os discípulos?",
+    "options": [
+      "No Jordão",
+      "No templo",
+      "No Pentecostes/Cenáculo",
+      "No deserto"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q69",
+    "prompt": "Quem era a sogra de Rute?",
+    "options": [
+      "Débora",
+      "Noemi",
+      "Ester",
+      "Abigail"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q70",
+    "prompt": "Qual profecia dizia que o Messias nasceria em Belém?",
+    "options": [
+      "Isaías",
+      "Jeremias",
+      "Ezequiel",
+      "Miqueias"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q71",
+    "prompt": "Quem escreveu o Evangelho de Lucas?",
+    "options": [
+      "Um apóstolo",
+      "Um médico",
+      "Um pescador",
+      "Um fariseu"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q72",
+    "prompt": "Qual é a primeira palavra da Bíblia?",
+    "options": [
+      "Deus",
+      "No princípio",
+      "Criou",
+      "Luz"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q73",
+    "prompt": "Quantos foram alimentados com 5 pães e 2 peixes?",
+    "options": [
+      "3.000",
+      "4.000",
+      "5.000",
+      "7.000"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q74",
+    "prompt": "Quem dormiu durante uma pregação de Paulo e caiu?",
+    "options": [
+      "Silas",
+      "Timóteo",
+      "Êutico",
+      "Lucas"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q75",
+    "prompt": "Qual livro relata a história de Ester?",
+    "options": [
+      "Rute",
+      "Ester",
+      "Neemias",
+      "Esdras"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q76",
+    "prompt": "O que significa 'Amen'?",
+    "options": [
+      "Assim seja",
+      "Aleluia",
+      "Louvado seja",
+      "Glória"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q77",
+    "prompt": "Quem roubou a bênção de Esaú com a ajuda da mãe?",
+    "options": [
+      "Isaque",
+      "Sião",
+      "Jacó",
+      "Rúben"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q78",
+    "prompt": "Quem era cego e pediu cura às margens do caminho de Jericó?",
+    "options": [
+      "Zaqueu",
+      "Bartimeu",
+      "Lázaro",
+      "Amós"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q79",
+    "prompt": "Quantos dias Jesus ficou no túmulo?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q80",
+    "prompt": "Qual era a tribo de Jesus?",
+    "options": [
+      "Levi",
+      "Benjamim",
+      "Judá",
+      "Efraim"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q81",
+    "prompt": "Quem foi o sucessor de Elias?",
+    "options": [
+      "Eliseu",
+      "Amós",
+      "Oseas",
+      "Jeremias"
+    ],
+    "answer": 0,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q82",
+    "prompt": "Qual era o nome do jardim onde Adão e Eva viviam?",
+    "options": [
+      "Getsêmani",
+      "Sião",
+      "Éden",
+      "Luz"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q83",
+    "prompt": "Qual dos evangelhos começa 'No princípio era o Verbo'?",
+    "options": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "João"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q84",
+    "prompt": "Quem foi o rei que mandou matar todos os meninos menores de 2 anos?",
+    "options": [
+      "César",
+      "Pilatos",
+      "Herodes",
+      "Agripa"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q85",
+    "prompt": "O que Jesus disse ser a porta?",
+    "options": [
+      "Pastores",
+      "Ovelhas",
+      "Ele mesmo",
+      "A Igreja"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q86",
+    "prompt": "Quem fez a arca da aliança?",
+    "options": [
+      "Salomão",
+      "Moisés",
+      "Bezalel",
+      "Aarão"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q87",
+    "prompt": "Qual era o nome do escravo que Filemon devia receber?",
+    "options": [
+      "Timóteo",
+      "Marcos",
+      "Onésimo",
+      "Tito"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q88",
+    "prompt": "Quem era o coletor de impostos que subiu na árvore?",
+    "options": [
+      "Mateus",
+      "Zaqueu",
+      "Nicodemos",
+      "Judas"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q89",
+    "prompt": "O que Moisés usou para separar o Mar Vermelho?",
+    "options": [
+      "A voz",
+      "A cajado/Vara",
+      "As mãos",
+      "A oração"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q90",
+    "prompt": "Onde Jesus foi tentado pelo diabo?",
+    "options": [
+      "Na Galileia",
+      "No deserto",
+      "No templo",
+      "No jardim"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q91",
+    "prompt": "Quantos livros tem o Antigo Testamento?",
+    "options": [
+      "29",
+      "35",
+      "37",
+      "39"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q92",
+    "prompt": "Quem reconstruiu os muros de Jerusalém?",
+    "options": [
+      "Esdras",
+      "Neemias",
+      "Zorobabel",
+      "Ezequias"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q93",
+    "prompt": "Qual é o Salmo mais famoso?",
+    "options": [
+      "22",
+      "23",
+      "100",
+      "119"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q94",
+    "prompt": "Quem sonhou com uma escada que chegava ao céu?",
+    "options": [
+      "Abraão",
+      "Isaac",
+      "Jacó",
+      "José"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q95",
+    "prompt": "Qual foi o milagre de Jesus em Caná?",
+    "options": [
+      "Cura de leprosos",
+      "Ressurreição de Lázaro",
+      "Transformar água em vinho",
+      "Andar sobre as águas"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q96",
+    "prompt": "Qual era o nome da irmã de Moisés?",
+    "options": [
+      "Ester",
+      "Séfora",
+      "Débora",
+      "Miriam"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q97",
+    "prompt": "Quem escreveu o livro de Provérbios?",
+    "options": [
+      "Davi",
+      "Moisés",
+      "Salomão",
+      "Isaías"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q98",
+    "prompt": "O que era a manna?",
+    "options": [
+      "Fruto proibido",
+      "Comida milagrosa do deserto",
+      "Erva medicinal",
+      "Um pão especial"
+    ],
+    "answer": 1,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q99",
+    "prompt": "Quem foi o juiz que Deus usou para derrotar os midianitas?",
+    "options": [
+      "Sansão",
+      "Débora",
+      "Gideão",
+      "Jefté"
+    ],
+    "answer": 2,
+    "difficulty": "easy",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q100",
+    "prompt": "Qual apóstolo escreveu o livro de Atos?",
+    "options": [
+      "João",
+      "Paulo",
+      "Marcos",
+      "Lucas"
+    ],
+    "answer": 3,
+    "difficulty": "easy",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q101",
+    "prompt": "Quantos anos viveu Noé?",
+    "options": [
+      "650",
+      "750",
+      "850",
+      "950"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": "Noé viveu 950 anos, sendo um dos homens mais longevos da Bíblia antes da redução progressiva da longevidade humana.",
+    "reference": "Gênesis 9:29"
+  },
+  {
+    "id": "q102",
+    "prompt": "Qual era o nome do pai de Abraão?",
+    "options": [
+      "Nuno",
+      "Tera",
+      "Naor",
+      "Harã"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": "Tera foi o pai de Abrão (Abraão), Naor e Harã, e liderou a família de Ur até Harã.",
+    "reference": "Gênesis 11:27"
+  },
+  {
+    "id": "q103",
+    "prompt": "Em qual monte Elias desafiou os profetas de Baal?",
+    "options": [
+      "Sinai",
+      "Carmelo",
+      "Sião",
+      "Tabor"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": "O desafio no Monte Carmelo demonstrou que o Senhor era o único Deus verdadeiro de Israel.",
+    "reference": "1 Reis 18:19-20"
+  },
+  {
+    "id": "q104",
+    "prompt": "Quantos profetas de Baal foram mortos por Elias?",
+    "options": [
+      "200",
+      "400",
+      "450",
+      "800"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": "Após o fogo do céu consumir o sacrifício de Elias, 450 profetas de Baal foram executados no ribeiro de Quisom.",
+    "reference": "1 Reis 18:40"
+  },
+  {
+    "id": "q105",
+    "prompt": "Quem foi o rei que mandou Daniel à cova dos leões?",
+    "options": [
+      "Nabucodonozor",
+      "Ciro",
+      "Dario",
+      "Belsazar"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": "Dario, o Medo, foi enganado por seus conselheiros para assinar um decreto que acabou afetando Daniel.",
+    "reference": "Daniel 6:1"
+  },
+  {
+    "id": "q106",
+    "prompt": "Quanto tempo Jó sofreu antes de ser restaurado?",
+    "options": [
+      "40 dias",
+      "1 ano",
+      "Não especificado",
+      "3 meses"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": "Embora a duração exata do sofrimento de Jó não seja declarada, o texto enfatiza sua paciência e a restauração final.",
+    "reference": "Jó 42:10-12"
+  },
+  {
+    "id": "q107",
+    "prompt": "Qual era a profissão de Amós?",
+    "options": [
+      "Sacerdote",
+      "Sumo sacerdote",
+      "Pastor e colhedor de sicômoros",
+      "Escriba"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": "Amós não era profeta de linhagem, mas um pastor de Tecoa chamado por Deus para profetizar a Israel.",
+    "reference": "Amós 7:14-15"
+  },
+  {
+    "id": "q108",
+    "prompt": "Quantas cartas Paulo escreveu ao todo (canônicas)?",
+    "options": [
+      "9",
+      "11",
+      "13",
+      "15"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": "O cânon bíblico atribui treze cartas ao apóstolo Paulo, endereçadas a igrejas e indivíduos.",
+    "reference": "Cânon Bíblico"
+  },
+  {
+    "id": "q109",
+    "prompt": "Qual era a cidade natal de Davi?",
+    "options": [
+      "Hebrom",
+      "Jerusalém",
+      "Belém",
+      "Siquém"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": "Davi era o filho mais novo de Jessé, o belemita, da tribo de Judá.",
+    "reference": "1 Samuel 16:1"
+  },
+  {
+    "id": "q110",
+    "prompt": "Quem foi a profetisa que julgou Israel?",
+    "options": [
+      "Miriam",
+      "Hulda",
+      "Débora",
+      "Noadia"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": "Débora era uma profetisa e juíza que liderava Israel sob uma palmeira entre Ramá e Betel.",
+    "reference": "Juízes 4:4-5"
+  },
+  {
+    "id": "q111",
+    "prompt": "Em qual cidade Paulo pregou no Areópago?",
+    "options": [
+      "Corinto",
+      "Roma",
+      "Atenas",
+      "Éfeso"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q112",
+    "prompt": "Quem substituiu Judas entre os 12 apóstolos?",
+    "options": [
+      "Paulo",
+      "Barnabé",
+      "Matias",
+      "Tiago"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q113",
+    "prompt": "Qual rei de Israel construiu altares para Baal e Astarte?",
+    "options": [
+      "Saul",
+      "Davi",
+      "Acabe",
+      "Josias"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q114",
+    "prompt": "Quantos anos Israel ficou no deserto?",
+    "options": [
+      "10",
+      "20",
+      "30",
+      "40"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q115",
+    "prompt": "Quem era a esposa de Acabe?",
+    "options": [
+      "Dalila",
+      "Jezebel",
+      "Atalia",
+      "Herodias"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q116",
+    "prompt": "Em qual cidade Rute e Noemi chegaram?",
+    "options": [
+      "Siquém",
+      "Belém",
+      "Hebrom",
+      "Jericó"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q117",
+    "prompt": "Quantos anos tinha Salomão quando assumiu o trono?",
+    "options": [
+      "15",
+      "17",
+      "18",
+      "Não especificado"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q118",
+    "prompt": "Qual profeta disse 'Eis-me aqui, envia-me'?",
+    "options": [
+      "Jeremias",
+      "Ezequiel",
+      "Isaías",
+      "Moisés"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q119",
+    "prompt": "Quem era o cunhado de Moisés?",
+    "options": [
+      "Arão",
+      "Hur",
+      "Jetro",
+      "Hobabe"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q120",
+    "prompt": "Quantos capítulos tem o livro dos Salmos?",
+    "options": [
+      "100",
+      "120",
+      "150",
+      "200"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q121",
+    "prompt": "Qual era o nome do soldado que estava com Jesus no Getsêmani e teve a orelha cortada?",
+    "options": [
+      "Judas",
+      "Malco",
+      "Simão",
+      "Anás"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q122",
+    "prompt": "Quem foi o centurião que reconheceu Jesus na cruz?",
+    "options": [
+      "Cornélio",
+      "Júlio",
+      "Longino",
+      "Não tem nome no texto"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": "A Bíblia não nomeia o centurião; 'Longino' é apenas uma tradição posterior, não consta nas Escrituras.",
+    "reference": "Mateus 27:54"
+  },
+  {
+    "id": "q123",
+    "prompt": "Qual era o nome dos dois filhos de Isaque?",
+    "options": [
+      "Jacó e Rúben",
+      "Esaú e Jacó",
+      "Isaque e Ismael",
+      "Gade e Aser"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q124",
+    "prompt": "Em qual livro está escrito: 'Posso tudo naquele que me fortalece'?",
+    "options": [
+      "Colossenses",
+      "Efésios",
+      "Filipenses",
+      "Gálatas"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q125",
+    "prompt": "Quantos dias Jonas ficou no ventre do peixe?",
+    "options": [
+      "1",
+      "3",
+      "7",
+      "40"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q126",
+    "prompt": "Qual foi o pecado de Davi com Bate-Seba?",
+    "options": [
+      "Idolatria",
+      "Mentira",
+      "Adultério e homicídio",
+      "Roubo"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q127",
+    "prompt": "Em qual livro aparece a história de Rute?",
+    "options": [
+      "Juízes",
+      "1 Samuel",
+      "Rute",
+      "Neemias"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q128",
+    "prompt": "Quem foi o discípulo amado de Jesus?",
+    "options": [
+      "Pedro",
+      "Tiago",
+      "André",
+      "João"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q129",
+    "prompt": "Qual era o nome do rei etíope que perseguiu Israel?",
+    "options": [
+      "Sisaque",
+      "Zerá",
+      "Faraó",
+      "Candace"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q130",
+    "prompt": "Quantas tribos tinha Israel?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q131",
+    "prompt": "Qual era a profissão de Mateus antes de seguir Jesus?",
+    "options": [
+      "Pescador",
+      "Fariseu",
+      "Cobrador de impostos",
+      "Pastor"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q132",
+    "prompt": "Onde Jesus pregou seu primeiro sermão famoso?",
+    "options": [
+      "No templo",
+      "Num barco",
+      "Num monte",
+      "Numa sinagoga"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q133",
+    "prompt": "Quem foi o primeiro diácono mencionado em Atos?",
+    "options": [
+      "Filipe",
+      "Estêvão",
+      "Nicanor",
+      "Prócoro"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q134",
+    "prompt": "Qual era o nome completo do apóstolo que era médico?",
+    "options": [
+      "Marcos",
+      "Lucas",
+      "Tito",
+      "Timóteo"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q135",
+    "prompt": "Quantos anos Abraham tinha quando Isaac nasceu?",
+    "options": [
+      "75",
+      "90",
+      "100",
+      "120"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q136",
+    "prompt": "Qual é o livro mais longo da Bíblia?",
+    "options": [
+      "Gênesis",
+      "Isaías",
+      "Jeremias",
+      "Salmos"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q137",
+    "prompt": "Quem profetizou sobre o vale dos ossos secos?",
+    "options": [
+      "Isaías",
+      "Jeremias",
+      "Daniel",
+      "Ezequiel"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q138",
+    "prompt": "Qual era o nome do primeiro sacerdote de Israel?",
+    "options": [
+      "Moisés",
+      "Arão",
+      "Eleazar",
+      "Fineias"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q139",
+    "prompt": "Qual apóstolo pregou em Pentecostes?",
+    "options": [
+      "João",
+      "Paulo",
+      "Pedro",
+      "Tiago"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q140",
+    "prompt": "Quem foi o esposo de Débora?",
+    "options": [
+      "Baraque",
+      "Lapidote",
+      "Calebe",
+      "Sísera"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q141",
+    "prompt": "Qual é o livro do NT que não menciona o nome de Jesus?",
+    "options": [
+      "Filemom",
+      "Gálatas",
+      "Hebreus",
+      "3 João"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q142",
+    "prompt": "Quem foi o pai de Salomão?",
+    "options": [
+      "Saul",
+      "Samuel",
+      "Davi",
+      "Joabe"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q143",
+    "prompt": "Quantos anos Moisés viveu?",
+    "options": [
+      "100",
+      "110",
+      "120",
+      "130"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q144",
+    "prompt": "Qual é o único evangelho que relata a parábola do bom samaritano?",
+    "options": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "João"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q145",
+    "prompt": "Quem foi o conselheiro de Absalão?",
+    "options": [
+      "Aitofel",
+      "Husai",
+      "Natã",
+      "Zadoque"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q146",
+    "prompt": "Como se chamava o local onde Jesus orou antes de ser preso?",
+    "options": [
+      "Monte Sião",
+      "Gólgota",
+      "Getsêmani",
+      "Monte Carmelo"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q147",
+    "prompt": "Qual era a cidade de origem do apóstolo Felipe?",
+    "options": [
+      "Cafarnaum",
+      "Betsaida",
+      "Nazaré",
+      "Jericó"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q148",
+    "prompt": "Em qual cidade Paulo foi apedrejado e deixado por morto?",
+    "options": [
+      "Listra",
+      "Derbe",
+      "Icônio",
+      "Antioquia"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q149",
+    "prompt": "Quantos podem estar reunidos em nome de Jesus para ele estar no meio?",
+    "options": [
+      "2 ou 3",
+      "5 ou 6",
+      "10",
+      "12"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q150",
+    "prompt": "Quem foi o general de Davi que matou Abner?",
+    "options": [
+      "Ioabe",
+      "Husai",
+      "Aitofel",
+      "Benaia"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q151",
+    "prompt": "Qual era o instrumento favorito de Davi?",
+    "options": [
+      "Flauta",
+      "Harpa",
+      "Trombeta",
+      "Címbalo"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q152",
+    "prompt": "Em qual Monte Jesus foi transfigurado?",
+    "options": [
+      "Monte Carmelo",
+      "Monte Tabor",
+      "Monte Hermon",
+      "Monte Sião"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q153",
+    "prompt": "Quem foi o profeta que ungiu Saul como rei?",
+    "options": [
+      "Natã",
+      "Gade",
+      "Samuel",
+      "Aias"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q154",
+    "prompt": "Qual rei de Judá destruiu os ídolos e fez a reforma?",
+    "options": [
+      "Manassés",
+      "Josias",
+      "Acaz",
+      "Ezequias"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q155",
+    "prompt": "Qual é o significado de 'Emanuel'?",
+    "options": [
+      "Rei dos reis",
+      "Deus conosco",
+      "Filho de Deus",
+      "Luz do mundo"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q156",
+    "prompt": "Quem foi o profeta que ficou em Israel enquanto outros foram ao exílio?",
+    "options": [
+      "Isaías",
+      "Daniel",
+      "Jeremias",
+      "Ezequiel"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q157",
+    "prompt": "Qual dos evangelhos é o mais curto?",
+    "options": [
+      "Mateus",
+      "Marcos",
+      "Lucas",
+      "João"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q158",
+    "prompt": "Quem foi a primeira mulher mencionada no NT?",
+    "options": [
+      "Maria Madalena",
+      "Maria, mãe de Jesus",
+      "Isabel",
+      "Ana"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q159",
+    "prompt": "Em qual livro do NT lemos sobre a fé como certeza das coisas que se esperam?",
+    "options": [
+      "Romanos",
+      "Gálatas",
+      "Hebreus",
+      "Tiago"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q160",
+    "prompt": "Quem foi o filho de Davi que tentou tomar o reino?",
+    "options": [
+      "Salomão",
+      "Amnon",
+      "Absalão",
+      "Adonias"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q161",
+    "prompt": "Qual é o nome da prisão de Paulo e Silas?",
+    "options": [
+      "Roma",
+      "Filipo",
+      "Cesareia",
+      "Jerusalém"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q162",
+    "prompt": "Em qual livro está o famoso capítulo 13 sobre o amor?",
+    "options": [
+      "Efésios",
+      "1 Coríntios",
+      "Filipenses",
+      "Colossenses"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q163",
+    "prompt": "Quantas esposas tinha Salomão?",
+    "options": [
+      "300",
+      "500",
+      "700",
+      "1000"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q164",
+    "prompt": "Quem precedeu João Batista como profeta de Israel?",
+    "options": [
+      "Malaquias",
+      "Jeremias",
+      "Ezequiel",
+      "Obadias"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q165",
+    "prompt": "Em qual mar Paulo naufragou a caminho de Roma?",
+    "options": [
+      "Mar Vermelho",
+      "Mar Morto",
+      "Mar Adriático/Mediterrâneo",
+      "Mar da Galileia"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q166",
+    "prompt": "Quem foi a mulher que ajudou os espias hebreus em Jericó?",
+    "options": [
+      "Débora",
+      "Rahabe",
+      "Ester",
+      "Rute"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q167",
+    "prompt": "Qual é o significado do nome 'Jesus'?",
+    "options": [
+      "Paz de Deus",
+      "Salvador",
+      "Ungido",
+      "Filho do Altíssimo"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q168",
+    "prompt": "Em qual cidade Lot e sua família eram de?",
+    "options": [
+      "Sodoma",
+      "Harã",
+      "Ur",
+      "Gomorra"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q169",
+    "prompt": "Quantos homens Gideão usou para vencer os midianitas?",
+    "options": [
+      "300",
+      "1000",
+      "3000",
+      "10000"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q170",
+    "prompt": "Qual era a tarefa de Neemias antes de reconstruir os muros?",
+    "options": [
+      "Sacerdote",
+      "Escriba",
+      "Copeiro do rei",
+      "General"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q171",
+    "prompt": "Em qual cidade estava a Igreja que recebeu o maior elogio em Apocalipse?",
+    "options": [
+      "Éfeso",
+      "Esmirna",
+      "Filadélfia",
+      "Laodiceia"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q172",
+    "prompt": "Qual rei persa autorizou Esdras a voltar para Jerusalém?",
+    "options": [
+      "Dario",
+      "Artaxerxes",
+      "Ciro",
+      "Xerxes"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q173",
+    "prompt": "Qual era o nome do escravo de Abraão?",
+    "options": [
+      "Eliezer",
+      "Harã",
+      "Quedarlâomer",
+      "Lotã"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q174",
+    "prompt": "Onde ocorreu o concílio que decidiu sobre a circuncisão dos gentios?",
+    "options": [
+      "Roma",
+      "Antioquia",
+      "Corinto",
+      "Jerusalém"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q175",
+    "prompt": "Quem foi o rei de Israel que fez o povo peccar adorando bezerros de ouro?",
+    "options": [
+      "Acabe",
+      "Jeroboão",
+      "Baasa",
+      "Zimri"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q176",
+    "prompt": "Quantos capítulos tem Isaías?",
+    "options": [
+      "40",
+      "60",
+      "66",
+      "72"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q177",
+    "prompt": "Qual é a frase que conclui o Pai Nosso?",
+    "options": [
+      "Glória ae Pai",
+      "Porque teu é o reino, e o poder e a glória",
+      "Amém",
+      "Em nome de Jesus"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q178",
+    "prompt": "Qual era o ofício de Bezalel, artesão do tabernáculo?",
+    "options": [
+      "Sacerdote",
+      "Escultor e artesão",
+      "Escriba",
+      "Levita"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q179",
+    "prompt": "Quem foi o rei que dividiu o reino de Israel pelo ciúme?",
+    "options": [
+      "Salomão em vida",
+      "Roboão após a morte de Salomão",
+      "Jeroboão",
+      "Acabe"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q180",
+    "prompt": "Qual é o nome do pai de João, o apóstolo?",
+    "options": [
+      "Zebedeu",
+      "Jonas",
+      "Alfeu",
+      "Cleofas"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q181",
+    "prompt": "Qual cidade Paulo visitou onde havia um altar ao 'Deus Desconhecido'?",
+    "options": [
+      "Roma",
+      "Corinto",
+      "Atenas",
+      "Éfeso"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q182",
+    "prompt": "Quem foi o pai de Jonatã?",
+    "options": [
+      "Davi",
+      "Samuel",
+      "Saul",
+      "Abner"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q183",
+    "prompt": "Qual é o livro mais antigo da Bíblia segundo muitos estudiosos?",
+    "options": [
+      "Gênesis",
+      "Jó",
+      "Êxodo",
+      "Salmos"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q184",
+    "prompt": "Quem foi o rei que construiu o segundo templo em Jerusalém?",
+    "options": [
+      "Zorobabel",
+      "Esdras",
+      "Neemias",
+      "Dario"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q185",
+    "prompt": "Quantos dias Paulo ficou em Damasco após sua conversão?",
+    "options": [
+      "3",
+      "7",
+      "14",
+      "40"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q186",
+    "prompt": "Em qual dos livros está o sermão de Moisés antes de sua morte?",
+    "options": [
+      "Levítico",
+      "Números",
+      "Deuteronômio",
+      "Josué"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q187",
+    "prompt": "Quem colocou Maria no cuidado de João na cruz?",
+    "options": [
+      "Pedro",
+      "Jesus",
+      "José de Arimatéia",
+      "Tiago"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q188",
+    "prompt": "Qual é o nome do pai de Abraão?",
+    "options": [
+      "Naor",
+      "Salé",
+      "Arfaxade",
+      "Terá"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q189",
+    "prompt": "Qual era a tribo sacerdotal de Israel?",
+    "options": [
+      "Judá",
+      "Efraim",
+      "Levi",
+      "Benjamim"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q190",
+    "prompt": "Em qual cidade ficava a porta chamada 'Bela'?",
+    "options": [
+      "Jericó",
+      "Hebrom",
+      "Templo de Jerusalém",
+      "Cafarnaum"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q191",
+    "prompt": "Quem tocou uma trombeta para anunciar o jubileu?",
+    "options": [
+      "Os levitas",
+      "O sumo sacerdote",
+      "Qualquer israelita",
+      "Os sacerdotes"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q192",
+    "prompt": "Qual carta de Paulo foi escrita da prisão em Roma?",
+    "options": [
+      "1 Tessalonicenses",
+      "Gálatas",
+      "Filipenses",
+      "1 Coríntios"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q193",
+    "prompt": "Qual é o nome do monte onde Arca parou?",
+    "options": [
+      "Monte Sinai",
+      "Monte Ararat",
+      "Monte Hermon",
+      "Monte Sião"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q194",
+    "prompt": "Qual discípulo era irmão de Pedro?",
+    "options": [
+      "Tiago",
+      "João",
+      "André",
+      "Filipe"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q195",
+    "prompt": "Em qual cidade Cornélio, o centurião, vivia?",
+    "options": [
+      "Cesareia",
+      "Roma",
+      "Antioquia",
+      "Jope"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q196",
+    "prompt": "Qual era o nome do servo de Eliseu que ficou leproso?",
+    "options": [
+      "Hazael",
+      "Naamã",
+      "Geazi",
+      "Ioabe"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q197",
+    "prompt": "Quem foi o primeiro gentio batizado no NT?",
+    "options": [
+      "Cornélio",
+      "O etíope da carruagem",
+      "O carcereiro de Filipo",
+      "Lidia"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q198",
+    "prompt": "Qual é o significado de 'Getsêmani'?",
+    "options": [
+      "Vale da sombra",
+      "Lagar de azeite",
+      "Jardim de pedras",
+      "Monte da luz"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q199",
+    "prompt": "Em qual livro estão os '7 espíritos' enviados por Deus?",
+    "options": [
+      "Ezequiel",
+      "Daniel",
+      "Zacarias",
+      "Apocalipse"
+    ],
+    "answer": 3,
+    "difficulty": "medium",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q200",
+    "prompt": "Qual arma Sansão usou para matar mil filisteus?",
+    "options": [
+      "Uma espada",
+      "Uma pedra",
+      "Osso de mandíbula de jumento",
+      "Um arco"
+    ],
+    "answer": 2,
+    "difficulty": "medium",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q201",
+    "prompt": "Qual é o significado do nome 'Israel'?",
+    "options": [
+      "O que serve a Deus",
+      "O que luta com Deus",
+      "O que segue a Deus",
+      "O que ama a Deus"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": "Jacó recebeu o nome Israel após lutar com o Anjo do Senhor, significando 'Aquele que luta com Deus'.",
+    "reference": "Gênesis 32:28"
+  },
+  {
+    "id": "q202",
+    "prompt": "Quem era pai de Onan e Er?",
+    "options": [
+      "Jacó",
+      "Judá",
+      "Rúben",
+      "Simeão"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": "Er e Onã eram os filhos primogênitos de Judá, cujas histórias estão ligadas ao início da tribo de Judá.",
+    "reference": "Gênesis 38:1-4"
+  },
+  {
+    "id": "q203",
+    "prompt": "Quantos capítulos tem Salmos 119?",
+    "options": [
+      "É um único capítulo com 176 versículos",
+      "São 3 capítulos",
+      "Um capítulo com 150 versículos",
+      "São 22 capítulos"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Curiosidades",
+    "explanation": "O Salmo 119 é um acróstico alfabético e o capítulo mais longo da Bíblia, focado inteiramente na Lei do Senhor.",
+    "reference": "Salmos 119:1"
+  },
+  {
+    "id": "q204",
+    "prompt": "Em qual tribo era Saul de Tarso?",
+    "options": [
+      "Judá",
+      "Levi",
+      "Benjamim",
+      "Efraim"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": "Paulo (Saulo) orgulhava-se de sua linhagem, sendo da tribo de Benjamim, um hebreu de hebreus.",
+    "reference": "Filipenses 3:5"
+  },
+  {
+    "id": "q205",
+    "prompt": "Qual era o material da arca da aliança?",
+    "options": [
+      "Cedro e ouro",
+      "Madeira de acácia revestida de ouro",
+      "Marfim e prata",
+      "Cedro revestido de bronze"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": "A arca era feita de madeira de acácia (setim) e revestida por dentro e por fora de ouro puro.",
+    "reference": "Êxodo 25:10-11"
+  },
+  {
+    "id": "q206",
+    "prompt": "Quantas seções tem o livro de Isaías segundo estudiosos?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Curiosidades",
+    "explanation": "Isaías é frequentemente dividido pelos teólogos em duas partes: a primeira sobre julgamento e a segunda sobre esperança.",
+    "reference": "Introdução a Isaías"
+  },
+  {
+    "id": "q207",
+    "prompt": "Qual é o nome do anjo que anunciou o nascimento de Jesus?",
+    "options": [
+      "Miguel",
+      "Rafael",
+      "Gabriel",
+      "Uriel"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": "Gabriel foi o mensageiro celestial enviado tanto a Zacarias quanto a Maria para anunciar os nascimentos de João e Jesus.",
+    "reference": "Lucas 1:19, 26"
+  },
+  {
+    "id": "q208",
+    "prompt": "Em qual capítulo de Gênesis aparece a genealogia de Noé?",
+    "options": [
+      "Capítulo 5",
+      "Capítulo 7",
+      "Capítulo 9",
+      "Capítulo 11"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": "A genealogia detalhada de Adão até Noé é registrada no capítulo 5 de Gênesis.",
+    "reference": "Gênesis 5:1-32"
+  },
+  {
+    "id": "q209",
+    "prompt": "Quem foi o sumo sacerdote na época de Jesus?",
+    "options": [
+      "Anás",
+      "Caifás",
+      "Herodes",
+      "Pilatos"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": "Caifás era o sumo sacerdote oficial durante o julgamento de Jesus, embora seu sogro Anás ainda exercesse influência.",
+    "reference": "Mateus 26:57"
+  },
+  {
+    "id": "q210",
+    "prompt": "Quantos anos tinha José quando foi vendido pelos irmãos?",
+    "options": [
+      "15",
+      "17",
+      "20",
+      "25"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": "José era um jovem de 17 anos quando cuidava das ovelhas com seus irmãos antes de ser vendido.",
+    "reference": "Gênesis 37:2"
+  },
+  {
+    "id": "q211",
+    "prompt": "Em qual livro está a frase 'Deus é amor'?",
+    "options": [
+      "João",
+      "1 João",
+      "Romanos",
+      "1 Coríntios"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q212",
+    "prompt": "Qual era o nome hebraico de Ester?",
+    "options": [
+      "Hadassá",
+      "Débora",
+      "Miriam",
+      "Abigail"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q213",
+    "prompt": "Quantos irmãos tinha José no total (incluindo Benjamim)?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q214",
+    "prompt": "Qual é o nome do rei que rasgou as roupas ao ouvir que não havia profeta em Israel?",
+    "options": [
+      "Acabe",
+      "Josafá",
+      "Jeorão da Israel",
+      "Bem-Hadade"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q215",
+    "prompt": "Em qual cidade Paulo teve a visão do homem macedônio?",
+    "options": [
+      "Troas",
+      "Filipos",
+      "Tessalônica",
+      "Bereia"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q216",
+    "prompt": "Qual é o lema do livro de Eclesiastes?",
+    "options": [
+      "A Sabedoria guia",
+      "Vaidade das vaidades",
+      "A lei é perfeita",
+      "Teme a Deus"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q217",
+    "prompt": "Quem era o pai de Josué?",
+    "options": [
+      "Calebe",
+      "Moisés",
+      "Num / Núm",
+      "Hur"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q218",
+    "prompt": "Qual era o nome do primeiro filho de Abraão com Hagar?",
+    "options": [
+      "Isaque",
+      "Ismael",
+      "Medã",
+      "Edom"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q219",
+    "prompt": "Quantos anos Jó viveu após Deus o restaurar?",
+    "options": [
+      "Não especificado",
+      "70",
+      "100",
+      "140"
+    ],
+    "answer": 3,
+    "difficulty": "hard",
+    "category": "Curiosidades",
+    "explanation": "Jó 42:16 diz que ele viveu 140 anos depois de sua restauração, vendo quatro gerações de descendentes.",
+    "reference": "Jó 42:16"
+  },
+  {
+    "id": "q220",
+    "prompt": "Qual é o nome do avô materno de Timóteo?",
+    "options": [
+      "Lóide",
+      "Eunice",
+      "Não é mencionado",
+      "Zenas"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q221",
+    "prompt": "Em qual livro aparece a primeira Páscoa registrada?",
+    "options": [
+      "Levítico",
+      "Êxodo",
+      "Números",
+      "Deuteronômio"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q222",
+    "prompt": "Quem foi o profeta que casou com uma prostituta por ordem de Deus?",
+    "options": [
+      "Amós",
+      "Oséias",
+      "Joel",
+      "Miqueias"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q223",
+    "prompt": "Qual é o nome do filho de Davi que nasceu da relação com Bate-Seba e morreu?",
+    "options": [
+      "Salomão",
+      "Absalão",
+      "Adonias",
+      "O filho sem nome registrado"
+    ],
+    "answer": 3,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q224",
+    "prompt": "Em qual livro Paulo fala de 'armar-se com toda a armadura de Deus'?",
+    "options": [
+      "Romanos",
+      "Colossenses",
+      "Efésios",
+      "1 Coríntios"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q225",
+    "prompt": "Quantos capítulos tem o livro de Números?",
+    "options": [
+      "30",
+      "32",
+      "36",
+      "40"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q226",
+    "prompt": "Qual é o nome do espião de Israel que não foi a Canaã por causa de incredulidade (exceto os fiéis)?",
+    "options": [
+      "Moisés",
+      "Um dos 10 espias incrédulos",
+      "Josué",
+      "Calebe"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q227",
+    "prompt": "Em qual cidade estava a sinagoga onde Jesus leu Isaías?",
+    "options": [
+      "Cafarnaum",
+      "Betânia",
+      "Nazaré",
+      "Jericó"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q228",
+    "prompt": "Quem foi o rei de Salem a quem Abraão deu o dízimo?",
+    "options": [
+      "Melquisedeque",
+      "Quedarlaômer",
+      "Amenophis",
+      "Faraó"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q229",
+    "prompt": "Em qual livro aparece a profecia dos 70 semanas?",
+    "options": [
+      "Isaías",
+      "Jeremias",
+      "Ezequiel",
+      "Daniel"
+    ],
+    "answer": 3,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q230",
+    "prompt": "Qual era o nome do filho de Noé que viu a nudez do pai?",
+    "options": [
+      "Sem",
+      "Jafé",
+      "Cam",
+      "Arpaxade"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q231",
+    "prompt": "Qual é o número de versículos de João 3:16 (quantas palavras em hebraico)?",
+    "options": [
+      "Não se aplica, é do NT grego",
+      "26 palavras em grego",
+      "25 ou 27",
+      "Depende do manuscrito"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q232",
+    "prompt": "Quem foi o governador que Paulo apelou para ser julgado por César?",
+    "options": [
+      "Félix",
+      "Festo",
+      "Agripa",
+      "Lisias"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q233",
+    "prompt": "Em qual livro Paulo cita o trecho de Joel 2:32?",
+    "options": [
+      "Atos",
+      "Romanos",
+      "1 Coríntios",
+      "Gálatas"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q234",
+    "prompt": "Quantas vezes o número 7 aparece no Apocalipse aproximadamente?",
+    "options": [
+      "Menos de 10",
+      "Mais de 50",
+      "Cerca de 30",
+      "Exatamente 7"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q235",
+    "prompt": "Qual era o nome do filho que Abraão quase sacrificou?",
+    "options": [
+      "Ismael",
+      "Isaque",
+      "Jacó",
+      "Esaú"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q236",
+    "prompt": "Quem eram as mulheres que foram ao sepulcro de Jesus no primeiro dia da semana?",
+    "options": [
+      "Maria e Marta",
+      "Maria Madalena e a outra Maria",
+      "Apenas Maria Madalena",
+      "Três mulheres sem nome"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q237",
+    "prompt": "O que significa a palavra 'Maranata'?",
+    "options": [
+      "Aleluia",
+      "Vem, Senhor",
+      "Glória a Deus",
+      "Que seja feita a vontade"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Curiosidades",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q238",
+    "prompt": "Qual profeta disse que os filhos de Israel voltariam do exílio após 70 anos?",
+    "options": [
+      "Isaías",
+      "Ezequiel",
+      "Jeremias",
+      "Daniel"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q239",
+    "prompt": "Em qual capítulo de Mateus está o Sermão da Montanha?",
+    "options": [
+      "3,4 e 5",
+      "5,6 e 7",
+      "4,5 e 6",
+      "6,7 e 8"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q240",
+    "prompt": "Quem foi o primeiro a crer na ressurreição de Jesus segundo João 20?",
+    "options": [
+      "Pedro",
+      "Maria Madalena",
+      "O discípulo amado (João)",
+      "Tomé"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q241",
+    "prompt": "Quantos capítulos tem o livro de Provérbios?",
+    "options": [
+      "25",
+      "30",
+      "31",
+      "33"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q242",
+    "prompt": "Qual era o nome do pai de Ester?",
+    "options": [
+      "Mardoqueu",
+      "Abicail",
+      "Mordecai",
+      "Hamã"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q243",
+    "prompt": "Em qual livro Paulo fala dos frutos do Espírito?",
+    "options": [
+      "Romanos",
+      "Efésios",
+      "Gálatas",
+      "Colossenses"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q244",
+    "prompt": "Qual é o nome do rei hitita ao qual Davi enviou Urias para a guerra?",
+    "options": [
+      "Não era hitita, era Joabe",
+      "Joabe era o general, Urias era o hitita enviado",
+      "O rei era Davi, o general Joabe",
+      "Hanune, rei dos Amonitas"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q245",
+    "prompt": "Quantos versículos tem o Salmo 119?",
+    "options": [
+      "150",
+      "172",
+      "176",
+      "180"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q246",
+    "prompt": "Qual é o nome do falso profeta vencido por Paulo em Chipre?",
+    "options": [
+      "Elimas ou Bar-Jesus",
+      "Simão o Mágico",
+      "Alexandre",
+      "Jannes"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q247",
+    "prompt": "Em qual capítulo de Romanos Paulo explica a justificação pela fé?",
+    "options": [
+      "Capítulo 1",
+      "Capítulo 3",
+      "Capítulo 5",
+      "Capítulo 8"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q248",
+    "prompt": "Qual era o nome da avó de Timóteo?",
+    "options": [
+      "Eunice",
+      "Priscila",
+      "Lóide",
+      "Febe"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q249",
+    "prompt": "Quem foi o general egípcio que comprou José?",
+    "options": [
+      "Potifar",
+      "Faraó",
+      "Peniel",
+      "Putiel"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q250",
+    "prompt": "Em qual livro está o 'Cântico de Moisés'?",
+    "options": [
+      "Êxodo 15",
+      "Gênesis 49",
+      "Números 23",
+      "Deuteronômio 31"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q251",
+    "prompt": "Quantas igrejas recebem cartas no Apocalipse?",
+    "options": [
+      "5",
+      "7",
+      "10",
+      "12"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q252",
+    "prompt": "Quem foi o pai de Boaz que se casou com Rute?",
+    "options": [
+      "Elimeleque",
+      "Salmom",
+      "Jesse",
+      "Obed"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q253",
+    "prompt": "Qual era o nome do rei de Tiro que ajudou Salomão com cedros?",
+    "options": [
+      "Abibaal",
+      "Hiram",
+      "Eterbal",
+      "Adão"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q254",
+    "prompt": "Em qual visão Isaías viu os serafins?",
+    "options": [
+      "Isaías 1",
+      "Isaías 6",
+      "Isaías 9",
+      "Isaías 40"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q255",
+    "prompt": "Quantos capítulos tem Ezequiel?",
+    "options": [
+      "40",
+      "48",
+      "52",
+      "60"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q256",
+    "prompt": "Qual apóstolo pediu para Jesus mostrar o Pai aos discípulos?",
+    "options": [
+      "Pedro",
+      "Tomé",
+      "Filipe",
+      "João"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q257",
+    "prompt": "Qual é o tema central do livro de Oséias?",
+    "options": [
+      "Arrependimento",
+      "O amor fiel de Deus apesar da infidelidade",
+      "A soberania de Deus",
+      "A vinda do Messias"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q258",
+    "prompt": "Em qual livro está a profecia do 'Emanuel'?",
+    "options": [
+      "Miquéias",
+      "Isaías",
+      "Jeremias",
+      "Zacarias"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q259",
+    "prompt": "Quantos planos de missão Paulo realizou (viagens missionárias)?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q260",
+    "prompt": "Qual é o nome do carcereiro de Filipo que Paulo batizou?",
+    "options": [
+      "Não é mencionado pelo nome",
+      "Estéfanas",
+      "Crispo",
+      "Joana"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q261",
+    "prompt": "Quem foi o pai de Davi?",
+    "options": [
+      "Boaz",
+      "Jessé",
+      "Obed",
+      "Naasom"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q262",
+    "prompt": "Em qual livro está escrito 'Cria em mim, ó Deus, um coração puro'?",
+    "options": [
+      "Salmos 51",
+      "Salmos 23",
+      "Provérbios 3",
+      "Isaías 1"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q263",
+    "prompt": "Qual era o nome do anjo que luta com Jacó?",
+    "options": [
+      "Miguel",
+      "Gabriel",
+      "Rafael",
+      "Não identificado no texto"
+    ],
+    "answer": 3,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q264",
+    "prompt": "Em qual cidade funciona a primeira Igreja gentílica organizada?",
+    "options": [
+      "Jerusalém",
+      "Corinto",
+      "Antioquia",
+      "Éfeso"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q265",
+    "prompt": "Qual profeta teve sua esposa morta como sinal profético ao povo?",
+    "options": [
+      "Oséias",
+      "Amós",
+      "Ageu",
+      "Ezequiel"
+    ],
+    "answer": 3,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": "Deus ordenou que Ezequiel não chorasse pela morte de sua esposa como sinal do juízo que viria sobre Jerusalém.",
+    "reference": "Ezequiel 24:16-18"
+  },
+  {
+    "id": "q266",
+    "prompt": "Qual é o nome do filho de Jacó que foi o antepassado de Jesus?",
+    "options": [
+      "Levi",
+      "Rúben",
+      "Judá",
+      "José"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q267",
+    "prompt": "Em qual capítulo de Apocalipse há a batalha de Armagedom?",
+    "options": [
+      "Ap 16",
+      "Ap 17",
+      "Ap 19",
+      "Ap 20"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q268",
+    "prompt": "Quantos servos tinha Abraão quando foi resgatar Ló?",
+    "options": [
+      "100",
+      "218",
+      "318",
+      "500"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q269",
+    "prompt": "Qual é o nome da esposa de Aquila, companheira de Paulo?",
+    "options": [
+      "Priscila",
+      "Febe",
+      "Júnia",
+      "Lídia"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q270",
+    "prompt": "Em qual livro Paulo usa a analogia do atleta e do soldado?",
+    "options": [
+      "Gálatas",
+      "Efésios",
+      "2 Timóteo",
+      "1 Coríntios"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q271",
+    "prompt": "Qual rei construiu um altar de Baal dentro do templo e colocou uma estátua de Asera?",
+    "options": [
+      "Acabe",
+      "Manassés",
+      "Jeroboão",
+      "Acaz"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q272",
+    "prompt": "Quantos anos Israel ficou sob domínio madianita antes de Gideão?",
+    "options": [
+      "3",
+      "5",
+      "7",
+      "10"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q273",
+    "prompt": "Qual é a primeira beatitude mencionada no Evangelho de Lucas?",
+    "options": [
+      "Bem-aventurados os pobres",
+      "Bem-aventurados os que choram",
+      "Bem-aventurados os mansos",
+      "Bem-aventurados os que têm fome"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q274",
+    "prompt": "Em qual livro do AT aparece pela primeira vez a palavra 'sacerdote'?",
+    "options": [
+      "Êxodo",
+      "Gênesis",
+      "Levítico",
+      "Números"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q275",
+    "prompt": "Quem foi o parente de Mardoqueu que criou Ester?",
+    "options": [
+      "Ele mesmo, Mardoqueu",
+      "O rei Assuero",
+      "Um sacerdote",
+      "Hamã"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q276",
+    "prompt": "Qual é o nome do livro do NT escrito em forma de sermão?",
+    "options": [
+      "Tiago",
+      "1 Pedro",
+      "Hebreus",
+      "Romanos"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q277",
+    "prompt": "Quem foi a concubina de Saul cujos filhos foram mortos pelos gibeonitas?",
+    "options": [
+      "Abigail",
+      "Aínoã",
+      "Rizpá",
+      "Mical"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q278",
+    "prompt": "Em qual capítulo de João está a oração sacerdotal de Jesus?",
+    "options": [
+      "João 15",
+      "João 16",
+      "João 17",
+      "João 18"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q279",
+    "prompt": "Qual é o número de tribos de Israel apresentadas no Apocalipse 7?",
+    "options": [
+      "10",
+      "12",
+      "14",
+      "24"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q280",
+    "prompt": "Quem foi o rei cujo coração era voltado a Deus de 'todo o coração, alma e força'?",
+    "options": [
+      "Davi",
+      "Josias",
+      "Ezequias",
+      "Asa"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q281",
+    "prompt": "Em qual livro está a frase 'Com que limpará o jovem o seu caminho'?",
+    "options": [
+      "Provérbios",
+      "Eclesiastes",
+      "Salmos",
+      "Jó"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q282",
+    "prompt": "Qual é o nome do filho de Noé de quem descendem os europeus, segundo a Tabela das Nações?",
+    "options": [
+      "Sem",
+      "Cam",
+      "Jafé",
+      "Não especificado"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q283",
+    "prompt": "Em qual livro Paulo diz que 'toda a Escritura é inspirada por Deus'?",
+    "options": [
+      "1 Timóteo",
+      "2 Timóteo",
+      "Tito",
+      "Hebreus"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q284",
+    "prompt": "Quem foi o sumo sacerdote que ajudou Davi fugir de Saul?",
+    "options": [
+      "Abiatar",
+      "Abimelece/Aimelec",
+      "Zadoque",
+      "Eleazar"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q285",
+    "prompt": "Qual é o nome do local onde Elias fugiu de Jezebel?",
+    "options": [
+      "Monte Sinai / Horebe",
+      "Monte Carmelo",
+      "Monte das Oliveiras",
+      "Deserto do Neguebe"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q286",
+    "prompt": "Em qual livro se lê: 'Guarda o teu coração mais do que tudo, porque dele procedem as fontes da vida'?",
+    "options": [
+      "Eclesiastes",
+      "Salmos",
+      "Provérbios",
+      "Sabedoria"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q287",
+    "prompt": "Qual era a cidade inimiga de Israel mais famosa destruída por Josué?",
+    "options": [
+      "Gaza",
+      "Jericó",
+      "Ai",
+      "Gibeão"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q288",
+    "prompt": "Em qual capítulo de Gênesis está o relato da Torre de Babel?",
+    "options": [
+      "Gênesis 1",
+      "Gênesis 6",
+      "Gênesis 11",
+      "Gênesis 15"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q289",
+    "prompt": "Quem acusou falsamente José na casa de Potifar?",
+    "options": [
+      "A esposa de Potifar (sem nome no texto)",
+      "Asenate",
+      "Uma serva",
+      "Potifar"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": "A esposa de Potifar tentou seduzir José, e ao ser rejeitada, o acusou falsamente de assédio.",
+    "reference": "Gênesis 39:7-20"
+  },
+  {
+    "id": "q290",
+    "prompt": "Quantos ancião há no trono da visão de Apocalipse 4?",
+    "options": [
+      "7",
+      "12",
+      "24",
+      "70"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q291",
+    "prompt": "Qual é o nome do rei persa que libertou Israel do exílio?",
+    "options": [
+      "Dario",
+      "Cambises",
+      "Ciro",
+      "Artaxerxes"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q292",
+    "prompt": "Em qual livro Paulo trata o tema da ressurreição dos mortos extensamente?",
+    "options": [
+      "Romanos",
+      "Filipenses",
+      "1 Coríntios",
+      "2 Coríntios"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q293",
+    "prompt": "Quem foi o profeta que viveu durante o reinado de quatro reis de Judá?",
+    "options": [
+      "Jeremias",
+      "Ezequiel",
+      "Isaías",
+      "Daniel"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q294",
+    "prompt": "Qual é o nome do sétimo rei de Israel (casa de Omri)?",
+    "options": [
+      "Joram/Jorão",
+      "Acaba",
+      "Acazias",
+      "Zimri"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q295",
+    "prompt": "Em qual livro está o famoso discurso de Deus a Jó 'Do meio do redemoinho'?",
+    "options": [
+      "Jó 1",
+      "Jó 28",
+      "Jó 38",
+      "Jó 42"
+    ],
+    "answer": 2,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q296",
+    "prompt": "Qual era o nome do general de Israel derrotado pela mulher Jael?",
+    "options": [
+      "Sísera",
+      "Cissão",
+      "Baraque",
+      "Biridija"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q297",
+    "prompt": "Quem foi o primeiro a usar a palavra 'cristão' para os seguidores de Jesus?",
+    "options": [
+      "Os judeus em Jerusalém",
+      "Os gentios em Antioquia",
+      "Os romanos em Roma",
+      "Paulo em Éfeso"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q298",
+    "prompt": "Em quantos dias Paulo atingiu Roma após partir de Malta?",
+    "options": [
+      "3",
+      "7",
+      "14",
+      "Não é especificado o tempo exato"
+    ],
+    "answer": 3,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q299",
+    "prompt": "Qual é o nome da mulher de Fineias que gerou Icabode?",
+    "options": [
+      "Sem nome no texto",
+      "Abigail",
+      "Penina",
+      "Miriam"
+    ],
+    "answer": 0,
+    "difficulty": "hard",
+    "category": "Antigo Testamento",
+    "explanation": null,
+    "reference": null
+  },
+  {
+    "id": "q300",
+    "prompt": "Qual é o último versículo da Bíblia?",
+    "options": [
+      "'Eis que venho depressa'",
+      "'A graça do Senhor Jesus seja com todos'",
+      "'Maranata'",
+      "'Amém'"
+    ],
+    "answer": 1,
+    "difficulty": "hard",
+    "category": "Novo Testamento",
+    "explanation": null,
+    "reference": null
+  }
+]

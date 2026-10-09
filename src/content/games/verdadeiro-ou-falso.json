@@ -1,0 +1,1432 @@
+[
+  {
+    "id": "vf1",
+    "prompt": "Matusalém foi o homem que mais viveu na Bíblia, chegando aos 969 anos.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Gênesis 5:27 registra a idade exata de Matusalém.",
+    "reference": null
+  },
+  {
+    "id": "vf2",
+    "prompt": "O Arcanjo Gabriel foi quem lutou com Jacó no vau de Jaboque.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "A Bíblia diz que Jacó lutou com um 'homem', muitas vezes interpretado como uma teofania ou um anjo, mas não o identifica especificamente como Gabriel.",
+    "reference": null
+  },
+  {
+    "id": "vf3",
+    "prompt": "Jesus nasceu em Nazaré, mas cresceu em Belém.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Foi o contrário: Jesus nasceu em Belém e cresceu em Nazaré.",
+    "reference": null
+  },
+  {
+    "id": "vf4",
+    "prompt": "Sansão perdeu sua força quando seu cabelo foi cortado por Dalila.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "O segredo de sua força estava em seu voto de nazireado, simbolizado pelo cabelo (Juízes 16:17).",
+    "reference": null
+  },
+  {
+    "id": "vf5",
+    "prompt": "O livro mais curto da Bíblia é 2 João.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "2 João tem apenas um capítulo e 13 versículos, sendo o menor em número de palavras (no grego original).",
+    "reference": null
+  },
+  {
+    "id": "vf6",
+    "prompt": "Moises entrou na Terra Prometida após liderar o povo por 40 anos.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Moisés viu a terra do monte Nebo, mas não entrou nela por causa de sua desobediência em Meribá.",
+    "reference": null
+  },
+  {
+    "id": "vf7",
+    "prompt": "Paulo era originalmente um perseguidor de cristãos chamado Saulo de Tarso.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele foi convertido no caminho de Damasco após um encontro com Jesus ressurreto.",
+    "reference": null
+  },
+  {
+    "id": "vf8",
+    "prompt": "A Arca de Noé tinha 3 andares.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Deus deu as instruções exatas em Gênesis 6:16: 'farás andares baixo, segundo e terceiro'.",
+    "reference": null
+  },
+  {
+    "id": "vf9",
+    "prompt": "Davi foi o primeiro rei de Israel.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Saul foi o primeiro rei ungido por Samuel.",
+    "reference": null
+  },
+  {
+    "id": "vf10",
+    "prompt": "O Rio Jordão abriu-se para que o povo atravessasse sob o comando de Josué.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Isso ocorreu em Josué 3, espelhando a abertura do Mar Vermelho com Moisés.",
+    "reference": null
+  },
+  {
+    "id": "vf11",
+    "prompt": "Jesus nasceu durante o reinado do imperador Augusto.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Lucas 2:1 menciona que César Augusto decretou um censo, durante o qual Jesus nasceu.",
+    "reference": null
+  },
+  {
+    "id": "vf12",
+    "prompt": "O apóstolo Paulo escreveu o Evangelho de Lucas.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "O Evangelho de Lucas foi escrito por Lucas, o médico, companheiro de Paulo.",
+    "reference": null
+  },
+  {
+    "id": "vf13",
+    "prompt": "Abraão foi chamado por Deus quando vivia em Ur dos Caldeus.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Deus chamou Abraão de Ur para ir a uma terra que Ele mostraria (Gênesis 12:1; Atos 7:2-4).",
+    "reference": null
+  },
+  {
+    "id": "vf14",
+    "prompt": "Elias foi levado ao céu em um carro de fogo.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Um redemoinho com carros e cavalos de fogo levou Elias ao céu (2 Reis 2:11).",
+    "reference": null
+  },
+  {
+    "id": "vf15",
+    "prompt": "O livro de Gênesis foi escrito por Salomão.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Gênesis é tradicionalmente atribuído a Moisés, não a Salomão.",
+    "reference": null
+  },
+  {
+    "id": "vf16",
+    "prompt": "Jesus multiplicou 5 pães e 2 peixes para alimentar 5.000 homens.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Este é um dos poucos milagres relatados em todos os quatro Evangelhos (Mateus 14:17-21).",
+    "reference": null
+  },
+  {
+    "id": "vf17",
+    "prompt": "Rute era israelita de nascimento.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Rute era moabita que se converteu ao Deus de Israel e seguiu sua sogra Noemi.",
+    "reference": null
+  },
+  {
+    "id": "vf18",
+    "prompt": "O Espírito Santo desceu sobre os apóstolos no dia de Pentecostes.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "O Espírito desceu como línguas de fogo e vento impetuoso sobre os discípulos (Atos 2:1-4).",
+    "reference": null
+  },
+  {
+    "id": "vf19",
+    "prompt": "Jesus foi batizado no Mar Morto.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Jesus foi batizado no Rio Jordão por João Batista (Mateus 3:13).",
+    "reference": null
+  },
+  {
+    "id": "vf20",
+    "prompt": "O livro de Apocalipse foi escrito pelo apóstolo João na ilha de Patmos.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "João recebeu as visões do Apocalipse enquanto estava exilado em Patmos (Apocalipse 1:9).",
+    "reference": null
+  },
+  {
+    "id": "vf21",
+    "prompt": "Enoque foi o primeiro homem a ser transladado sem ver a morte.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Gênesis 5:24 diz que Enoque andou com Deus e já não era, porque Deus o levou para si.",
+    "reference": null
+  },
+  {
+    "id": "vf22",
+    "prompt": "Melquisedeque era o rei de Israel na época de Abraão.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Melquisedeque era rei de Salém e sacerdote do Deus Altíssimo, não de Israel (que ainda não existia).",
+    "reference": null
+  },
+  {
+    "id": "vf23",
+    "prompt": "Sara riu quando ouviu que teria um filho na velhice.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Em Gênesis 18:12, Sara riu intimamente, o que deu origem ao nome Isaque (riso).",
+    "reference": null
+  },
+  {
+    "id": "vf24",
+    "prompt": "O Arco-Íris foi o sinal da aliança de Deus com Abraão.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "O Arco-Íris foi o sinal da aliança com Noé após o Dilúvio.",
+    "reference": null
+  },
+  {
+    "id": "vf25",
+    "prompt": "Esaú vendeu sua primogenitura por um prato de lentilhas.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele desprezou seu direito de primogênito por uma refeição rápida (Gênesis 25:34).",
+    "reference": null
+  },
+  {
+    "id": "vf26",
+    "prompt": "José foi vendido para o Egito por seu pai, Jacó.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "José foi vendido por seus irmãos, que tinham inveja dele.",
+    "reference": null
+  },
+  {
+    "id": "vf27",
+    "prompt": "As dez pragas do Egito terminaram com a morte dos primogênitos.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Essa foi a praga final que forçou o Faraó a deixar o povo ir.",
+    "reference": null
+  },
+  {
+    "id": "vf28",
+    "prompt": "O Maná caía do céu todos os dias, incluindo o Sábado.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "No Sábado não caía maná; o povo devia colher porção dobrada na sexta-feira.",
+    "reference": null
+  },
+  {
+    "id": "vf29",
+    "prompt": "Moisés recebeu as tábuas da Lei no Monte Sinai.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Deus entregou os Dez Mandamentos a Moisés no Sinai (Êxodo 20).",
+    "reference": null
+  },
+  {
+    "id": "vf30",
+    "prompt": "Arão foi o primeiro Juiz de Israel.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Arão foi o primeiro Sumo Sacerdote; Otniel é considerado o primeiro juiz.",
+    "reference": null
+  },
+  {
+    "id": "vf31",
+    "prompt": "Josué fez o sol se deter sobre Gibeom.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Isso ocorreu durante uma batalha para que Israel pudesse vencer seus inimigos (Josué 10:12).",
+    "reference": null
+  },
+  {
+    "id": "vf32",
+    "prompt": "Raabe era uma espiã de Israel enviada por Josué.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Raabe era uma moradora de Jericó que escondeu os espiões de Israel.",
+    "reference": null
+  },
+  {
+    "id": "vf33",
+    "prompt": "Gideão venceu os midianitas com apenas 300 homens.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Deus ordenou a redução do exército para que a glória da vitória fosse d'Ele (Juízes 7).",
+    "reference": null
+  },
+  {
+    "id": "vf34",
+    "prompt": "Sansão matou mil filisteus usando uma espada de ouro.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele usou a queixada de um jumento (Juízes 15:15).",
+    "reference": null
+  },
+  {
+    "id": "vf35",
+    "prompt": "Davi era o filho mais velho de Jessé.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Davi era o mais novo entre os oito filhos de Jessé.",
+    "reference": null
+  },
+  {
+    "id": "vf36",
+    "prompt": "Golias era um gigante de Gate que desafiou o exército de Israel.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele afrontou Israel por 40 dias antes de ser derrotado por Davi.",
+    "reference": null
+  },
+  {
+    "id": "vf37",
+    "prompt": "Salomão escreveu o livro de Eclesiastes na sua velhice.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Eclesiastes é tradicionalmente atribuído a Salomão refletindo sobre a vida 'debaixo do sol'.",
+    "reference": null
+  },
+  {
+    "id": "vf38",
+    "prompt": "O Reino de Israel se dividiu após a morte de Davi.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "A divisão ocorreu após a morte de Salomão, sob o reinado de seu filho Reoboão.",
+    "reference": null
+  },
+  {
+    "id": "vf39",
+    "prompt": "Elias foi levado ao céu em um redemoinho por carros e cavalos de fogo.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Aconteceu enquanto ele caminhava com Eliseu (2 Reis 2:11).",
+    "reference": null
+  },
+  {
+    "id": "vf40",
+    "prompt": "Nabucodonosor foi o rei que destruiu o Templo de Salomão.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele levou o povo de Judá para o cativeiro na Babilônia.",
+    "reference": null
+  },
+  {
+    "id": "vf41",
+    "prompt": "O profeta Daniel foi lançado na cova dos leões pelo rei Nabucodonosor.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Foi pelo rei Dario, devido a um decreto que proibia orar a outro deus.",
+    "reference": null
+  },
+  {
+    "id": "vf42",
+    "prompt": "Ester era uma rainha persa que salvou os judeus do extermínio.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ela intercedeu perante o rei Assuero contra a trama de Hamã.",
+    "reference": null
+  },
+  {
+    "id": "vf43",
+    "prompt": "Neemias foi o responsável por reconstruir os muros de Jerusalém.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele liderou a reconstrução em apenas 52 dias.",
+    "reference": null
+  },
+  {
+    "id": "vf44",
+    "prompt": "Jonas ficou 3 dias e 3 noites no ventre de um tubarão.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "A Bíblia diz que foi um 'grande peixe', frequentemente interpretado como baleia, mas não tubarão.",
+    "reference": null
+  },
+  {
+    "id": "vf45",
+    "prompt": "O Novo Testamento contém 27 livros.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Começando com o Evangelho de Mateus e terminando com o Apocalipse.",
+    "reference": null
+  },
+  {
+    "id": "vf46",
+    "prompt": "João Batista era irmão de Jesus.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Eles eram primos (suas mães, Maria e Isabel, eram parentes).",
+    "reference": null
+  },
+  {
+    "id": "vf47",
+    "prompt": "O primeiro milagre de Jesus foi a multiplicação dos pães.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Seu primeiro milagre registrado foi transformar água em vinho nas bodas de Caná.",
+    "reference": null
+  },
+  {
+    "id": "vf48",
+    "prompt": "Zaqueu era um cobrador de impostos de baixa estatura.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele subiu em um sicômoro para conseguir ver Jesus passar.",
+    "reference": null
+  },
+  {
+    "id": "vf49",
+    "prompt": "Jesus ressuscitou Lázaro após ele estar morto há 10 dias.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Lázaro estava morto há 4 dias quando Jesus o chamou do túmulo.",
+    "reference": null
+  },
+  {
+    "id": "vf50",
+    "prompt": "Judas Iscariotes traiu Jesus por 30 moedas de prata.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "O valor foi entregue pelos chefes dos sacerdotes.",
+    "reference": null
+  },
+  {
+    "id": "vf51",
+    "prompt": "Simão Pedro negou Jesus três vezes antes do galo cantar.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Jesus havia predito isso durante a última ceia.",
+    "reference": null
+  },
+  {
+    "id": "vf52",
+    "prompt": "O apóstolo Paulo foi quem escreveu o livro de Atos dos Apóstolos.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "O livro de Atos foi escrito por Lucas, o médico amado.",
+    "reference": null
+  },
+  {
+    "id": "vf53",
+    "prompt": "Estêvão é considerado o primeiro mártir da igreja cristã.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele foi apedrejado após testemunhar perante o Sinédrio.",
+    "reference": null
+  },
+  {
+    "id": "vf54",
+    "prompt": "Paulo teve sua grande conversão no caminho para Damasco.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Uma luz do céu brilhou ao seu redor e ele ouviu a voz de Jesus.",
+    "reference": null
+  },
+  {
+    "id": "vf55",
+    "prompt": "O livro de Apocalipse foi escrito pelo apóstolo Paulo.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Foi escrito pelo apóstolo João na ilha de Patmos.",
+    "reference": null
+  },
+  {
+    "id": "vf56",
+    "prompt": "Matusalém viveu 969 anos.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele é registrado como o homem mais longevo da Bíblia.",
+    "reference": null
+  },
+  {
+    "id": "vf57",
+    "prompt": "O nome original de Abraão era Abrão.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Deus mudou seu nome para Abraão (Pai de Multidões).",
+    "reference": null
+  },
+  {
+    "id": "vf58",
+    "prompt": "Jacó teve 10 filhos homens.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Jacó teve 12 filhos homens, que deram origem às 12 tribos de Israel.",
+    "reference": null
+  },
+  {
+    "id": "vf59",
+    "prompt": "Moisés morreu e foi sepultado no Monte Sinai.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele morreu no Monte Nebo, e seu túmulo é desconhecido (Deuteronômio 34:5-6).",
+    "reference": null
+  },
+  {
+    "id": "vf60",
+    "prompt": "O primeiro rei de Israel foi Saul.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele foi ungido pelo profeta Samuel a pedido do povo.",
+    "reference": null
+  },
+  {
+    "id": "vf61",
+    "prompt": "Salomão era filho de Davi com Bate-Seba.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele sucedeu seu pai no trono de Israel.",
+    "reference": null
+  },
+  {
+    "id": "vf62",
+    "prompt": "A Rainha de Sabá visitou Salomão para testar sua sabedoria.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ela ficou impressionada com tudo o que viu e ouviu.",
+    "reference": null
+  },
+  {
+    "id": "vf63",
+    "prompt": "Elias desafiou os profetas de Baal no Monte Carmelo.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "O fogo de Deus caiu sobre o altar de Elias, provando Quem era o Deus verdadeiro.",
+    "reference": null
+  },
+  {
+    "id": "vf64",
+    "prompt": "O profeta Isaías predisse o nascimento virginal do Messias.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Isaías 7:14 é uma das profecias mais importantes do Antigo Testamento.",
+    "reference": null
+  },
+  {
+    "id": "vf65",
+    "prompt": "Jeremias é conhecido como o 'Profeta da Esperança'.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele é frequentemente chamado de 'Profeta Chorão' devido às suas lamentações sobre Judá.",
+    "reference": null
+  },
+  {
+    "id": "vf66",
+    "prompt": "Daniel interpretou o sonho da estátua para o rei Nabucodonosor.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "O sonho revelava as potências mundiais futuras.",
+    "reference": null
+  },
+  {
+    "id": "vf67",
+    "prompt": "João Batista batizava as pessoas no Mar Vermelho.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele batizava no Rio Jordão.",
+    "reference": null
+  },
+  {
+    "id": "vf68",
+    "prompt": "Jesus nasceu em Nazaré, mas fugiu para o Egito.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Jesus nasceu em Belém; de lá a família fugiu para o Egito.",
+    "reference": null
+  },
+  {
+    "id": "vf69",
+    "prompt": "As Epístolas Paulinas são 13 ou 14 cartas atribuídas a Paulo.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "A contagem depende se a Epístola aos Hebreus é incluída ou não.",
+    "reference": null
+  },
+  {
+    "id": "vf70",
+    "prompt": "O Sermão do Monte foi pregado em Jerusalém.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Foi pregado na região da Galileia.",
+    "reference": null
+  },
+  {
+    "id": "vf71",
+    "prompt": "Nicodemos era um mestre da lei que visitou Jesus à noite.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Jesus lhe ensinou sobre a necessidade de 'nascer de novo'.",
+    "reference": null
+  },
+  {
+    "id": "vf72",
+    "prompt": "Maria Madalena foi a primeira pessoa a ver Jesus ressurreto.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Conforme registrado no Evangelho de João.",
+    "reference": null
+  },
+  {
+    "id": "vf73",
+    "prompt": "O apóstolo Tomé só acreditou na ressurreição após tocar nas feridas de Jesus.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele disse que não acreditaria sem ver e tocar.",
+    "reference": null
+  },
+  {
+    "id": "vf74",
+    "prompt": "Paulo era originalmente um fariseu chamado Saulo.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele perseguia os cristãos antes de seu chamado divino.",
+    "reference": null
+  },
+  {
+    "id": "vf75",
+    "prompt": "O livro de Salmos tem exatamente 100 capítulos.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "O livro de Salmos possui 150 capítulos.",
+    "reference": null
+  },
+  {
+    "id": "vf76",
+    "prompt": "O Salmo 119 é o capítulo mais longo da Bíblia.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele possui 176 versículos.",
+    "reference": null
+  },
+  {
+    "id": "vf77",
+    "prompt": "Amós era um profeta que antes cuidava de gado e colhia figos.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele declarou que não era profeta por herança, mas chamado por Deus.",
+    "reference": null
+  },
+  {
+    "id": "vf78",
+    "prompt": "Miqueias profetizou que o Messias nasceria em Belém.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Miqueias 5:2 identifica o local exato.",
+    "reference": null
+  },
+  {
+    "id": "vf79",
+    "prompt": "O profeta Malquias é o último do Antigo Testamento.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Seu livro encerra a revelação veterotestamentária.",
+    "reference": null
+  },
+  {
+    "id": "vf80",
+    "prompt": "Jesus jejuou 40 dias antes de ser tentado no deserto.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Após o jejum, o diabo veio para tentar enfraquecê-Lo.",
+    "reference": null
+  },
+  {
+    "id": "vf81",
+    "prompt": "O apóstolo André era irmão de Simão Pedro.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele foi quem primeiro trouxe Pedro a Jesus.",
+    "reference": null
+  },
+  {
+    "id": "vf82",
+    "prompt": "Tiago e João eram chamados de 'Filhos do Trovão'.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Jesus deu a eles esse sobrenome (Boanerges).",
+    "reference": null
+  },
+  {
+    "id": "vf83",
+    "prompt": "Judas Iscariotes se enforcou após trair Jesus.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele sentiu remorso e devolveu as moedas antes.",
+    "reference": null
+  },
+  {
+    "id": "vf84",
+    "prompt": "O centurião Cornélio foi o primeiro gentio a se converter oficialmente.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Pedro foi instruído por uma visão a ir à casa dele.",
+    "reference": null
+  },
+  {
+    "id": "vf85",
+    "prompt": "Timóteo era um jovem líder incentivado por Paulo.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Paulo escreveu duas cartas pastorais endereçadas a ele.",
+    "reference": null
+  },
+  {
+    "id": "vf86",
+    "prompt": "O livro de Tiago foca muito na relação entre fé e obras.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele argumenta que 'a fé sem obras é morta'.",
+    "reference": null
+  },
+  {
+    "id": "vf87",
+    "prompt": "Filemom era um senhor de escravos a quem Paulo escreveu.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Paulo intercedeu pelo escravo fugitivo Onésimo.",
+    "reference": null
+  },
+  {
+    "id": "vf88",
+    "prompt": "A cidade de Nínive se arrependeu após a pregação de Jonas.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Mesmo Jonas não querendo, Deus salvou a cidade.",
+    "reference": null
+  },
+  {
+    "id": "vf89",
+    "prompt": "A Arca da Aliança foi guardada no Santo dos Santos no Templo.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Era o lugar mais sagrado onde apenas o Sumo Sacerdote entrava.",
+    "reference": null
+  },
+  {
+    "id": "vf90",
+    "prompt": "Davi tocou harpa para acalmar o rei Saul.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Saul sofria de um espírito perturbador e a música o aliviava.",
+    "reference": null
+  },
+  {
+    "id": "vf91",
+    "prompt": "Salomão teve 700 esposas e 300 concubinas.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Suas alianças políticas levaram a esses inúmeros casamentos.",
+    "reference": null
+  },
+  {
+    "id": "vf92",
+    "prompt": "A torre de Babel foi construída para chegar ao céu.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Deus confundiu as línguas para impedir o orgulho humano.",
+    "reference": null
+  },
+  {
+    "id": "vf93",
+    "prompt": "Gênesis significa 'Partida'.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Gênesis significa 'Origem' ou 'Início'; Êxodo é que significa 'Partida'.",
+    "reference": null
+  },
+  {
+    "id": "vf94",
+    "prompt": "Abrão era natural da Babilônia.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ele era de Ur dos Caldeus, na Mesopotâmia.",
+    "reference": null
+  },
+  {
+    "id": "vf95",
+    "prompt": "Sodoma e Gomorra foram destruídas por uma inundação.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Foram destruídas por fogo e enxofre vindos do céu.",
+    "reference": null
+  },
+  {
+    "id": "vf96",
+    "prompt": "Ló era irmão de Abraão.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Ló era sobrinho de Abraão.",
+    "reference": null
+  },
+  {
+    "id": "vf97",
+    "prompt": "O deserto em que Israel peregrinou por 40 anos era o Saara.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Era o deserto do Sinai.",
+    "reference": null
+  },
+  {
+    "id": "vf98",
+    "prompt": "Davi matou Golias com um arco e flecha.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Davi usou uma funda e uma pedra.",
+    "reference": null
+  },
+  {
+    "id": "vf99",
+    "prompt": "A Bíblia foi escrita originalmente em Português e Inglês.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Foi escrita em Hebraico, Aramaico e Grego.",
+    "reference": null
+  },
+  {
+    "id": "vf100",
+    "prompt": "O Mar Vermelho foi o lugar onde Jesus andou sobre as águas.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Jesus andou sobre o Mar da Galileia.",
+    "reference": null
+  },
+  {
+    "id": "vf101",
+    "prompt": "Noé levou 7 pares de cada animal limpo para a Arca.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Gênesis 7:2 especifica 7 pares de animais limpos e 2 de imundos.",
+    "reference": null
+  },
+  {
+    "id": "vf102",
+    "prompt": "A primeira Bíblia impressa foi a de Gutenberg.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "No século XV, marcando o início da imprensa.",
+    "reference": null
+  },
+  {
+    "id": "vf103",
+    "prompt": "O apóstolo João morreu martirizado como os outros 11.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 1,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "João é tradicionalmente considerado o único apóstolo que morreu de velhice em liberdade.",
+    "reference": null
+  },
+  {
+    "id": "vf104",
+    "prompt": "A Bíblia é o livro mais vendido e traduzido do mundo.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Superando qualquer outra obra literária na história.",
+    "reference": null
+  },
+  {
+    "id": "vf105",
+    "prompt": "Jesus falava principalmente Aramaico.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Era a língua comum da Palestina naquela época.",
+    "reference": null
+  },
+  {
+    "id": "vf106",
+    "prompt": "O versículo mais curto da Bíblia (em português) é 'Jesus chorou'.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Em João 11:35.",
+    "reference": null
+  },
+  {
+    "id": "vf107",
+    "prompt": "As muralhas de Jericó caíram após o povo gritar e tocar buzinas.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Após rodearem a cidade 7 vezes no sétimo dia.",
+    "reference": null
+  },
+  {
+    "id": "vf108",
+    "prompt": "Davi compôs a maioria dos Salmos.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Cerca de 73 dos 150 salmos são atribuídos a ele.",
+    "reference": null
+  },
+  {
+    "id": "vf109",
+    "prompt": "Simão, o Zelote, era um dos doze apóstolos.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Mencionado nas listas dos evangelhos e Atos.",
+    "reference": null
+  },
+  {
+    "id": "vf110",
+    "prompt": "O Apocalipse descreve a Nova Jerusalém como uma cidade quadrada.",
+    "options": [
+      "Verdadeiro",
+      "Falso"
+    ],
+    "answer": 0,
+    "difficulty": "medium",
+    "category": "Verdadeiro ou Falso",
+    "explanation": "Apocalipse 21:16 descreve suas dimensões iguais.",
+    "reference": null
+  }
+]

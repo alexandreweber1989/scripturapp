@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/*
+ * Scriptura design tokens — "manuscrito iluminado moderno":
+ * parchment surfaces, lapis-lazuli primary, gilded accents.
+ * Dark mode ("noite") follows the system preference.
+ */
+:root {
+  --bg: #f6f1e7;
+  --surface: #fffcf6;
+  --surface-2: #efe7d6;
+  --ink: #1e1a15;
+  --muted: #6c6357;
+  --line: #e2d8c4;
+  --primary: #2c3d8f;
+  --primary-strong: #1f2d6e;
+  --primary-ink: #ffffff;
+  --primary-soft: #e3e7f7;
+  --gold: #a87a1f;
+  --gold-bright: #d9a63a;
+  --gold-soft: #f4e4bd;
+  --success: #2f7a48;
+  --success-soft: #dcefe1;
+  --danger: #b03a3a;
+  --danger-soft: #f6dddd;
+  --flame: #de6526;
+
+  --hl-ouro: #f6dc8a;
+  --hl-oliva: #cfe3a6;
+  --hl-ceu: #bcdcf3;
+  --hl-rosa: #f5c6d3;
+  --hl-lavanda: #d9cdf2;
+
+  --shadow: 0 1px 2px rgb(30 26 21 / 0.06), 0 8px 24px -12px rgb(30 26 21 / 0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11131b;
+    --surface: #191c27;
+    --surface-2: #222636;
+    --ink: #ece5d8;
+    --muted: #9b9384;
+    --line: #2d3245;
+    --primary: #93a3ff;
+    --primary-strong: #b5c0ff;
+    --primary-ink: #10132a;
+    --primary-soft: #252b4d;
+    --gold: #e3b65c;
+    --gold-bright: #f0c66c;
+    --gold-soft: #3a311d;
+    --success: #6fcf8f;
+    --success-soft: #1d3326;
+    --danger: #ff8a8a;
+    --danger-soft: #3d2222;
+    --flame: #ff8a4c;
+
+    --hl-ouro: #5c4a17;
+    --hl-oliva: #3d4d22;
+    --hl-ceu: #1f3f59;
+    --hl-rosa: #5a2a3a;
+    --hl-lavanda: #3d3260;
+
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-ink: var(--primary-ink);
+  --color-primary-soft: var(--primary-soft);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-gold-soft: var(--gold-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-flame: var(--flame);
+  --color-hl-ouro: var(--hl-ouro);
+  --color-hl-oliva: var(--hl-oliva);
+  --color-hl-ceu: var(--hl-ceu);
+  --color-hl-rosa: var(--hl-rosa);
+  --color-hl-lavanda: var(--hl-lavanda);
+  --font-sans: var(--font-ui);
+  --font-serif: var(--font-scripture);
+  --shadow-card: var(--shadow);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui), system-ui, sans-serif;
+}
+
+/* Thin gilded rule used under section titles. */
+.gilded-rule {
+  height: 2px;
+  width: 3rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--gold-bright), transparent);
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-rise {
+  animation: rise-in 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-float {
+  animation: float 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-float {
+    animation: none;
+  }
+}
