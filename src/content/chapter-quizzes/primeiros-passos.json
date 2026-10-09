@@ -1,0 +1,330 @@
+{
+  "gn.1": [
+    {
+      "id": "cq-gn-1-1",
+      "prompt": "Qual foi a primeira ordem de Deus registrada com as palavras \"Haja...\"?",
+      "options": [
+        "Haja luz",
+        "Haja um firmamento",
+        "Haja luminares no céu",
+        "Haja vegetação na terra"
+      ],
+      "answer": 0,
+      "explanation": "Depois de criar os céus e a terra, Deus disse \"Haja luz\", e houve luz. (v. 3)",
+      "verse": 3
+    },
+    {
+      "id": "cq-gn-1-2",
+      "prompt": "Em que dia Deus fez os dois grandes luminares e as estrelas?",
+      "options": [
+        "No segundo dia",
+        "No terceiro dia",
+        "No quarto dia",
+        "No quinto dia"
+      ],
+      "answer": 2,
+      "explanation": "Os luminares e as estrelas foram feitos para governar o dia e a noite, e isso foi o quarto dia. (v. 14-19)",
+      "verse": 19
+    },
+    {
+      "id": "cq-gn-1-3",
+      "prompt": "O que o capítulo destaca sobre a criação do homem e da mulher?",
+      "options": [
+        "Foram criados antes dos animais",
+        "Foram criados no quinto dia",
+        "Foram feitos para governar a noite",
+        "Foram criados à imagem de Deus"
+      ],
+      "answer": 3,
+      "explanation": "Deus criou o homem à sua imagem; homem e mulher os criou, o que mostra o valor especial do ser humano. (v. 27)",
+      "verse": 27
+    }
+  ],
+  "gn.3": [
+    {
+      "id": "cq-gn-3-1",
+      "prompt": "Segundo a própria mulher, quem a enganou para que comesse do fruto?",
+      "options": [
+        "O homem",
+        "A serpente",
+        "Um querubim",
+        "Um animal do campo"
+      ],
+      "answer": 1,
+      "explanation": "Quando Deus a questionou, a mulher respondeu: \"A serpente me enganou, e eu comi\". (v. 13)",
+      "verse": 13
+    },
+    {
+      "id": "cq-gn-3-2",
+      "prompt": "Com que o homem e a mulher se cobriram ao perceber que estavam nus?",
+      "options": [
+        "Folhas de oliveira",
+        "Ramos de palmeira",
+        "Folhas de videira",
+        "Folhas de figueira"
+      ],
+      "answer": 3,
+      "explanation": "Os olhos dos dois se abriram, e eles juntaram folhas de figueira para cobrir-se. (v. 7)",
+      "verse": 7
+    },
+    {
+      "id": "cq-gn-3-3",
+      "prompt": "Quando Deus os questionou, como o homem e a mulher reagiram?",
+      "options": [
+        "Cada um pôs a culpa em outro",
+        "Os dois confessaram sem desculpas",
+        "Fugiram do jardim às pressas",
+        "Ofereceram um sacrifício a Deus"
+      ],
+      "answer": 0,
+      "explanation": "O homem culpou a mulher que Deus lhe dera, e a mulher culpou a serpente. (v. 12-13)",
+      "verse": 12
+    }
+  ],
+  "ex.14": [
+    {
+      "id": "cq-ex-14-1",
+      "prompt": "O que aconteceu quando Moisés estendeu a mão sobre o mar?",
+      "options": [
+        "O mar ficou vermelho como sangue",
+        "Caiu fogo do céu sobre o mar",
+        "As águas se dividiram",
+        "Uma ponte surgiu sobre as águas"
+      ],
+      "answer": 2,
+      "explanation": "O Senhor afastou o mar com um forte vento oriental, tornou-o terra seca, e as águas se dividiram. (v. 21)",
+      "verse": 21
+    },
+    {
+      "id": "cq-ex-14-2",
+      "prompt": "Quantos dos melhores carros de guerra o faraó levou, além dos demais?",
+      "options": [
+        "Trezentos",
+        "Seiscentos",
+        "Mil",
+        "Setenta"
+      ],
+      "answer": 1,
+      "explanation": "O faraó levou todos os carros de guerra do Egito, inclusive seiscentos dos melhores. (v. 7)",
+      "verse": 7
+    },
+    {
+      "id": "cq-ex-14-3",
+      "prompt": "Diante do povo aterrorizado, qual foi a mensagem central de Moisés?",
+      "options": [
+        "O Senhor lutará por vocês",
+        "Voltem para o Egito",
+        "Preparem as armas para a batalha",
+        "Fujam pelo deserto"
+      ],
+      "answer": 0,
+      "explanation": "Moisés pediu que não tivessem medo e confiassem, pois o Senhor lutaria por eles. (v. 13-14)",
+      "verse": 14
+    }
+  ],
+  "ps.23": [
+    {
+      "id": "cq-ps-23-1",
+      "prompt": "Como o salmista descreve o Senhor logo no início do salmo?",
+      "options": [
+        "Meu rei",
+        "Minha rocha",
+        "Meu escudo",
+        "Meu pastor"
+      ],
+      "answer": 3,
+      "explanation": "O salmo começa com \"O Senhor é o meu pastor; de nada terei falta\". (v. 1)",
+      "verse": 1
+    },
+    {
+      "id": "cq-ps-23-2",
+      "prompt": "Com que o Senhor unge a cabeça do salmista?",
+      "options": [
+        "Com óleo",
+        "Com água",
+        "Com vinho",
+        "Com mirra"
+      ],
+      "answer": 0,
+      "explanation": "O Senhor honra o salmista ungindo a sua cabeça com óleo e fazendo transbordar o seu cálice. (v. 5)",
+      "verse": 5
+    },
+    {
+      "id": "cq-ps-23-3",
+      "prompt": "Por que o salmista não teme perigo algum no vale de trevas e morte?",
+      "options": [
+        "Porque é forte e corajoso",
+        "Porque o Senhor está com ele",
+        "Porque seus inimigos fugiram",
+        "Porque conhece bem o caminho"
+      ],
+      "answer": 1,
+      "explanation": "A confiança do salmista está na presença de Deus: \"pois tu estás comigo\". (v. 4)",
+      "verse": 4
+    }
+  ],
+  "is.53": [
+    {
+      "id": "cq-is-53-1",
+      "prompt": "Com que o servo é comparado ao ser levado ao matadouro sem abrir a boca?",
+      "options": [
+        "Um bezerro",
+        "Um cabrito",
+        "Um cordeiro",
+        "Uma pomba"
+      ],
+      "answer": 2,
+      "explanation": "Ele foi oprimido e não abriu a boca, como um cordeiro levado para o matadouro. (v. 7)",
+      "verse": 7
+    },
+    {
+      "id": "cq-is-53-2",
+      "prompt": "Segundo o texto, com quem foi dado um túmulo ao servo?",
+      "options": [
+        "Com os reis de Judá",
+        "Com os profetas",
+        "Com seus antepassados",
+        "Com os ímpios e com os ricos"
+      ],
+      "answer": 3,
+      "explanation": "Foi-lhe dado um túmulo com os ímpios e com os ricos, embora não tivesse cometido violência. (v. 9)",
+      "verse": 9
+    },
+    {
+      "id": "cq-is-53-3",
+      "prompt": "De acordo com o capítulo, por que o servo foi transpassado?",
+      "options": [
+        "Por causa dos próprios pecados",
+        "Por causa das nossas transgressões",
+        "Porque cometeu violência",
+        "Porque havia mentira em sua boca"
+      ],
+      "answer": 1,
+      "explanation": "Ele sofreu em nosso lugar: foi transpassado por nossas transgressões, e pelas suas feridas fomos curados. (v. 5)",
+      "verse": 5
+    }
+  ],
+  "mt.5": [
+    {
+      "id": "cq-mt-5-1",
+      "prompt": "Onde Jesus se assentou para ensinar os discípulos neste capítulo?",
+      "options": [
+        "No monte",
+        "Num barco",
+        "Na sinagoga",
+        "No templo"
+      ],
+      "answer": 0,
+      "explanation": "Vendo as multidões, Jesus subiu ao monte, assentou-se e começou a ensinar. (v. 1-2)",
+      "verse": 1
+    },
+    {
+      "id": "cq-mt-5-2",
+      "prompt": "Segundo as bem-aventuranças, o que os humildes receberão?",
+      "options": [
+        "O Reino dos céus",
+        "Misericórdia",
+        "A terra por herança",
+        "A visão de Deus"
+      ],
+      "answer": 2,
+      "explanation": "Jesus disse: \"Bem-aventurados os humildes, pois eles receberão a terra por herança\". (v. 5)",
+      "verse": 5
+    },
+    {
+      "id": "cq-mt-5-3",
+      "prompt": "Segundo Jesus, como seus seguidores devem tratar os inimigos?",
+      "options": [
+        "Evitá-los sempre",
+        "Pagar olho por olho",
+        "Saudar apenas os irmãos",
+        "Amá-los e orar por eles"
+      ],
+      "answer": 3,
+      "explanation": "Jesus ensinou: \"Amem os seus inimigos e orem por aqueles que os perseguem\". (v. 44)",
+      "verse": 44
+    }
+  ],
+  "lc.15": [
+    {
+      "id": "cq-lc-15-1",
+      "prompt": "Quantas ovelhas tinha o homem da parábola da ovelha perdida?",
+      "options": [
+        "Dez",
+        "Cem",
+        "Noventa e nove",
+        "Mil"
+      ],
+      "answer": 1,
+      "explanation": "O homem possuía cem ovelhas e deixou as noventa e nove para buscar a perdida. (v. 4)",
+      "verse": 4
+    },
+    {
+      "id": "cq-lc-15-2",
+      "prompt": "Que trabalho o filho mais novo conseguiu na região distante?",
+      "options": [
+        "Cuidar de porcos",
+        "Pastorear ovelhas",
+        "Trabalhar na colheita",
+        "Servir num banquete"
+      ],
+      "answer": 0,
+      "explanation": "Ele foi empregar-se com um cidadão daquela região, que o mandou ao campo cuidar de porcos. (v. 15)",
+      "verse": 15
+    },
+    {
+      "id": "cq-lc-15-3",
+      "prompt": "Segundo Jesus, o que causa alegria no céu nas parábolas da ovelha e da moeda?",
+      "options": [
+        "Noventa e nove justos",
+        "As ofertas no templo",
+        "Um pecador que se arrepende",
+        "Os que nunca se perderam"
+      ],
+      "answer": 2,
+      "explanation": "Jesus explicou que há mais alegria no céu por um pecador que se arrepende. (v. 7)",
+      "verse": 7
+    }
+  ],
+  "jo.3": [
+    {
+      "id": "cq-jo-3-1",
+      "prompt": "Quem foi até Jesus à noite para conversar com ele?",
+      "options": [
+        "José de Arimatéia",
+        "Zaqueu",
+        "Gamaliel",
+        "Nicodemos"
+      ],
+      "answer": 3,
+      "explanation": "Nicodemos, um fariseu e autoridade entre os judeus, veio a Jesus à noite. (v. 1-2)",
+      "verse": 2
+    },
+    {
+      "id": "cq-jo-3-2",
+      "prompt": "Jesus comparou o Filho do homem ser levantado a qual ato de Moisés?",
+      "options": [
+        "Erguer a vara sobre o mar",
+        "Levantar a serpente no deserto",
+        "Tirar água da rocha",
+        "Subir ao monte Sinai"
+      ],
+      "answer": 1,
+      "explanation": "Assim como Moisés levantou a serpente no deserto, o Filho do homem precisava ser levantado. (v. 14)",
+      "verse": 14
+    },
+    {
+      "id": "cq-jo-3-3",
+      "prompt": "Segundo o capítulo, para que Deus enviou o seu Filho ao mundo?",
+      "options": [
+        "Para condenar o mundo",
+        "Para julgar os fariseus",
+        "Para que o mundo fosse salvo",
+        "Para restaurar o templo"
+      ],
+      "answer": 2,
+      "explanation": "Deus enviou o seu Filho não para condenar o mundo, mas para que este fosse salvo por meio dele. (v. 17)",
+      "verse": 17
+    }
+  ]
+}

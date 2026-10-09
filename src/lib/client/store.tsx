@@ -4,6 +4,7 @@ import { createContext, type ReactNode, useCallback, useContext, useEffect, useM
 import type { Activity } from "@/domain/progression/activities";
 import { type Reward, applyActivity } from "@/domain/progression/engine";
 import { type ProgressState, createProgressState, normalizeProgressState } from "@/domain/progression/state";
+import type { ReviewState } from "@/domain/memory/srs";
 import { dayKey } from "@/domain/time";
 import type { ActivityRequest } from "@/lib/activity-request";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
@@ -15,6 +16,8 @@ export interface Annotation {
   highlight: HighlightColor | null;
   favorite: boolean;
   note: string | null;
+  /** Memorization schedule (only for favorites). */
+  review: ReviewState | null;
   updatedAt: string;
 }
 
@@ -77,12 +80,13 @@ interface AnnotationRow {
   highlight: HighlightColor | null;
   favorite: boolean;
   note: string | null;
+  review: ReviewState | null;
   updated_at: string;
 }
 
 function rowsToAnnotations(rows: AnnotationRow[]): Record<string, Annotation> {
   return Object.fromEntries(
-    rows.map((r) => [r.verse, { highlight: r.highlight, favorite: r.favorite, note: r.note, updatedAt: r.updated_at }]),
+    rows.map((r) => [r.verse, { highlight: r.highlight, favorite: r.favorite, note: r.note, review: r.review, updatedAt: r.updated_at }]),
   );
 }
 
@@ -92,7 +96,14 @@ export function ScripturaProvider({ children }: { children: ReactNode }) {
   const [profile, setProfile] = useState<Profile>(DEFAULT_PROFILE);
   // Placeholder until mount ("loading" mode); the real day is only known in the browser.
   const [progress, setProgress] = useState<ProgressState>(() => createProgressState(""));
-  const [annotations, setAnnotations] = useState<Record<string, Annotation>>({});
+  const [annotations, setAnnotationsState] = useState<Record<string, Annotation>>({});
+  // Latest annotations, so several annotate() calls in a row (multi-verse highlight,
+  // starter deck) build on each other instead of on a stale render's copy.
+  const annotationsRef = useRef<Record<string, Annotation>>({});
+  const setAnnotations = useCallback((next: Record<string, Annotation>) => {
+    annotationsRef.current = next;
+    setAnnotationsState(next);
+  }, []);
   const [rewards, setRewards] = useState<Reward[]>([]);
   const userId = useRef<string | null>(null);
   // Serialises guest-mode writes so two quick taps can't both read stale state.
@@ -108,7 +119,7 @@ export function ScripturaProvider({ children }: { children: ReactNode }) {
     setProgress(normalizeProgressState(readLocal(KEYS.progress, null), dayKey()));
     setAnnotations(readLocal(KEYS.annotations, {}));
     setMode("guest");
-  }, []);
+  }, [setAnnotations]);
 
   const loadAccount = useCallback(async (id: string, accountEmail: string | null) => {
     const supabase = getBrowserSupabase()!;
@@ -117,7 +128,7 @@ export function ScripturaProvider({ children }: { children: ReactNode }) {
     const [progressRes, profileRes, annotationsRes] = await Promise.all([
       fetch("/api/progress", { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)),
       supabase.from("profiles").select("display_name, companion_id, plan").eq("id", id).single(),
-      supabase.from("verse_annotations").select("verse, highlight, favorite, note, updated_at"),
+      supabase.from("verse_annotations").select("verse, highlight, favorite, note, review, updated_at"),
     ]);
     setProgress(normalizeProgressState(progressRes?.state, dayKey()));
     if (profileRes.data) {
@@ -129,7 +140,7 @@ export function ScripturaProvider({ children }: { children: ReactNode }) {
     }
     setAnnotations(rowsToAnnotations((annotationsRes.data as AnnotationRow[] | null) ?? []));
     setMode("account");
-  }, []);
+  }, [setAnnotations]);
 
   useEffect(() => {
     const supabase = getBrowserSupabase();
@@ -177,15 +188,16 @@ export function ScripturaProvider({ children }: { children: ReactNode }) {
 
       // Guest mode: same rules engine, state kept in this browser.
       let resolved: Activity;
-      if (activity.type === "quiz_completed") {
+      if (activity.type === "mentor_question") {
+        resolved = activity;
+      } else {
+        // Same resolver as the server (scores games from raw answers); loaded lazily to keep content out of the main bundle.
         const { resolveActivityRequest } = await import("@/lib/activity-request");
         try {
           resolved = resolveActivityRequest(activity);
         } catch {
           return null;
         }
-      } else {
-        resolved = activity;
       }
       const claimed = new Set(readLocal<string[]>(KEYS.claimed, []));
       const result = applyActivity(progressRef.current, resolved, { day: dayKey(), alreadyClaimed: (k) => claimed.has(k) });
@@ -202,16 +214,18 @@ export function ScripturaProvider({ children }: { children: ReactNode }) {
 
   const annotate = useCallback(
     async (verse: string, patch: Partial<Omit<Annotation, "updatedAt">>) => {
-      const previous = annotations[verse];
+      const current = annotationsRef.current;
+      const previous = current[verse];
       const next: Annotation = {
         highlight: previous?.highlight ?? null,
         favorite: previous?.favorite ?? false,
         note: previous?.note ?? null,
+        review: previous?.review ?? null,
         ...patch,
         updatedAt: new Date().toISOString(),
       };
       const isEmpty = !next.highlight && !next.favorite && !next.note;
-      const updated = { ...annotations };
+      const updated = { ...current };
       if (isEmpty) delete updated[verse];
       else updated[verse] = next;
       setAnnotations(updated);
@@ -226,20 +240,25 @@ export function ScripturaProvider({ children }: { children: ReactNode }) {
               highlight: next.highlight,
               favorite: next.favorite,
               note: next.note,
+              review: next.review,
             });
         if (error) {
-          setAnnotations(annotations);
+          // Roll back only this verse; other edits may have happened meanwhile.
+          const rolledBack = { ...annotationsRef.current };
+          if (previous) rolledBack[verse] = previous;
+          else delete rolledBack[verse];
+          setAnnotations(rolledBack);
           return;
         }
       } else {
-        writeLocal(KEYS.annotations, updated);
+        writeLocal(KEYS.annotations, annotationsRef.current);
       }
 
       if (patch.favorite && !previous?.favorite) await record({ type: "verse_favorited", verse });
       if (patch.highlight && !previous?.highlight) await record({ type: "verse_highlighted", verse });
       if (patch.note && patch.note.trim() && patch.note !== previous?.note) await record({ type: "note_written", verse });
     },
-    [annotations, mode, record],
+    [mode, record, setAnnotations],
   );
 
   const updateProfile = useCallback(

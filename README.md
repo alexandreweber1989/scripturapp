@@ -8,16 +8,20 @@ Esta é a **nova versão**, reconstruída do zero a partir da análise do projet
 - [`docs/ARQUITETURA.md`](docs/ARQUITETURA.md): como a nova versão funciona (regras de XP, segurança, motores de jogo).
 - [`docs/ROADMAP.md`](docs/ROADMAP.md): as próximas fases.
 
-## O que já funciona (Fase 1)
+## O que já funciona
 
 | Área | O que tem |
 |---|---|
 | **Bíblia** | Os 66 livros e 1.189 capítulos (NVI), pré-gerados como páginas estáticas. Destaque em 5 cores, favoritos, reflexões por versículo, copiar, "perguntar ao mentor", tamanho de fonte e "continuar lendo". |
 | **Gamificação** | XP com curva de níveis, 50 títulos bem-humorados, 9 patentes (Peregrino → Patriarca) e sequência diária com **Escudos da Fé**, que perdoam um dia perdido. Também há 3 missões diárias (iguais para todos no dia), 19 conquistas e limites diários anti-farm. |
 | **Jogos** | Motor de quiz reutilizável, com dois pacotes: Quiz Bíblico (300 perguntas, 3 dificuldades) e Verdadeiro ou Falso (110 afirmações), ambos com cronômetro. A pontuação é **recalculada no servidor**. |
+| **Trilhas de Jornada** | 3 trilhas ("Primeiros Passos", "Evangelho de Marcos", "Vida de Davi") com 32 capítulos. Cada etapa é ler o capítulo e responder 3 perguntas sobre ele (acertar 2 avança). No fim há um desafio final que dá uma relíquia. |
+| **Quiz pós-leitura** | 96 perguntas de compreensão, uma série por capítulo das trilhas, cada uma ancorada num versículo. Só melhorar a nota rende XP, então repetir não vira farm. |
+| **Palavra do Dia** | Jogo no estilo Wordle bíblico, com a mesma palavra para todos no dia, dica, pista após 3 tentativas e resultado compartilhável sem revelar a resposta. |
+| **Memorização** | Os versículos favoritos viram cartões com lacunas e repetição espaçada: os que você lembra voltam cada vez menos. |
 | **Mentor (IA)** | Chat em streaming com Claude, persona do companheiro escolhido e perspectiva teológica batista. As referências bíblicas da resposta viram links. Há cota diária por plano. |
 | **Contas** | Supabase Auth com e-mail e senha. Sem Supabase configurado, o app funciona em **modo visitante**, salvando o progresso no navegador. |
-| **Visual** | Identidade "manuscrito iluminado moderno", com modo escuro automático, responsivo e navegação inferior no celular. |
+| **Visual** | Paleta do Scriptura original (índigo, gradiente azul→roxo, dourado e verde-água) com acabamento tecnológico: vidro fosco, brilhos de "aurora", grade sutil e números em fonte mono. Tipografia **Syne** na interface e **Literata** no texto bíblico. Modo escuro automático, responsivo, com navegação inferior no celular. |
 
 ## Rodando localmente
 
@@ -39,7 +43,7 @@ npm run build   # build de produção (gera as 1.338 páginas estáticas)
 ## Configurando o Supabase (contas e progresso na nuvem)
 
 1. Crie um projeto em [supabase.com](https://supabase.com).
-2. Aplique a migration `supabase/migrations/20261009000000_initial_schema.sql`. Use o SQL Editor ou `supabase db push` com a CLI.
+2. Aplique as migrations de `supabase/migrations/`, em ordem: `20261009000000_initial_schema.sql` e depois `20261010000000_verse_review.sql`. Use o SQL Editor ou `supabase db push` com a CLI.
 3. Em **Authentication → URL Configuration**, adicione `https://SEU-DOMINIO/auth/callback` às Redirect URLs.
 4. Preencha no `.env.local` (e na Vercel):
    - `NEXT_PUBLIC_SUPABASE_URL`

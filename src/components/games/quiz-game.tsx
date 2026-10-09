@@ -25,7 +25,7 @@ function newSessionId() {
  * The quiz engine. One component serves every multiple-choice and
  * true/false pack; the score is recomputed by the server from the answers.
  */
-export function QuizGame({ pack }: { pack: QuizPack }) {
+export function QuizGame({ pack, backHref = "/jogos", backLabel = "Outros jogos" }: { pack: QuizPack; backHref?: string; backLabel?: string }) {
   const { record } = useScriptura();
   const [phase, setPhase] = useState<Phase>({ name: "intro" });
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
@@ -82,10 +82,10 @@ export function QuizGame({ pack }: { pack: QuizPack }) {
       <div className="mx-auto max-w-xl space-y-6">
         <header className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">{pack.questionsPerRound} perguntas por rodada</p>
-          <h1 className="font-serif text-3xl font-semibold">{pack.title}</h1>
+          <h1 className="font-display text-3xl font-bold">{pack.title}</h1>
           <p className="mt-2 text-muted">{pack.description}</p>
         </header>
-        {pack.variant === "true-false" ? (
+        {pack.variant === "true-false" || new Set(pack.questions.map((q) => q.difficulty)).size === 1 ? (
           <Button className="w-full py-3 text-base" onClick={() => start("all")}>
             Começar
           </Button>
@@ -95,9 +95,9 @@ export function QuizGame({ pack }: { pack: QuizPack }) {
               <button
                 key={d.id}
                 onClick={() => start(d.id)}
-                className="rounded-2xl border border-line bg-surface p-4 text-left shadow-card transition hover:border-primary/60"
+                className="rounded-2xl glass border border-line p-4 text-left shadow-card premium-lift"
               >
-                <p className="font-serif text-lg font-semibold">{d.label}</p>
+                <p className="font-display text-lg font-bold">{d.label}</p>
                 <p className="text-sm text-muted">{d.hint}</p>
               </button>
             ))}
@@ -114,7 +114,7 @@ export function QuizGame({ pack }: { pack: QuizPack }) {
       <Card className="animate-rise mx-auto max-w-md space-y-5 text-center">
         <Trophy className={clsx("mx-auto size-12", perfect ? "text-gold-bright" : "text-muted")} />
         <div>
-          <p className="font-serif text-3xl font-semibold">
+          <p className="font-display text-3xl font-bold">
             {phase.correct}/{total}
           </p>
           <p className="text-muted">{perfect ? "Gabarito! Você conhece bem a Palavra." : phase.correct >= total / 2 ? "Muito bem! Continue estudando." : "Cada erro é uma chance de aprender."}</p>
@@ -124,8 +124,8 @@ export function QuizGame({ pack }: { pack: QuizPack }) {
           <Button variant="secondary" onClick={() => setPhase({ name: "intro" })}>
             <RotateCcw className="size-4" /> Jogar de novo
           </Button>
-          <Link href="/jogos" className="inline-flex items-center rounded-xl px-4 py-2.5 text-sm font-semibold text-primary hover:bg-surface-2">
-            Outros jogos
+          <Link href={backHref} className="inline-flex items-center rounded-xl px-4 py-2.5 text-sm font-semibold text-primary hover:bg-surface-2">
+            {backLabel}
           </Link>
         </div>
       </Card>
@@ -151,7 +151,7 @@ export function QuizGame({ pack }: { pack: QuizPack }) {
 
       <Card key={question.id} className="animate-rise space-y-5">
         <p className="text-xs font-semibold uppercase tracking-wider text-gold">{question.category}</p>
-        <h2 className="font-serif text-2xl font-semibold leading-snug">{question.prompt}</h2>
+        <h2 className="font-display text-2xl font-bold leading-snug">{question.prompt}</h2>
         <div className={clsx("grid gap-2", pack.variant === "true-false" ? "grid-cols-2" : "grid-cols-1")}>
           {question.options.map((option, i) => {
             const state = !answered ? "idle" : i === question.answer ? "right" : i === choice ? "wrong" : "dim";

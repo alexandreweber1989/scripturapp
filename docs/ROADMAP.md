@@ -9,7 +9,15 @@
 - Contas Supabase e modo visitante.
 - Schema seguro com RLS e testes.
 
-## Fase 2: conteúdo e jogos
+## Fase 2: conteúdo e jogos (em andamento)
+
+Já entregue:
+- Trilhas de Jornada (3 trilhas, 32 capítulos) com quiz pós-leitura e desafio final com relíquias.
+- Palavra do Dia compartilhável.
+- Memorização com repetição espaçada.
+- Bloco "Hoje no Scriptura" na página inicial.
+
+Próximos:
 
 - **Novos motores de jogo**, cada um servindo vários jogos antigos:
   - Ligar pares: profecias, paralelos, conexões.

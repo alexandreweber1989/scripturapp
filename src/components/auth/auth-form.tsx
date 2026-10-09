@@ -26,7 +26,7 @@ export function AuthForm() {
   if (!supabase) {
     return (
       <Card className="mx-auto max-w-md space-y-3 text-center">
-        <h1 className="font-serif text-2xl font-semibold">Contas em breve</h1>
+        <h1 className="font-display text-2xl font-bold">Contas em breve</h1>
         <p className="text-muted">
           Este ambiente ainda não tem o Supabase configurado. Você pode usar tudo no modo visitante — o progresso fica salvo neste aparelho.
         </p>
@@ -65,7 +65,7 @@ export function AuthForm() {
   return (
     <Card className="mx-auto max-w-md space-y-5">
       <div className="text-center">
-        <h1 className="font-serif text-3xl font-semibold">{tab === "entrar" ? "Bem-vindo de volta" : "Comece sua jornada"}</h1>
+        <h1 className="font-display text-3xl font-bold">{tab === "entrar" ? "Bem-vindo de volta" : "Comece sua jornada"}</h1>
         <p className="mt-1 text-sm text-muted">Seu progresso, sequência e conquistas salvos na nuvem.</p>
       </div>
       <div className="grid grid-cols-2 rounded-xl bg-surface-2 p-1 text-sm font-semibold">

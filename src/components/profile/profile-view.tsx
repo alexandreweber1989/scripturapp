@@ -1,15 +1,17 @@
 "use client";
 
 import clsx from "clsx";
-import { Heart, Lock, LogIn, LogOut, NotebookPen, Trophy } from "lucide-react";
+import { Gem, Heart, Lock, LogIn, LogOut, NotebookPen, Trophy } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { TOTAL_CHAPTERS, chapterHref, formatReference, parseVerseKey } from "@/domain/bible/books";
 import { COMPANIONS } from "@/domain/companions";
 import { ACHIEVEMENTS, type AchievementTier } from "@/domain/progression/achievements";
 import { levelProgress } from "@/domain/progression/levels";
+import { TRAILS } from "@/domain/trails";
 import { useScriptura } from "@/lib/client/store";
 import { CompanionAvatar } from "../companion-avatar";
+import { ThemeSelector } from "../theme-toggle";
 import { Button, Card, ProgressBar, SectionTitle, Skeleton } from "../ui";
 
 const TIER_STYLE: Record<AchievementTier, string> = {
@@ -49,7 +51,7 @@ export function ProfileView() {
         <CompanionAvatar id={profile.companionId} size={96} className="self-center" />
         <div className="flex-1 space-y-2">
           {name === null ? (
-            <button onClick={() => setName(profile.displayName)} className="font-serif text-3xl font-semibold hover:text-primary" title="Editar nome">
+            <button onClick={() => setName(profile.displayName)} className="font-display text-3xl font-bold hover:text-primary" title="Editar nome">
               {profile.displayName}
             </button>
           ) : (
@@ -65,7 +67,7 @@ export function ProfileView() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 maxLength={60}
-                className="min-w-0 flex-1 rounded-xl border border-line bg-bg px-3 py-2 font-serif text-xl outline-none focus:border-primary"
+                className="min-w-0 flex-1 rounded-xl border border-line bg-bg px-3 py-2 font-display text-xl outline-none focus:border-primary"
                 aria-label="Seu nome"
               />
               <Button type="submit">Salvar</Button>
@@ -85,9 +87,9 @@ export function ProfileView() {
         <SectionTitle title="Estatísticas" />
         <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {stats.map((s) => (
-            <div key={s.label} className="rounded-2xl border border-line bg-surface p-4">
+            <div key={s.label} className="rounded-2xl glass border border-line p-4">
               <dt className="text-xs text-muted">{s.label}</dt>
-              <dd className="font-serif text-2xl font-semibold">{s.value}</dd>
+              <dd className="font-mono text-2xl font-semibold">{s.value}</dd>
             </div>
           ))}
         </dl>
@@ -99,7 +101,7 @@ export function ProfileView() {
           {ACHIEVEMENTS.map((a) => {
             const unlocked = progress.achievements.includes(a.id);
             return (
-              <li key={a.id} className={clsx("rounded-2xl border border-line bg-surface p-4 text-center", !unlocked && "opacity-55")}>
+              <li key={a.id} className={clsx("rounded-2xl glass border border-line p-4 text-center", !unlocked && "opacity-55")}>
                 <div
                   className={clsx(
                     "mx-auto mb-2 grid size-12 place-items-center rounded-full bg-gradient-to-br text-white shadow-card",
@@ -117,6 +119,31 @@ export function ProfileView() {
       </section>
 
       <section>
+        <SectionTitle eyebrow={`${progress.trailsMastered.length}/${TRAILS.length}`} title="Relíquias" />
+        <ul className="grid gap-3 sm:grid-cols-3">
+          {TRAILS.map((t) => {
+            const owned = progress.trailsMastered.includes(t.id);
+            return (
+              <li key={t.id}>
+                <Link
+                  href={`/trilhas/${t.id}`}
+                  className={clsx("glass premium-lift flex items-center gap-3 rounded-2xl border border-line p-4", !owned && "opacity-60")}
+                >
+                  <span className={clsx("grid size-11 shrink-0 place-items-center rounded-xl", owned ? "bg-gradient-gold text-white shadow-card" : "bg-surface-2 text-muted")}>
+                    {owned ? <Gem className="size-5" /> : <Lock className="size-4" />}
+                  </span>
+                  <span>
+                    <span className="block text-sm font-bold">{t.relic}</span>
+                    <span className="block text-xs text-muted">{owned ? `Trilha ${t.title} dominada` : `Domine a trilha ${t.title}`}</span>
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      <section>
         <SectionTitle title="Seu companheiro de jornada" />
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-5">
           {COMPANIONS.map((c) => (
@@ -124,7 +151,7 @@ export function ProfileView() {
               <button
                 onClick={() => updateProfile({ companionId: c.id })}
                 className={clsx(
-                  "flex w-full flex-col items-center gap-1 rounded-2xl border bg-surface p-3 transition",
+                  "flex w-full flex-col items-center gap-1 glass rounded-2xl border p-3 transition",
                   c.id === profile.companionId ? "border-primary ring-2 ring-primary/30" : "border-line hover:border-primary/50",
                 )}
                 aria-pressed={c.id === profile.companionId}
@@ -136,6 +163,11 @@ export function ProfileView() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section>
+        <SectionTitle title="Aparência" />
+        <ThemeSelector />
       </section>
 
       {(favorites.length > 0 || notes.length > 0) && (
@@ -181,7 +213,7 @@ function VerseList({ title, icon, entries }: { title: string; icon: React.ReactN
           if (!ref) return null;
           return (
             <li key={key}>
-              <Link href={chapterHref(ref.book, ref.chapter)} className="block rounded-xl border border-line bg-surface px-3 py-2 hover:border-primary/50">
+              <Link href={chapterHref(ref.book, ref.chapter)} className="block rounded-xl glass border border-line px-3 py-2 hover:border-primary/50">
                 <span className="text-sm font-semibold text-primary">{formatReference(ref.book, ref.chapter, ref.verse)}</span>
                 {note && <span className="mt-0.5 line-clamp-2 block text-sm text-muted">{note}</span>}
               </Link>

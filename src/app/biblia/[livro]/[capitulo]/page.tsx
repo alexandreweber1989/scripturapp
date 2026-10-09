@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { ChapterReader } from "@/components/bible/chapter-reader";
 import { Skeleton } from "@/components/ui";
 import { BOOKS, getBookBySlug, isValidChapter, nextChapter, previousChapter } from "@/domain/bible/books";
+import { getChapterQuiz } from "@/content/chapter-quizzes";
 import { TRANSLATION, getChapterVerses } from "@/lib/server/bible";
 
 type Params = PageProps<"/biblia/[livro]/[capitulo]">["params"];
@@ -46,6 +47,7 @@ async function Chapter({ params }: { params: Params }) {
       translation={TRANSLATION.short}
       prev={prev && { slug: prev.book.slug, name: prev.book.name, chapter: prev.chapter }}
       next={next && { slug: next.book.slug, name: next.book.name, chapter: next.chapter }}
+      quiz={getChapterQuiz(`${ref.book.id}.${ref.chapter}`)}
     />
   );
 }

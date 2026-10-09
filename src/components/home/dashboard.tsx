@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { BookOpen, Check, Flame, Gamepad2, MessageCircle, Shield, Sparkles } from "lucide-react";
+import { BookOpen, Brain, Check, Flame, Gamepad2, MessageCircle, Puzzle, Route, Shield, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useSyncExternalStore } from "react";
 import dailyVerses from "@/content/daily-verses.json";
@@ -9,7 +9,9 @@ import { getCompanion } from "@/domain/companions";
 import { levelProgress } from "@/domain/progression/levels";
 import { FULL_DAY_BONUS, questStatuses } from "@/domain/progression/quests";
 import { effectiveStreak, streakAtRisk } from "@/domain/progression/streak";
+import { isDue } from "@/domain/memory/srs";
 import { dayKey, dayOfYear } from "@/domain/time";
+import { TRAILS, stepHref, stepLabel, trailProgress } from "@/domain/trails";
 import { useScriptura } from "@/lib/client/store";
 import { ContinueReading } from "../bible/reading-progress";
 import { CompanionAvatar } from "../companion-avatar";
@@ -68,30 +70,32 @@ export function HomeDashboard() {
   return (
     <div className="space-y-8">
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-3xl border border-line bg-gradient-to-br from-primary-soft via-surface to-gold-soft p-6 shadow-card">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+      <section className="gradient-border relative overflow-hidden rounded-3xl p-6 shadow-card">
+        <div className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-violet/20 blur-3xl" aria-hidden />
+        <div className="pointer-events-none absolute -bottom-28 left-10 size-64 rounded-full bg-primary/15 blur-3xl" aria-hidden />
+        <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center">
           <div className="relative shrink-0 self-center">
-            <div className="absolute inset-2 rounded-full bg-gold-bright/25 blur-2xl" aria-hidden />
+            <div className="absolute inset-3 rounded-full bg-gradient-primary opacity-30 blur-2xl" aria-hidden />
             <CompanionAvatar id={companion.id} size={112} float className="relative" />
           </div>
           <div className="min-w-0 flex-1 space-y-3">
             <div>
-              <p className="text-sm text-muted">{greeting(today.hour)},</p>
-              <h1 className="font-serif text-3xl font-semibold">{profile.displayName}</h1>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">{greeting(today.hour)},</p>
+              <h1 className="text-gradient font-display text-4xl font-extrabold">{profile.displayName}</h1>
             </div>
-            <p className="rounded-2xl rounded-tl-sm bg-surface/80 px-4 py-2 text-sm shadow-sm">
+            <p className="glass rounded-2xl rounded-tl-sm border border-line px-4 py-2 text-sm">
               <span className="font-semibold text-primary">{companion.name}:</span> {companion.messages[messageIndex]}
             </p>
             <div>
               <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2 text-sm">
-                <span className="font-semibold">
-                  Nível {level.level} · {level.rank.name}
+                <span className="font-bold">
+                  Nível {level.level} · <span className="text-primary">{level.rank.name}</span>
                 </span>
-                <span className="text-muted">
+                <span className="font-mono text-xs text-muted">
                   {level.current}/{level.needed} XP
                 </span>
               </div>
-              <ProgressBar value={level.ratio} tone="gold" className="h-2.5" />
+              <ProgressBar value={level.ratio} className="h-2.5" />
               <p className="mt-1 text-xs italic text-muted">“{level.title}”</p>
             </div>
           </div>
@@ -113,12 +117,12 @@ export function HomeDashboard() {
         {/* Streak */}
         <Card className="space-y-4">
           <div className="flex items-center gap-4">
-            <div className={clsx("grid size-14 place-items-center rounded-2xl", streak > 0 ? "bg-flame/15 text-flame" : "bg-surface-2 text-muted")}>
+            <div className={clsx("grid size-14 place-items-center rounded-2xl", streak > 0 ? "bg-gradient-gold text-white glow-primary" : "bg-surface-2 text-muted")}>
               <Flame className="size-8" />
             </div>
             <div>
-              <p className="font-serif text-3xl font-semibold">
-                {streak} {streak === 1 ? "dia" : "dias"}
+              <p className="font-display text-3xl font-extrabold">
+                <span className="font-mono">{streak}</span> {streak === 1 ? "dia" : "dias"}
               </p>
               <p className="text-sm text-muted">Fogo Santo · recorde {progress.streak.longest}</p>
             </div>
@@ -145,7 +149,7 @@ export function HomeDashboard() {
             {quests.map(({ quest, progress: done, completed }) => (
               <li key={quest.id}>
                 <Link href={quest.href} className={clsx("flex items-center gap-3 rounded-xl p-2 transition hover:bg-surface-2", completed && "opacity-70")}>
-                  <span className={clsx("grid size-9 shrink-0 place-items-center rounded-full", completed ? "bg-success text-white" : "bg-surface-2 text-muted")}>
+                  <span className={clsx("grid size-9 shrink-0 place-items-center rounded-full", completed ? "bg-gradient-accent text-white" : "bg-primary-soft text-primary")}>
                     {completed ? <Check className="size-5" /> : <Sparkles className="size-4" />}
                   </span>
                   <span className="min-w-0 flex-1">
@@ -153,8 +157,8 @@ export function HomeDashboard() {
                     <span className="block text-xs text-muted">{quest.description}</span>
                   </span>
                   <span className="text-right text-xs">
-                    <span className="block font-semibold text-gold">+{quest.xp}</span>
-                    <span className="text-muted">
+                    <span className="block font-mono font-semibold text-gold">+{quest.xp}</span>
+                    <span className="font-mono text-muted">
                       {done}/{quest.target}
                     </span>
                   </span>
@@ -166,18 +170,74 @@ export function HomeDashboard() {
         </Card>
       </div>
 
+      <TodayStrip day={today.day} />
       <DailyVerse day={today.day} />
       <ContinueReading />
 
       <section>
         <SectionTitle title="Para onde vamos hoje?" />
         <div className="grid gap-3 sm:grid-cols-3">
-          <Shortcut href="/biblia" icon={<BookOpen className="size-6" />} title="Ler a Bíblia" text="10 XP por capítulo" />
-          <Shortcut href="/jogos" icon={<Gamepad2 className="size-6" />} title="Jogar" text="Quiz e desafios" />
-          <Shortcut href="/mentor" icon={<MessageCircle className="size-6" />} title={`Falar com ${companion.name}`} text="Tire suas dúvidas" />
+          <Shortcut href="/biblia" icon={<BookOpen className="size-6" />} title="Ler a Bíblia" text="10 XP por capítulo" tone="primary" />
+          <Shortcut href="/jogos" icon={<Gamepad2 className="size-6" />} title="Jogar" text="Quiz e desafios" tone="gold" />
+          <Shortcut href="/mentor" icon={<MessageCircle className="size-6" />} title={`Falar com ${companion.name}`} text="Tire suas dúvidas" tone="accent" />
         </div>
       </section>
     </div>
+  );
+}
+
+/** The three daily loops: continue a trail, the word of the day, memorization reviews. */
+function TodayStrip({ day }: { day: string }) {
+  const { progress, annotations } = useScriptura();
+  const inProgress = TRAILS.map((t) => ({ trail: t, p: trailProgress(t, progress) }));
+  const next = inProgress.find(({ p }) => p.passed > 0 && !p.completed) ?? inProgress.find(({ p }) => !p.completed);
+  const wordDone = progress.today.day === day && (progress.today.counts.daily_word_solved ?? 0) > 0;
+  const deck = Object.entries(annotations).filter(([, a]) => a.favorite);
+  const due = deck.filter(([, a]) => isDue(a.review ?? undefined, day)).length;
+
+  const tiles = [
+    next
+      ? {
+          href: stepHref(next.trail.steps[next.p.current], next.trail.id),
+          icon: Route,
+          tone: "bg-gradient-primary",
+          title: next.trail.title,
+          text: `Etapa ${next.p.passed + 1}/${next.p.total} · ${stepLabel(next.trail.steps[next.p.current])}`,
+        }
+      : { href: "/trilhas", icon: Route, tone: "bg-gradient-primary", title: "Trilhas dominadas", text: "Revise quando quiser" },
+    {
+      href: "/jogos/palavra-do-dia",
+      icon: wordDone ? Check : Puzzle,
+      tone: "bg-gradient-gold",
+      title: "Palavra do Dia",
+      text: wordDone ? "Resolvida hoje · volte amanhã" : "Descubra em 6 tentativas",
+    },
+    {
+      href: "/memorizar",
+      icon: Brain,
+      tone: "bg-gradient-accent",
+      title: "Memorização",
+      text: deck.length === 0 ? "Monte seu baralho de versículos" : due > 0 ? `${due} versículo${due > 1 ? "s" : ""} para revisar` : "Revisão em dia",
+    },
+  ];
+
+  return (
+    <section>
+      <SectionTitle eyebrow="Seus desafios" title="Hoje no Scriptura" />
+      <div className="grid gap-3 sm:grid-cols-3">
+        {tiles.map(({ href, icon: Icon, tone, title, text }) => (
+          <Link key={title} href={href} className="sheen glass premium-lift flex items-center gap-4 rounded-2xl border border-line p-4">
+            <span className={clsx("grid size-12 shrink-0 place-items-center rounded-xl text-white shadow-card", tone)}>
+              <Icon className="size-6" />
+            </span>
+            <span className="min-w-0">
+              <span className="block truncate font-bold">{title}</span>
+              <span className="block text-sm text-muted">{text}</span>
+            </span>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -186,9 +246,9 @@ function DailyVerse({ day }: { day: string }) {
   const verse = dailyVerses[(dayOfYear(day) - 1) % dailyVerses.length];
   const done = progress.today.day === day && (progress.today.counts.daily_verse_read ?? 0) > 0;
   return (
-    <section className="rounded-3xl border border-gold/30 bg-surface p-6 text-center shadow-card sm:p-8">
+    <section className="rounded-3xl glass gradient-border p-6 text-center shadow-card sm:p-8">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Versículo do dia</p>
-      <blockquote className="mx-auto mt-3 max-w-2xl font-serif text-xl leading-relaxed sm:text-2xl">“{verse.text}”</blockquote>
+      <blockquote className="mx-auto mt-3 max-w-2xl font-scripture text-xl leading-relaxed sm:text-2xl">“{verse.text}”</blockquote>
       <p className="mt-3 font-semibold text-primary">{verse.reference}</p>
       <div className="mt-5">
         {done ? (
@@ -205,12 +265,30 @@ function DailyVerse({ day }: { day: string }) {
   );
 }
 
-function Shortcut({ href, icon, title, text }: { href: string; icon: React.ReactNode; title: string; text: string }) {
+const SHORTCUT_TONE = {
+  primary: "bg-gradient-primary",
+  gold: "bg-gradient-gold",
+  accent: "bg-gradient-accent",
+};
+
+function Shortcut({
+  href,
+  icon,
+  title,
+  text,
+  tone,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  title: string;
+  text: string;
+  tone: keyof typeof SHORTCUT_TONE;
+}) {
   return (
-    <Link href={href} className="flex items-center gap-4 rounded-2xl border border-line bg-surface p-4 transition hover:border-primary/50 hover:shadow-card">
-      <span className="grid size-12 place-items-center rounded-xl bg-primary-soft text-primary">{icon}</span>
+    <Link href={href} className="sheen flex items-center gap-4 rounded-2xl glass border border-line p-4 premium-lift">
+      <span className={clsx("grid size-12 place-items-center rounded-xl text-white shadow-card", SHORTCUT_TONE[tone])}>{icon}</span>
       <span>
-        <span className="block font-semibold">{title}</span>
+        <span className="block font-bold">{title}</span>
         <span className="text-sm text-muted">{text}</span>
       </span>
     </Link>

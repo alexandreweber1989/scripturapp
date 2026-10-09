@@ -1,0 +1,330 @@
+{
+  "1sm.16": [
+    {
+      "id": "cq-1sm-16-1",
+      "prompt": "Qual filho de Jessé Samuel ungiu como rei, por ordem do Senhor?",
+      "options": [
+        "Eliabe",
+        "Abinadabe",
+        "Davi",
+        "Samá"
+      ],
+      "answer": 2,
+      "explanation": "Depois de Jessé apresentar sete filhos, o caçula Davi foi trazido do campo e ungido por Samuel na presença dos irmãos. (v. 13)",
+      "verse": 13
+    },
+    {
+      "id": "cq-1sm-16-2",
+      "prompt": "Para qual cidade o Senhor enviou Samuel, à casa de Jessé?",
+      "options": [
+        "Ramá",
+        "Belém",
+        "Gibeá",
+        "Siló"
+      ],
+      "answer": 1,
+      "explanation": "O Senhor mandou Samuel encher o chifre com óleo e ir a Belém, à casa de Jessé. (v. 1)",
+      "verse": 1
+    },
+    {
+      "id": "cq-1sm-16-3",
+      "prompt": "Ao rejeitar Eliabe, o que o Senhor disse que ele considera ao escolher alguém?",
+      "options": [
+        "O coração",
+        "A aparência",
+        "A altura",
+        "A força no combate"
+      ],
+      "answer": 0,
+      "explanation": "O homem vê a aparência, mas o Senhor vê o coração; por isso a escolha de Deus não seguiu a impressão de Samuel. (v. 7)",
+      "verse": 7
+    }
+  ],
+  "1sm.17": [
+    {
+      "id": "cq-1sm-17-1",
+      "prompt": "Com o que Davi derrubou Golias?",
+      "options": [
+        "A espada de Saul",
+        "Uma lança de bronze",
+        "Um arco e flechas",
+        "Uma atiradeira e uma pedra"
+      ],
+      "answer": 3,
+      "explanation": "Davi venceu o filisteu com uma atiradeira e uma pedra, sem espada na mão. (v. 50)",
+      "verse": 50
+    },
+    {
+      "id": "cq-1sm-17-2",
+      "prompt": "Quantas pedras lisas Davi escolheu no riacho antes de enfrentar Golias?",
+      "options": [
+        "Cinco",
+        "Três",
+        "Sete",
+        "Doze"
+      ],
+      "answer": 0,
+      "explanation": "Davi escolheu no riacho cinco pedras lisas e as colocou no seu alforje de pastor. (v. 40)",
+      "verse": 40
+    },
+    {
+      "id": "cq-1sm-17-3",
+      "prompt": "Segundo Davi, por que todos saberiam que a vitória não vem por espada ou lança?",
+      "options": [
+        "Porque Israel tinha mais soldados",
+        "Porque Saul era um rei valente",
+        "Porque a batalha é do Senhor",
+        "Porque Golias estava sem escudeiro"
+      ],
+      "answer": 2,
+      "explanation": "Davi declarou que o Senhor não concede vitória por espada ou lança, pois a batalha é do Senhor. (v. 47)",
+      "verse": 47
+    }
+  ],
+  "1sm.24": [
+    {
+      "id": "cq-1sm-24-1",
+      "prompt": "O que Davi cortou de Saul dentro da caverna?",
+      "options": [
+        "Uma mecha do cabelo",
+        "Uma ponta do manto",
+        "A correia da sandália",
+        "A ponta da lança"
+      ],
+      "answer": 1,
+      "explanation": "Davi se aproximou com cuidado e cortou uma ponta do manto de Saul, sem que ele percebesse. (v. 4)",
+      "verse": 4
+    },
+    {
+      "id": "cq-1sm-24-2",
+      "prompt": "Em qual deserto Davi estava quando Saul saiu à sua procura?",
+      "options": [
+        "Zife",
+        "Maom",
+        "En-Gedi",
+        "Parã"
+      ],
+      "answer": 2,
+      "explanation": "Disseram a Saul que Davi estava no deserto de En-Gedi, e ele partiu com três mil soldados. (v. 1)",
+      "verse": 1
+    },
+    {
+      "id": "cq-1sm-24-3",
+      "prompt": "Por que Davi não deixou que atacassem Saul na caverna?",
+      "options": [
+        "Temia o exército de Saul",
+        "Saul havia prometido paz",
+        "Jônatas lhe pediu isso",
+        "Saul era o ungido do Senhor"
+      ],
+      "answer": 3,
+      "explanation": "Davi disse que o Senhor o livrasse de erguer a mão contra seu senhor, pois ele era o ungido do Senhor. (v. 6)",
+      "verse": 6
+    }
+  ],
+  "2sm.6": [
+    {
+      "id": "cq-2sm-6-1",
+      "prompt": "O que Davi e seus guerreiros foram buscar em Baalim, em Judá?",
+      "options": [
+        "O altar de bronze",
+        "A arca de Deus",
+        "A espada de Golias",
+        "O manto de Samuel"
+      ],
+      "answer": 1,
+      "explanation": "Davi partiu com trinta mil guerreiros para buscar a arca de Deus, sobre a qual é invocado o nome do Senhor. (v. 2)",
+      "verse": 2
+    },
+    {
+      "id": "cq-2sm-6-2",
+      "prompt": "Na casa de quem a arca ficou por três meses?",
+      "options": [
+        "Abinadabe",
+        "Aiô",
+        "Uzá",
+        "Obede-Edom, de Gate"
+      ],
+      "answer": 3,
+      "explanation": "Davi levou a arca para a casa de Obede-Edom, onde ficou três meses, e o Senhor abençoou sua família. (v. 11)",
+      "verse": 11
+    },
+    {
+      "id": "cq-2sm-6-3",
+      "prompt": "Como Davi respondeu à crítica de Mical sobre sua dança?",
+      "options": [
+        "Dançou perante o Senhor, que o escolheu",
+        "Pediu perdão e prometeu parar",
+        "Disse que dançou para agradar o povo",
+        "Culpou os levitas pela festa"
+      ],
+      "answer": 0,
+      "explanation": "Davi afirmou que dançou perante o Senhor, que o escolheu como soberano sobre Israel, e que continuaria a celebrar. (v. 21)",
+      "verse": 21
+    }
+  ],
+  "2sm.11": [
+    {
+      "id": "cq-2sm-11-1",
+      "prompt": "Segundo o texto, quem era o marido de Bate-Seba?",
+      "options": [
+        "Joabe",
+        "Eliã",
+        "Urias, o hitita",
+        "Abner"
+      ],
+      "answer": 2,
+      "explanation": "Informaram a Davi que ela era Bate-Seba, filha de Eliã e mulher de Urias, o hitita. (v. 3)",
+      "verse": 3
+    },
+    {
+      "id": "cq-2sm-11-2",
+      "prompt": "Por que Urias se recusou a ir descansar em sua casa?",
+      "options": [
+        "A arca e os soldados estavam em tendas",
+        "Estava ferido da batalha",
+        "Joabe o havia proibido",
+        "Sua casa ficava longe dali"
+      ],
+      "answer": 0,
+      "explanation": "Urias disse que não iria para casa enquanto a arca, Joabe e os soldados estavam acampados em tendas. (v. 11)",
+      "verse": 11
+    },
+    {
+      "id": "cq-2sm-11-3",
+      "prompt": "Como o capítulo avalia, no final, o que Davi fez?",
+      "options": [
+        "Foi aprovado pelos sacerdotes",
+        "Foi justificado pela guerra",
+        "Foi elogiado por Joabe",
+        "Desagradou ao Senhor"
+      ],
+      "answer": 3,
+      "explanation": "O capítulo termina afirmando com clareza que o que Davi fez desagradou ao Senhor. (v. 27)",
+      "verse": 27
+    }
+  ],
+  "2sm.12": [
+    {
+      "id": "cq-2sm-12-1",
+      "prompt": "Quem o Senhor enviou para confrontar Davi?",
+      "options": [
+        "O profeta Natã",
+        "O profeta Gade",
+        "O profeta Samuel",
+        "O sacerdote Abiatar"
+      ],
+      "answer": 0,
+      "explanation": "O Senhor enviou a Davi o profeta Natã, que lhe contou a história de dois homens. (v. 1)",
+      "verse": 1
+    },
+    {
+      "id": "cq-2sm-12-2",
+      "prompt": "Na história de Natã, o que o homem rico tomou do pobre?",
+      "options": [
+        "Um boi",
+        "Uma cordeirinha",
+        "Um jumento",
+        "Um campo de trigo"
+      ],
+      "answer": 1,
+      "explanation": "O rico não quis usar suas próprias ovelhas e preparou para o visitante a cordeira do homem pobre. (v. 4)",
+      "verse": 4
+    },
+    {
+      "id": "cq-2sm-12-3",
+      "prompt": "Por que Davi deixou de jejuar depois que a criança morreu?",
+      "options": [
+        "Natã lhe ordenou que comesse",
+        "Os conselheiros o obrigaram",
+        "Não poderia trazê-la de volta à vida",
+        "Queria celebrar a vitória em Rabá"
+      ],
+      "answer": 2,
+      "explanation": "Davi explicou que jejuou enquanto havia esperança, mas, morta a criança, não poderia trazê-la de volta. (v. 22-23)",
+      "verse": 23
+    }
+  ],
+  "ps.51": [
+    {
+      "id": "cq-ps-51-1",
+      "prompt": "Que tipo de coração o salmista pede que Deus crie nele?",
+      "options": [
+        "Um coração valente",
+        "Um coração puro",
+        "Um coração sábio",
+        "Um coração alegre"
+      ],
+      "answer": 1,
+      "explanation": "O salmista ora: \"Cria em mim um coração puro, ó Deus\", e pede um espírito estável. (v. 10)",
+      "verse": 10
+    },
+    {
+      "id": "cq-ps-51-2",
+      "prompt": "Com o que o salmista pede para ser purificado?",
+      "options": [
+        "Com hissopo",
+        "Com mirra",
+        "Com óleo",
+        "Com cinzas"
+      ],
+      "answer": 0,
+      "explanation": "Ele pede: \"Purifica-me com hissopo, e ficarei puro\", ficando mais branco do que a neve. (v. 7)",
+      "verse": 7
+    },
+    {
+      "id": "cq-ps-51-3",
+      "prompt": "Segundo o salmo, que sacrifício Deus não desprezará?",
+      "options": [
+        "Muitos holocaustos de novilhos",
+        "Ofertas de ouro e prata",
+        "Longos dias de jejum",
+        "Um coração quebrantado e contrito"
+      ],
+      "answer": 3,
+      "explanation": "Os sacrifícios que agradam a Deus são um espírito quebrantado; um coração quebrantado e contrito ele não despreza. (v. 17)",
+      "verse": 17
+    }
+  ],
+  "ps.139": [
+    {
+      "id": "cq-ps-139-1",
+      "prompt": "Onde o salmista diz que Deus o teceu?",
+      "options": [
+        "Na casa de seu pai",
+        "No santuário",
+        "Nos campos de Belém",
+        "No ventre de sua mãe"
+      ],
+      "answer": 3,
+      "explanation": "O salmista declara que Deus criou o íntimo do seu ser e o teceu no ventre de sua mãe. (v. 13)",
+      "verse": 13
+    },
+    {
+      "id": "cq-ps-139-2",
+      "prompt": "Com o que o salmista compara a quantidade dos pensamentos de Deus?",
+      "options": [
+        "Estrelas do céu",
+        "Gotas de orvalho",
+        "Grãos de areia",
+        "Folhas das árvores"
+      ],
+      "answer": 2,
+      "explanation": "Ele diz que, se contasse os pensamentos de Deus, seriam mais do que os grãos de areia. (v. 18)",
+      "verse": 18
+    },
+    {
+      "id": "cq-ps-139-3",
+      "prompt": "Que pedido o salmista faz a Deus perto do fim do salmo?",
+      "options": [
+        "Que lhe dê riquezas e vitória",
+        "Que o sonde e conheça seu coração",
+        "Que o esconda dos inimigos",
+        "Que lhe revele o futuro"
+      ],
+      "answer": 1,
+      "explanation": "Depois de reconhecer que Deus o conhece, ele pede: \"Sonda-me, ó Deus, e conhece o meu coração\". (v. 23)",
+      "verse": 23
+    }
+  ]
+}

@@ -56,7 +56,7 @@ export function ContinueReading() {
       <BookOpen className="size-6 text-primary" aria-hidden />
       <div>
         <p className="text-xs font-semibold uppercase tracking-wider text-primary">Continuar lendo</p>
-        <p className="font-serif text-lg font-semibold">
+        <p className="font-display text-lg font-bold">
           {last.book.name} {last.chapter}
         </p>
       </div>
@@ -112,7 +112,7 @@ export function ChapterGrid({ book }: { book: BibleBook }) {
               className={
                 done
                   ? "grid aspect-square place-items-center rounded-xl bg-success-soft font-semibold text-success"
-                  : "grid aspect-square place-items-center rounded-xl border border-line bg-surface font-semibold hover:border-primary/60"
+                  : "grid aspect-square place-items-center rounded-xl glass border border-line font-semibold hover:border-primary/60"
               }
               aria-label={`Capítulo ${chapter}${done ? " (lido)" : ""}`}
             >

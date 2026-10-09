@@ -23,7 +23,7 @@ export function RewardToast() {
     <div className="pointer-events-none fixed inset-x-0 top-16 z-50 flex justify-center px-4 md:top-auto md:bottom-8 md:pl-60" aria-live="polite">
       <div
         key={rewards.length}
-        className="animate-rise pointer-events-auto w-full max-w-sm rounded-2xl border border-gold/40 bg-surface p-4 shadow-card"
+        className="animate-rise pointer-events-auto w-full max-w-sm rounded-2xl glass gradient-border p-4 shadow-card"
         role="status"
       >
         <div className="flex items-start gap-3">
@@ -33,7 +33,7 @@ export function RewardToast() {
           <div className="min-w-0 flex-1">
             {reward.levelUp ? (
               <>
-                <p className="font-serif text-lg font-semibold">Nível {reward.levelUp.to}!</p>
+                <p className="font-display text-lg font-bold">Nível {reward.levelUp.to}!</p>
                 <p className="text-sm text-muted">{levelTitle(reward.levelUp.to)}</p>
               </>
             ) : (
