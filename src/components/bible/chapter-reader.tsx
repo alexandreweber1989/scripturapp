@@ -146,7 +146,7 @@ export function ChapterReader({
           <Link href={`/biblia/${book.slug}`} className="text-sm font-medium text-muted hover:text-primary">
             {book.name}
           </Link>
-          <h1 className="font-serif text-3xl font-semibold">
+          <h1 className="font-display text-3xl font-bold">
             {book.name} {chapter}
           </h1>
         </div>
@@ -161,7 +161,7 @@ export function ChapterReader({
         </div>
       </header>
 
-      <div className={clsx("font-serif leading-[1.9] text-ink", FONT_SIZES[fontSize])}>
+      <div className={clsx("font-scripture leading-[1.9] text-ink", FONT_SIZES[fontSize])}>
         {verses.map((text, i) => {
           const number = i + 1;
           const key = verseKey(bookId, chapter, number);
@@ -181,7 +181,7 @@ export function ChapterReader({
                 )}
               >
                 {number === 1 ? (
-                  <span className="float-left mr-2 mt-1 select-none font-serif text-[3.2em] font-bold leading-[0.8] text-gold" aria-label="versículo 1">
+                  <span className="float-left mr-2 mt-1 select-none font-display text-[3.2em] font-bold leading-[0.8] text-gold" aria-label="versículo 1">
                     {chapter}
                   </span>
                 ) : (
@@ -209,7 +209,7 @@ export function ChapterReader({
         })}
       </div>
 
-      <section className="mt-12 flex flex-col items-center gap-4 rounded-2xl border border-line bg-surface p-6 text-center">
+      <section className="mt-12 flex flex-col items-center gap-4 rounded-2xl glass border border-line p-6 text-center">
         {completedNow ? (
           <p className="flex items-center gap-2 font-semibold text-success">
             <Check className="size-5" /> Leitura registrada. Que a Palavra frutifique em você!
@@ -240,9 +240,9 @@ export function ChapterReader({
 
       {selected.length > 0 && (
         <div className="fixed inset-x-0 bottom-16 z-40 flex justify-center px-3 md:bottom-6 md:pl-60">
-          <div className="animate-rise w-full max-w-xl rounded-2xl border border-line bg-surface p-4 shadow-card">
+          <div className="animate-rise w-full max-w-xl rounded-2xl glass border border-line p-4 shadow-card">
             <div className="mb-3 flex items-center justify-between">
-              <p className="font-serif font-semibold">{reference}</p>
+              <p className="font-display font-bold">{reference}</p>
               <button onClick={() => setSelected([])} className="rounded-lg p-1 text-muted hover:bg-surface-2" aria-label="Cancelar seleção">
                 <X className="size-4" />
               </button>

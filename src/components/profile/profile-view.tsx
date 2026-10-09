@@ -49,7 +49,7 @@ export function ProfileView() {
         <CompanionAvatar id={profile.companionId} size={96} className="self-center" />
         <div className="flex-1 space-y-2">
           {name === null ? (
-            <button onClick={() => setName(profile.displayName)} className="font-serif text-3xl font-semibold hover:text-primary" title="Editar nome">
+            <button onClick={() => setName(profile.displayName)} className="font-display text-3xl font-bold hover:text-primary" title="Editar nome">
               {profile.displayName}
             </button>
           ) : (
@@ -65,7 +65,7 @@ export function ProfileView() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 maxLength={60}
-                className="min-w-0 flex-1 rounded-xl border border-line bg-bg px-3 py-2 font-serif text-xl outline-none focus:border-primary"
+                className="min-w-0 flex-1 rounded-xl border border-line bg-bg px-3 py-2 font-display text-xl outline-none focus:border-primary"
                 aria-label="Seu nome"
               />
               <Button type="submit">Salvar</Button>
@@ -85,9 +85,9 @@ export function ProfileView() {
         <SectionTitle title="Estatísticas" />
         <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {stats.map((s) => (
-            <div key={s.label} className="rounded-2xl border border-line bg-surface p-4">
+            <div key={s.label} className="rounded-2xl glass border border-line p-4">
               <dt className="text-xs text-muted">{s.label}</dt>
-              <dd className="font-serif text-2xl font-semibold">{s.value}</dd>
+              <dd className="font-display text-2xl font-bold">{s.value}</dd>
             </div>
           ))}
         </dl>
@@ -99,7 +99,7 @@ export function ProfileView() {
           {ACHIEVEMENTS.map((a) => {
             const unlocked = progress.achievements.includes(a.id);
             return (
-              <li key={a.id} className={clsx("rounded-2xl border border-line bg-surface p-4 text-center", !unlocked && "opacity-55")}>
+              <li key={a.id} className={clsx("rounded-2xl glass border border-line p-4 text-center", !unlocked && "opacity-55")}>
                 <div
                   className={clsx(
                     "mx-auto mb-2 grid size-12 place-items-center rounded-full bg-gradient-to-br text-white shadow-card",
@@ -124,7 +124,7 @@ export function ProfileView() {
               <button
                 onClick={() => updateProfile({ companionId: c.id })}
                 className={clsx(
-                  "flex w-full flex-col items-center gap-1 rounded-2xl border bg-surface p-3 transition",
+                  "flex w-full flex-col items-center gap-1 glass rounded-2xl border p-3 transition",
                   c.id === profile.companionId ? "border-primary ring-2 ring-primary/30" : "border-line hover:border-primary/50",
                 )}
                 aria-pressed={c.id === profile.companionId}
@@ -181,7 +181,7 @@ function VerseList({ title, icon, entries }: { title: string; icon: React.ReactN
           if (!ref) return null;
           return (
             <li key={key}>
-              <Link href={chapterHref(ref.book, ref.chapter)} className="block rounded-xl border border-line bg-surface px-3 py-2 hover:border-primary/50">
+              <Link href={chapterHref(ref.book, ref.chapter)} className="block rounded-xl glass border border-line px-3 py-2 hover:border-primary/50">
                 <span className="text-sm font-semibold text-primary">{formatReference(ref.book, ref.chapter, ref.verse)}</span>
                 {note && <span className="mt-0.5 line-clamp-2 block text-sm text-muted">{note}</span>}
               </Link>

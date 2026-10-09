@@ -5,14 +5,14 @@ import type { ComponentProps, ReactNode } from "react";
 type Variant = "primary" | "secondary" | "ghost" | "gold";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-primary text-primary-ink hover:bg-primary-strong shadow-card",
-  secondary: "bg-surface text-ink border border-line hover:bg-surface-2",
+  primary: "bg-gradient-primary text-white glow-primary hover:brightness-110",
+  secondary: "glass text-ink border border-line hover:border-primary/40",
   ghost: "text-ink hover:bg-surface-2",
-  gold: "bg-gold-bright text-[#2a1d05] hover:brightness-105 shadow-card",
+  gold: "bg-gradient-gold text-[#2a1d05] shadow-card hover:brightness-105",
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+  "sheen inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold transition active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
 
 export function Button({ variant = "primary", className, ...props }: ComponentProps<"button"> & { variant?: Variant }) {
   return <button className={clsx(base, variants[variant], className)} {...props} />;
@@ -22,17 +22,17 @@ export function ButtonLink({ variant = "primary", className, ...props }: Compone
   return <Link className={clsx(base, variants[variant], className)} {...props} />;
 }
 
-export function Card({ className, ...props }: ComponentProps<"div">) {
-  return <div className={clsx("rounded-2xl border border-line bg-surface p-5 shadow-card", className)} {...props} />;
+export function Card({ className, interactive = false, ...props }: ComponentProps<"div"> & { interactive?: boolean }) {
+  return <div className={clsx("glass rounded-2xl border border-line p-5 shadow-card", interactive && "premium-lift", className)} {...props} />;
 }
 
 export function SectionTitle({ eyebrow, title, action }: { eyebrow?: string; title: ReactNode; action?: ReactNode }) {
   return (
     <div className="mb-3 flex items-end justify-between gap-3">
       <div>
-        {eyebrow && <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">{eyebrow}</p>}
-        <h2 className="font-serif text-xl font-semibold text-ink">{title}</h2>
-        <div className="gilded-rule mt-1.5" />
+        {eyebrow && <p className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-primary">{eyebrow}</p>}
+        <h2 className="font-display text-xl font-bold text-ink">{title}</h2>
+        <div className="gradient-rule mt-1.5" />
       </div>
       {action}
     </div>
@@ -41,7 +41,7 @@ export function SectionTitle({ eyebrow, title, action }: { eyebrow?: string; tit
 
 export function ProgressBar({ value, className, tone = "primary" }: { value: number; className?: string; tone?: "primary" | "gold" | "success" }) {
   const pct = Math.max(0, Math.min(1, value)) * 100;
-  const fill = { primary: "bg-primary", gold: "bg-gold-bright", success: "bg-success" }[tone];
+  const fill = { primary: "bg-gradient-primary", gold: "bg-gradient-gold", success: "bg-gradient-accent" }[tone];
   return (
     <div
       className={clsx("h-2 overflow-hidden rounded-full bg-surface-2", className)}

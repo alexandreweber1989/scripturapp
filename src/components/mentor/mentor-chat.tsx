@@ -102,14 +102,14 @@ export function MentorChat() {
       <header className="mb-4 flex items-center gap-3">
         <CompanionAvatar id={companion.id} size={56} />
         <div>
-          <h1 className="font-serif text-2xl font-semibold">{companion.name}</h1>
+          <h1 className="font-display text-2xl font-bold">{companion.name}</h1>
           <p className="text-sm text-muted">{companion.trait} · seu mentor de estudo</p>
         </div>
       </header>
 
       <div className="flex-1 space-y-4">
         {messages.length === 0 && (
-          <div className="space-y-4 rounded-2xl border border-line bg-surface p-5">
+          <div className="space-y-4 rounded-2xl glass border border-line p-5">
             <p>
               Olá! Eu sou {companion.name}. Pergunte o que quiser sobre a Bíblia — contexto, significado, aplicação para a sua vida.
             </p>
@@ -131,7 +131,7 @@ export function MentorChat() {
             <div
               className={clsx(
                 "max-w-[85%] rounded-2xl px-4 py-3",
-                m.role === "user" ? "rounded-br-sm bg-primary text-primary-ink" : "rounded-bl-sm border border-line bg-surface",
+                m.role === "user" ? "rounded-br-sm bg-gradient-primary text-white glow-primary" : "rounded-bl-sm glass border border-line",
               )}
             >
               {m.role === "assistant" ? (
@@ -165,7 +165,7 @@ export function MentorChat() {
           e.preventDefault();
           void send(input);
         }}
-        className="sticky bottom-20 mt-4 flex items-end gap-2 rounded-2xl border border-line bg-surface p-2 shadow-card md:bottom-4"
+        className="sticky bottom-20 mt-4 flex items-end gap-2 rounded-2xl glass border border-line p-2 shadow-card md:bottom-4"
       >
         <textarea
           value={input}

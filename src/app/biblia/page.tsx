@@ -24,9 +24,9 @@ function Testament({ title, books }: { title: string; books: BibleBook[] }) {
               <li key={book.id}>
                 <Link
                   href={`/biblia/${book.slug}`}
-                  className="flex h-full flex-col rounded-xl border border-line bg-surface px-3 py-2.5 transition hover:border-primary/50 hover:shadow-card"
+                  className="flex h-full flex-col rounded-xl glass border border-line px-3 py-2.5 premium-lift"
                 >
-                  <span className="font-serif font-semibold">{book.name}</span>
+                  <span className="font-display font-bold">{book.name}</span>
                   <span className="text-xs text-muted">
                     <BookReadCount bookId={book.id} total={book.chapters} />
                   </span>
@@ -44,7 +44,7 @@ export default function BiblePage() {
   return (
     <div className="space-y-10">
       <header>
-        <h1 className="font-serif text-3xl font-semibold">Bíblia Sagrada</h1>
+        <h1 className="font-display text-3xl font-bold">Bíblia Sagrada</h1>
         <p className="mt-1 text-muted">Cada capítulo lido vale XP — e o primeiro de cada um vale um bônus.</p>
       </header>
       <ContinueReading />

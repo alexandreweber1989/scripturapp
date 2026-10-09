@@ -17,7 +17,7 @@ Esta é a **nova versão**, reconstruída do zero a partir da análise do projet
 | **Jogos** | Motor de quiz reutilizável, com dois pacotes: Quiz Bíblico (300 perguntas, 3 dificuldades) e Verdadeiro ou Falso (110 afirmações), ambos com cronômetro. A pontuação é **recalculada no servidor**. |
 | **Mentor (IA)** | Chat em streaming com Claude, persona do companheiro escolhido e perspectiva teológica batista. As referências bíblicas da resposta viram links. Há cota diária por plano. |
 | **Contas** | Supabase Auth com e-mail e senha. Sem Supabase configurado, o app funciona em **modo visitante**, salvando o progresso no navegador. |
-| **Visual** | Identidade "manuscrito iluminado moderno", com modo escuro automático, responsivo e navegação inferior no celular. |
+| **Visual** | Paleta do Scriptura original (índigo, gradiente azul→roxo, dourado e verde-água) com acabamento tecnológico: vidro fosco, brilhos de "aurora", grade sutil e números em fonte mono. Tipografia **Syne** na interface e **Literata** no texto bíblico. Modo escuro automático, responsivo, com navegação inferior no celular. |
 
 ## Rodando localmente
 

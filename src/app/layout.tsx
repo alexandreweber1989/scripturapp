@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Literata, Manrope } from "next/font/google";
+import { JetBrains_Mono, Literata, Syne } from "next/font/google";
 import { AppShell } from "@/components/app-shell";
 import { ScripturaProvider } from "@/lib/client/store";
 import "./globals.css";
 
-const scripture = Literata({ variable: "--font-scripture", subsets: ["latin"], style: ["normal", "italic"] });
-const ui = Manrope({ variable: "--font-ui", subsets: ["latin"] });
+// Syne for the interface; Literata only for long-form scripture text; JetBrains Mono for numbers and labels.
+const syne = Syne({ variable: "--font-syne", subsets: ["latin"] });
+const literata = Literata({ variable: "--font-literata", subsets: ["latin"], style: ["normal", "italic"] });
+const mono = JetBrains_Mono({ variable: "--font-jetbrains", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: { default: "Scriptura — estude a Bíblia jogando", template: "%s · Scriptura" },
@@ -14,14 +16,14 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f6f1e7" },
-    { media: "(prefers-color-scheme: dark)", color: "#11131b" },
+    { media: "(prefers-color-scheme: light)", color: "#f9fafb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f1218" },
   ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${scripture.variable} ${ui.variable} antialiased`}>
+    <html lang="pt-BR" className={`${syne.variable} ${literata.variable} ${mono.variable} antialiased`}>
       <body>
         <ScripturaProvider>
           <AppShell>{children}</AppShell>

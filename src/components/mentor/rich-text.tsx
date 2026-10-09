@@ -79,7 +79,7 @@ export function RichText({ text }: { text: string }) {
     const heading = /^(#{1,4})\s+(.*)$/.exec(line);
     if (heading) {
       blocks.push(
-        <p key={i} className="font-serif text-lg font-semibold">
+        <p key={i} className="font-display text-lg font-bold">
           {inline(heading[2], `h-${i}`)}
         </p>,
       );
@@ -87,7 +87,7 @@ export function RichText({ text }: { text: string }) {
     }
     if (line.startsWith(">")) {
       blocks.push(
-        <blockquote key={i} className="border-l-4 border-gold/60 pl-3 font-serif italic">
+        <blockquote key={i} className="border-l-4 border-gold/60 pl-3 font-scripture italic">
           {inline(line.replace(/^>\s?/, ""), `q-${i}`)}
         </blockquote>,
       );

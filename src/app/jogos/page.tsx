@@ -20,7 +20,7 @@ export default function GamesPage() {
   return (
     <div className="space-y-10">
       <header>
-        <h1 className="font-serif text-3xl font-semibold">Jogos</h1>
+        <h1 className="font-display text-3xl font-bold">Jogos</h1>
         <p className="mt-1 text-muted">Aprenda brincando. Cada rodada vale XP — e um gabarito vale bônus.</p>
       </header>
 
@@ -31,7 +31,7 @@ export default function GamesPage() {
             <li key={pack.id}>
               <Link
                 href={`/jogos/${pack.id}`}
-                className="group flex h-full flex-col gap-3 rounded-2xl border border-line bg-surface p-5 shadow-card transition hover:border-primary/50"
+                className="group flex h-full flex-col gap-3 rounded-2xl glass border border-line p-5 shadow-card premium-lift"
               >
                 <div className="flex items-center justify-between">
                   <span className="rounded-full bg-primary-soft px-2.5 py-1 text-xs font-semibold text-primary">
@@ -43,7 +43,7 @@ export default function GamesPage() {
                     </span>
                   )}
                 </div>
-                <h3 className="font-serif text-xl font-semibold">{pack.title}</h3>
+                <h3 className="font-display text-xl font-bold">{pack.title}</h3>
                 <p className="flex-1 text-sm text-muted">{pack.description}</p>
                 <span className="flex items-center gap-1 text-sm font-semibold text-primary">
                   Jogar <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />

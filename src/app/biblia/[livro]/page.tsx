@@ -23,7 +23,7 @@ async function BookDetails({ params }: { params: PageProps<"/biblia/[livro]">["p
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">
           {book.testament === "old" ? "Antigo Testamento" : "Novo Testamento"} · {book.category}
         </p>
-        <h1 className="font-serif text-4xl font-semibold">{book.name}</h1>
+        <h1 className="font-display text-4xl font-bold">{book.name}</h1>
       </header>
       <Card className="grid gap-4 sm:grid-cols-3">
         <div>

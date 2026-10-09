@@ -26,8 +26,10 @@ function isActive(pathname: string, href: string) {
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2" aria-label="Scriptura — início">
-      <span className="grid size-8 place-items-center rounded-lg bg-primary font-serif text-lg font-bold text-gold-bright shadow-card">S</span>
-      <span className="font-serif text-xl font-semibold tracking-tight">Scriptura</span>
+      <span className="bg-gradient-primary glow-primary grid size-9 place-items-center rounded-xl font-display text-lg font-extrabold text-white">S</span>
+      <span className="font-display text-xl font-extrabold tracking-tight">
+        Scriptura<span className="text-primary">.</span>
+      </span>
     </Link>
   );
 }
@@ -38,16 +40,16 @@ function StatusChips() {
   const streak = effectiveStreak(progress.streak, dayKey());
   const activeToday = progress.streak.lastActiveDay === dayKey();
   return (
-    <div className="flex items-center gap-2 text-sm font-semibold">
+    <div className="flex items-center gap-2 font-mono text-sm font-medium">
       <span
-        className={clsx("flex items-center gap-1 rounded-full px-2.5 py-1", activeToday ? "bg-flame/15 text-flame" : "bg-surface-2 text-muted")}
+        className={clsx("flex items-center gap-1 rounded-full px-2.5 py-1", activeToday ? "border-flame/30 bg-flame/10 text-flame" : "border-line bg-surface-2 text-muted", "border")}
         title={activeToday ? "Sequência mantida hoje" : "Estude hoje para manter a sequência"}
       >
         <Flame className="size-4" aria-hidden />
         {streak}
       </span>
-      <span className="rounded-full bg-gold-soft px-2.5 py-1 text-gold" title={`${progress.xp} XP`}>
-        Nv {levelFromXp(progress.xp)}
+      <span className="rounded-full border border-primary/30 bg-primary-soft px-2.5 py-1 text-primary" title={`${progress.xp} XP`}>
+        LV {levelFromXp(progress.xp)}
       </span>
     </div>
   );
@@ -59,7 +61,8 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   return (
     <div className="min-h-dvh md:grid md:grid-cols-[15rem_1fr]">
-      <aside className="sticky top-0 hidden h-dvh flex-col gap-8 border-r border-line bg-surface px-4 py-6 md:flex">
+      <div className="app-backdrop" aria-hidden />
+      <aside className="glass sticky top-0 hidden h-dvh flex-col gap-8 border-r border-line px-4 py-6 md:flex">
         <Logo />
         <nav className="flex flex-col gap-1" aria-label="Principal">
           {NAV.map(({ href, label, icon: Icon }) => (
@@ -68,7 +71,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               href={href}
               className={clsx(
                 "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition",
-                isActive(pathname, href) ? "bg-primary-soft text-primary" : "text-muted hover:bg-surface-2 hover:text-ink",
+                isActive(pathname, href) ? "bg-gradient-primary glow-primary font-bold text-white" : "text-muted hover:bg-surface-2 hover:text-ink",
               )}
             >
               <Icon className="size-5" aria-hidden />
@@ -79,7 +82,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </aside>
 
       <div className="flex min-w-0 flex-col">
-        <header className="sticky top-0 z-30 flex items-center justify-between border-b border-line bg-bg/85 px-4 py-3 backdrop-blur md:px-8">
+        <header className="glass sticky top-0 z-30 flex items-center justify-between border-b border-line px-4 py-3 md:px-8">
           <div className="md:invisible">
             <Logo />
           </div>
@@ -90,16 +93,18 @@ export function AppShell({ children }: { children: ReactNode }) {
       </div>
 
       <nav
-        className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur md:hidden"
+        className="glass fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-line pb-[env(safe-area-inset-bottom)] md:hidden"
         aria-label="Principal"
       >
         {NAV.map(({ href, label, icon: Icon }) => (
           <Link
             key={href}
             href={href}
-            className={clsx("flex flex-col items-center gap-0.5 py-2.5 text-[11px] font-medium", isActive(pathname, href) ? "text-primary" : "text-muted")}
+            className={clsx("flex flex-col items-center gap-0.5 py-2 text-[11px] font-semibold", isActive(pathname, href) ? "text-primary" : "text-muted")}
           >
-            <Icon className="size-5" aria-hidden />
+            <span className={clsx("grid h-7 w-12 place-items-center rounded-full transition", isActive(pathname, href) && "bg-gradient-primary text-white glow-primary")}>
+              <Icon className="size-[18px]" aria-hidden />
+            </span>
             {label}
           </Link>
         ))}

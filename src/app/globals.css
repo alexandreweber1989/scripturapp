@@ -1,67 +1,87 @@
 @import "tailwindcss";
 
 /*
- * Scriptura design tokens — "manuscrito iluminado moderno":
- * parchment surfaces, lapis-lazuli primary, gilded accents.
- * Dark mode ("noite") follows the system preference.
+ * Scriptura design tokens — the original Scriptura palette
+ * (indigo primary, blue→violet gradients, gold, teal accent) with a
+ * "tech" finish: glass surfaces, aurora glows and a subtle grid.
+ * Dark mode follows the system preference.
  */
 :root {
-  --bg: #f6f1e7;
-  --surface: #fffcf6;
-  --surface-2: #efe7d6;
-  --ink: #1e1a15;
-  --muted: #6c6357;
-  --line: #e2d8c4;
-  --primary: #2c3d8f;
-  --primary-strong: #1f2d6e;
-  --primary-ink: #ffffff;
-  --primary-soft: #e3e7f7;
-  --gold: #a87a1f;
-  --gold-bright: #d9a63a;
-  --gold-soft: #f4e4bd;
-  --success: #2f7a48;
-  --success-soft: #dcefe1;
-  --danger: #b03a3a;
-  --danger-soft: #f6dddd;
-  --flame: #de6526;
+  --bg: hsl(220 20% 98%);
+  --surface: hsl(0 0% 100%);
+  --surface-2: hsl(220 20% 95%);
+  --ink: hsl(220 25% 16%);
+  --muted: hsl(220 10% 46%);
+  --line: hsl(220 15% 91%);
+  --primary: hsl(230 75% 58%);
+  --primary-strong: hsl(230 80% 45%);
+  --primary-ink: hsl(0 0% 100%);
+  --primary-soft: hsl(230 60% 96%);
+  --violet: hsl(260 70% 60%);
+  --accent: hsl(172 66% 50%);
+  --accent-soft: hsl(172 60% 94%);
+  /* Original gold for fills; a deeper shade for text so it stays legible on white. */
+  --gold-bright: hsl(38 90% 55%);
+  --gold: hsl(33 88% 42%);
+  --gold-soft: hsl(38 90% 94%);
+  --success: hsl(142 70% 38%);
+  --success-soft: hsl(142 60% 94%);
+  --danger: hsl(0 84% 55%);
+  --danger-soft: hsl(0 85% 96%);
+  --flame: hsl(25 95% 55%);
 
-  --hl-ouro: #f6dc8a;
-  --hl-oliva: #cfe3a6;
-  --hl-ceu: #bcdcf3;
-  --hl-rosa: #f5c6d3;
-  --hl-lavanda: #d9cdf2;
+  --hl-ouro: hsl(45 95% 80%);
+  --hl-oliva: hsl(142 55% 84%);
+  --hl-ceu: hsl(200 85% 86%);
+  --hl-rosa: hsl(345 85% 89%);
+  --hl-lavanda: hsl(260 75% 90%);
 
-  --shadow: 0 1px 2px rgb(30 26 21 / 0.06), 0 8px 24px -12px rgb(30 26 21 / 0.18);
+  --glass: hsl(0 0% 100% / 0.72);
+  --grid-line: hsl(230 40% 50% / 0.06);
+  --aurora-a: hsl(230 75% 58% / 0.22);
+  --aurora-b: hsl(260 70% 60% / 0.16);
+  --aurora-c: hsl(38 90% 55% / 0.14);
+  --shadow: 0 1px 3px hsl(220 25% 16% / 0.04), 0 12px 32px -12px hsl(230 75% 58% / 0.16);
+  --shadow-hover: 0 18px 40px -18px hsl(230 75% 58% / 0.32), 0 6px 18px -8px hsl(0 0% 0% / 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #11131b;
-    --surface: #191c27;
-    --surface-2: #222636;
-    --ink: #ece5d8;
-    --muted: #9b9384;
-    --line: #2d3245;
-    --primary: #93a3ff;
-    --primary-strong: #b5c0ff;
-    --primary-ink: #10132a;
-    --primary-soft: #252b4d;
-    --gold: #e3b65c;
-    --gold-bright: #f0c66c;
-    --gold-soft: #3a311d;
-    --success: #6fcf8f;
-    --success-soft: #1d3326;
-    --danger: #ff8a8a;
-    --danger-soft: #3d2222;
-    --flame: #ff8a4c;
+    --bg: hsl(222 24% 8%);
+    --surface: hsl(220 18% 12%);
+    --surface-2: hsl(220 15% 17%);
+    --ink: hsl(220 10% 92%);
+    --muted: hsl(220 10% 60%);
+    --line: hsl(220 12% 21%);
+    --primary: hsl(230 80% 68%);
+    --primary-strong: hsl(230 85% 78%);
+    --primary-ink: hsl(0 0% 100%);
+    --primary-soft: hsl(230 40% 20%);
+    --violet: hsl(265 75% 68%);
+    --accent: hsl(172 66% 48%);
+    --accent-soft: hsl(172 40% 15%);
+    --gold-bright: hsl(38 90% 55%);
+    --gold: hsl(38 90% 60%);
+    --gold-soft: hsl(38 50% 16%);
+    --success: hsl(142 65% 52%);
+    --success-soft: hsl(142 40% 14%);
+    --danger: hsl(0 80% 66%);
+    --danger-soft: hsl(0 40% 16%);
+    --flame: hsl(25 95% 60%);
 
-    --hl-ouro: #5c4a17;
-    --hl-oliva: #3d4d22;
-    --hl-ceu: #1f3f59;
-    --hl-rosa: #5a2a3a;
-    --hl-lavanda: #3d3260;
+    --hl-ouro: hsl(45 60% 26%);
+    --hl-oliva: hsl(142 35% 22%);
+    --hl-ceu: hsl(205 50% 25%);
+    --hl-rosa: hsl(345 40% 26%);
+    --hl-lavanda: hsl(260 40% 30%);
 
-    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+    --glass: hsl(220 18% 12% / 0.66);
+    --grid-line: hsl(230 60% 70% / 0.05);
+    --aurora-a: hsl(230 80% 60% / 0.2);
+    --aurora-b: hsl(265 75% 60% / 0.16);
+    --aurora-c: hsl(38 90% 55% / 0.08);
+    --shadow: 0 1px 2px hsl(0 0% 0% / 0.4), 0 12px 32px -12px hsl(230 80% 40% / 0.35);
+    --shadow-hover: 0 18px 44px -16px hsl(230 80% 60% / 0.35), 0 6px 18px -8px hsl(0 0% 0% / 0.5);
   }
 }
 
@@ -76,6 +96,9 @@
   --color-primary-strong: var(--primary-strong);
   --color-primary-ink: var(--primary-ink);
   --color-primary-soft: var(--primary-soft);
+  --color-violet: var(--violet);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
   --color-gold: var(--gold);
   --color-gold-bright: var(--gold-bright);
   --color-gold-soft: var(--gold-soft);
@@ -89,9 +112,14 @@
   --color-hl-ceu: var(--hl-ceu);
   --color-hl-rosa: var(--hl-rosa);
   --color-hl-lavanda: var(--hl-lavanda);
-  --font-sans: var(--font-ui);
-  --font-serif: var(--font-scripture);
+  --font-sans: var(--font-syne);
+  --font-display: var(--font-syne);
+  --font-scripture: var(--font-literata);
+  --font-mono: var(--font-jetbrains);
   --shadow-card: var(--shadow);
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.125rem;
+  --radius-3xl: 1.5rem;
 }
 
 html {
@@ -101,15 +129,159 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-ui), system-ui, sans-serif;
+  font-family: var(--font-syne), system-ui, sans-serif;
+  letter-spacing: 0.005em;
+  /* Syne defaults to old-style figures ("3oo"); lining figures read better in a UI. */
+  font-variant-numeric: lining-nums;
 }
 
-/* Thin gilded rule used under section titles. */
-.gilded-rule {
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+/* ─── Backdrop: aurora glows over a faint tech grid ─── */
+.app-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 30%, transparent 100%);
+}
+
+.app-backdrop::before,
+.app-backdrop::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(80px);
+}
+
+.app-backdrop::before {
+  width: 46rem;
+  height: 30rem;
+  top: -12rem;
+  left: 10%;
+  background: radial-gradient(closest-side, var(--aurora-a), transparent), radial-gradient(closest-side, var(--aurora-b), transparent);
+  animation: aurora 18s ease-in-out infinite;
+}
+
+.app-backdrop::after {
+  width: 30rem;
+  height: 24rem;
+  top: 4rem;
+  right: -6rem;
+  background: radial-gradient(closest-side, var(--aurora-c), transparent);
+  animation: aurora 22s ease-in-out -6s infinite reverse;
+}
+
+@keyframes aurora {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, 6%, 0) scale(1.08);
+  }
+}
+
+/* ─── Surfaces ─── */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+}
+
+.premium-lift {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
+}
+
+.premium-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+}
+
+/* Light sweep on hover. */
+.sheen {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.sheen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 35%, hsl(0 0% 100% / 0.22) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sheen:hover::before {
+  transform: translateX(120%);
+}
+
+/* Gradient hairline border (used on hero / highlighted cards). */
+.gradient-border {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(135deg, color-mix(in srgb, var(--primary) 70%, transparent), color-mix(in srgb, var(--violet) 50%, transparent), color-mix(in srgb, var(--gold-bright) 60%, transparent)) border-box;
+}
+
+/* ─── Gradients ─── */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--primary), var(--violet));
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, var(--gold-bright), hsl(25 95% 60%));
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, var(--accent), hsl(190 70% 55%));
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--primary), var(--violet), var(--gold-bright), var(--primary));
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 8s ease-in-out infinite;
+}
+
+@keyframes gradient-pan {
+  0%,
+  100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+.glow-primary {
+  box-shadow: 0 8px 24px -8px color-mix(in srgb, var(--primary) 60%, transparent);
+}
+
+/* Thin gradient rule used under section titles. */
+.gradient-rule {
   height: 2px;
   width: 3rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--gold-bright), transparent);
+  background: linear-gradient(90deg, var(--primary), var(--violet), transparent);
 }
 
 .pixelated {
@@ -137,17 +309,24 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
   }
 }
 
 .animate-float {
-  animation: float 3.2s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-rise,
-  .animate-float {
+  .animate-float,
+  .text-gradient,
+  .app-backdrop::before,
+  .app-backdrop::after {
     animation: none;
+  }
+  .premium-lift,
+  .sheen::before {
+    transition: none;
   }
 }
