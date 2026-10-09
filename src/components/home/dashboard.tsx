@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { BookOpen, Check, Flame, Gamepad2, MessageCircle, Shield, Sparkles } from "lucide-react";
+import { BookOpen, Brain, Check, Flame, Gamepad2, MessageCircle, Puzzle, Route, Shield, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useSyncExternalStore } from "react";
 import dailyVerses from "@/content/daily-verses.json";
@@ -9,7 +9,9 @@ import { getCompanion } from "@/domain/companions";
 import { levelProgress } from "@/domain/progression/levels";
 import { FULL_DAY_BONUS, questStatuses } from "@/domain/progression/quests";
 import { effectiveStreak, streakAtRisk } from "@/domain/progression/streak";
+import { isDue } from "@/domain/memory/srs";
 import { dayKey, dayOfYear } from "@/domain/time";
+import { TRAILS, stepHref, stepLabel, trailProgress } from "@/domain/trails";
 import { useScriptura } from "@/lib/client/store";
 import { ContinueReading } from "../bible/reading-progress";
 import { CompanionAvatar } from "../companion-avatar";
@@ -168,6 +170,7 @@ export function HomeDashboard() {
         </Card>
       </div>
 
+      <TodayStrip day={today.day} />
       <DailyVerse day={today.day} />
       <ContinueReading />
 
@@ -180,6 +183,61 @@ export function HomeDashboard() {
         </div>
       </section>
     </div>
+  );
+}
+
+/** The three daily loops: continue a trail, the word of the day, memorization reviews. */
+function TodayStrip({ day }: { day: string }) {
+  const { progress, annotations } = useScriptura();
+  const inProgress = TRAILS.map((t) => ({ trail: t, p: trailProgress(t, progress) }));
+  const next = inProgress.find(({ p }) => p.passed > 0 && !p.completed) ?? inProgress.find(({ p }) => !p.completed);
+  const wordDone = progress.today.day === day && (progress.today.counts.daily_word_solved ?? 0) > 0;
+  const deck = Object.entries(annotations).filter(([, a]) => a.favorite);
+  const due = deck.filter(([, a]) => isDue(a.review ?? undefined, day)).length;
+
+  const tiles = [
+    next
+      ? {
+          href: stepHref(next.trail.steps[next.p.current], next.trail.id),
+          icon: Route,
+          tone: "bg-gradient-primary",
+          title: next.trail.title,
+          text: `Etapa ${next.p.passed + 1}/${next.p.total} · ${stepLabel(next.trail.steps[next.p.current])}`,
+        }
+      : { href: "/trilhas", icon: Route, tone: "bg-gradient-primary", title: "Trilhas dominadas", text: "Revise quando quiser" },
+    {
+      href: "/jogos/palavra-do-dia",
+      icon: wordDone ? Check : Puzzle,
+      tone: "bg-gradient-gold",
+      title: "Palavra do Dia",
+      text: wordDone ? "Resolvida hoje · volte amanhã" : "Descubra em 6 tentativas",
+    },
+    {
+      href: "/memorizar",
+      icon: Brain,
+      tone: "bg-gradient-accent",
+      title: "Memorização",
+      text: deck.length === 0 ? "Monte seu baralho de versículos" : due > 0 ? `${due} versículo${due > 1 ? "s" : ""} para revisar` : "Revisão em dia",
+    },
+  ];
+
+  return (
+    <section>
+      <SectionTitle eyebrow="Seus desafios" title="Hoje no Scriptura" />
+      <div className="grid gap-3 sm:grid-cols-3">
+        {tiles.map(({ href, icon: Icon, tone, title, text }) => (
+          <Link key={title} href={href} className="sheen glass premium-lift flex items-center gap-4 rounded-2xl border border-line p-4">
+            <span className={clsx("grid size-12 shrink-0 place-items-center rounded-xl text-white shadow-card", tone)}>
+              <Icon className="size-6" />
+            </span>
+            <span className="min-w-0">
+              <span className="block truncate font-bold">{title}</span>
+              <span className="block text-sm text-muted">{text}</span>
+            </span>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }
 

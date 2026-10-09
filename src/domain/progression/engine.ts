@@ -1,4 +1,15 @@
 import { chapterKey } from "../bible/books";
+import { CHAPTER_QUIZ_PERFECT_BONUS, CHAPTER_QUIZ_XP_PER_CORRECT } from "../games/chapter-quiz";
+import { dailyWordXp } from "../games/daily-word";
+import {
+  MASTERY_RATIO,
+  TRAIL_COMPLETE_BONUS,
+  TRAIL_MASTERY_BONUS,
+  type Trail,
+  trailFromBossPack,
+  trailProgress,
+  trailsCompletedBy,
+} from "../trails";
 import {
   type Activity,
   type Counts,
@@ -10,6 +21,7 @@ import {
   HIGHLIGHT_XP,
   MENTOR_XP,
   NOTE_XP,
+  REVIEW_XP,
   RULES,
   activityKey,
   isValidActivity,
@@ -74,6 +86,22 @@ function baseReward(activity: Activity, state: ProgressState): { metrics: Metric
       return { metrics: ["daily_verse_read"], lines: [{ label, xp: DAILY_VERSE_XP }] };
     case "mentor_question":
       return { metrics: ["mentor_question"], lines: [{ label, xp: MENTOR_XP }] };
+    case "chapter_quiz_completed": {
+      // Only improvements pay XP, so replaying a quiz can't be farmed.
+      const key = chapterKey(activity.book, activity.chapter);
+      const best = state.chapterQuizzes[key] ?? 0;
+      const { correct, total } = activity.score;
+      const lines = [{ label: `${label} (${correct}/${total})`, xp: Math.max(0, correct - best) * CHAPTER_QUIZ_XP_PER_CORRECT }];
+      if (correct === total && best < total) lines.push({ label: "Gabarito no capítulo", xp: CHAPTER_QUIZ_PERFECT_BONUS });
+      return { metrics: ["chapter_quiz_completed"], lines };
+    }
+    case "daily_word_completed": {
+      const { result } = activity;
+      const text = result.solved ? `${label} (${result.attempts}/6)` : `${label} (não foi dessa vez)`;
+      return { metrics: result.solved ? ["daily_word_solved"] : [], lines: [{ label: text, xp: dailyWordXp(result) }] };
+    }
+    case "verse_reviewed":
+      return { metrics: ["verse_reviewed"], lines: [{ label, xp: REVIEW_XP }] };
   }
 }
 
@@ -85,6 +113,7 @@ function baseReward(activity: Activity, state: ProgressState): { metrics: Metric
 export function applyActivity(previous: ProgressState, activity: Activity, ctx: ApplyContext): ApplyResult {
   const key = activityKey(activity, ctx.day);
   if (!isValidActivity(activity)) return { ok: false, key, reason: "invalid" };
+  if (activity.type === "daily_word_completed" && activity.result.day !== ctx.day) return { ok: false, key, reason: "invalid" };
   if (ctx.alreadyClaimed(key)) return { ok: false, key, reason: "duplicate" };
 
   let state = rollDay(previous, ctx.day);
@@ -104,6 +133,28 @@ export function applyActivity(previous: ProgressState, activity: Activity, ctx: 
     totals = bump(totals, m);
   }
 
+  // Chapter quizzes: keep the best score, then pay trails that this step completed.
+  let chapterQuizzes = state.chapterQuizzes;
+  let completedTrails: Trail[] = [];
+  if (activity.type === "chapter_quiz_completed") {
+    const key = chapterKey(activity.book, activity.chapter);
+    const before = trailsCompletedBy(state, key).map((t) => t.id);
+    chapterQuizzes = { ...chapterQuizzes, [key]: Math.max(chapterQuizzes[key] ?? 0, activity.score.correct) };
+    completedTrails = trailsCompletedBy({ ...state, chapterQuizzes }, key).filter((t) => !before.includes(t.id));
+  }
+  for (const trail of completedTrails) lines.push({ label: `Trilha concluída: ${trail.title}`, xp: TRAIL_COMPLETE_BONUS });
+
+  // The final challenge of a completed trail masters it.
+  let trailsMastered = state.trailsMastered;
+  if (activity.type === "quiz_completed") {
+    const trail = trailFromBossPack(activity.score.packId);
+    const { correct, total } = activity.score;
+    if (trail && !trailsMastered.includes(trail.id) && correct / total >= MASTERY_RATIO && trailProgress(trail, { ...state, chapterQuizzes }).completed) {
+      trailsMastered = [...trailsMastered, trail.id];
+      lines.push({ label: `Trilha dominada: ${trail.title} · relíquia ${trail.relic}`, xp: TRAIL_MASTERY_BONUS });
+    }
+  }
+
   const readChapters =
     activity.type === "chapter_read" && !state.readChapters.includes(chapterKey(activity.book, activity.chapter))
       ? [...state.readChapters, chapterKey(activity.book, activity.chapter)]
@@ -116,6 +167,8 @@ export function applyActivity(previous: ProgressState, activity: Activity, ctx: 
     streak: streakUpdate.streak,
     totals,
     readChapters,
+    chapterQuizzes,
+    trailsMastered,
     today: {
       ...state.today,
       counts,

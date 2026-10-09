@@ -1,4 +1,4 @@
-import { ArrowRight, Clock, Lock } from "lucide-react";
+import { ArrowRight, Brain, Clock, Lock, Puzzle, Route } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionTitle } from "@/components/ui";
@@ -10,10 +10,15 @@ export const metadata: Metadata = { title: "Jogos" };
 const COMING_SOON = [
   { title: "Ligue os Pares", description: "Profecia ↔ cumprimento, personagem ↔ feito, Antigo ↔ Novo Testamento." },
   { title: "Linha do Tempo", description: "Coloque os acontecimentos bíblicos na ordem certa." },
-  { title: "Complete o Versículo", description: "Memorize a Palavra preenchendo as lacunas." },
   { title: "Detetive Bíblico", description: "Pistas progressivas: quanto antes acertar, mais pontos." },
   { title: "Caça-Palavras", description: "Encontre nomes e lugares escondidos." },
   { title: "Histórias Interativas", description: "Viva a história e faça escolhas." },
+];
+
+const DAILY = [
+  { href: "/jogos/palavra-do-dia", title: "Palavra do Dia", description: "Descubra a palavra bíblica em 6 tentativas e compartilhe o resultado.", icon: Puzzle, tone: "bg-gradient-gold" },
+  { href: "/trilhas", title: "Trilhas", description: "Leia, responda 3 perguntas por capítulo e domine uma jornada.", icon: Route, tone: "bg-gradient-primary" },
+  { href: "/memorizar", title: "Memorização", description: "Revise seus versículos favoritos com repetição espaçada.", icon: Brain, tone: "bg-gradient-accent" },
 ];
 
 export default function GamesPage() {
@@ -23,6 +28,26 @@ export default function GamesPage() {
         <h1 className="font-display text-3xl font-bold">Jogos</h1>
         <p className="mt-1 text-muted">Aprenda brincando. Cada rodada vale XP — e um gabarito vale bônus.</p>
       </header>
+
+      <section>
+        <SectionTitle eyebrow="Todos os dias" title="Desafios diários" />
+        <ul className="grid gap-4 sm:grid-cols-3">
+          {DAILY.map(({ href, title, description, icon: Icon, tone }) => (
+            <li key={href}>
+              <Link href={href} className="sheen glass premium-lift group flex h-full flex-col gap-3 rounded-2xl border border-line p-5 shadow-card">
+                <span className={`grid size-12 place-items-center rounded-xl text-white shadow-card ${tone}`}>
+                  <Icon className="size-6" />
+                </span>
+                <h3 className="font-display text-xl font-bold">{title}</h3>
+                <p className="flex-1 text-sm text-muted">{description}</p>
+                <span className="flex items-center gap-1 text-sm font-semibold text-primary">
+                  Abrir <ArrowRight className="size-4 transition group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <section>
         <SectionTitle eyebrow="Disponíveis" title="Desafios de conhecimento" />

@@ -1,4 +1,6 @@
 import { BOOKS, TOTAL_CHAPTERS, chapterKey } from "../bible/books";
+import { CHAPTER_QUIZ_PASS } from "../games/chapter-quiz";
+import { TRAILS } from "../trails";
 import { levelFromXp } from "./levels";
 import type { ProgressState } from "./state";
 
@@ -39,6 +41,10 @@ export const ACHIEVEMENTS: readonly Achievement[] = [
   { id: "quiz-25", title: "Mestre das Perguntas", description: "Complete 25 quizzes.", tier: "ouro", xp: 200, isUnlocked: (s) => total(s, "quiz_completed") >= 25 },
   { id: "relicario", title: "Relicário", description: "Guarde 10 versículos favoritos.", tier: "bronze", xp: 40, isUnlocked: (s) => total(s, "verse_favorited") >= 10 },
   { id: "escriba", title: "Escriba Fiel", description: "Escreva 10 reflexões.", tier: "prata", xp: 80, isUnlocked: (s) => total(s, "note_written") >= 10 },
+  { id: "trilheiro", title: "Trilheiro", description: "Conclua todas as etapas de uma trilha.", tier: "prata", xp: 0, isUnlocked: (s) => TRAILS.some((t) => t.steps.every((k) => (s.chapterQuizzes[k] ?? 0) >= CHAPTER_QUIZ_PASS)) },
+  { id: "mestre-das-trilhas", title: "Mestre das Trilhas", description: "Vença o desafio final de uma trilha.", tier: "ouro", xp: 0, isUnlocked: (s) => s.trailsMastered.length >= 1 },
+  { id: "palavra-7", title: "Decifrador de Pergaminhos", description: "Descubra 7 Palavras do Dia.", tier: "prata", xp: 60, isUnlocked: (s) => total(s, "daily_word_solved") >= 7 },
+  { id: "memoria-25", title: "Escrito no Coração", description: "Faça 25 revisões de versículos.", tier: "prata", xp: 60, isUnlocked: (s) => total(s, "verse_reviewed") >= 25 },
   { id: "nivel-5", title: "Discípulo", description: "Alcance o nível 5.", tier: "bronze", xp: 0, isUnlocked: (s) => levelFromXp(s.xp) >= 5 },
   { id: "nivel-10", title: "Escriba", description: "Alcance o nível 10.", tier: "prata", xp: 0, isUnlocked: (s) => levelFromXp(s.xp) >= 10 },
   { id: "nivel-25", title: "Juiz de Israel", description: "Alcance o nível 25.", tier: "ouro", xp: 0, isUnlocked: (s) => levelFromXp(s.xp) >= 25 },

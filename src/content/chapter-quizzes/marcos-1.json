@@ -1,0 +1,330 @@
+{
+  "mc.1": [
+    {
+      "id": "cq-mc-1-1",
+      "prompt": "Onde Jesus foi batizado por João?",
+      "options": [
+        "No mar da Galiléia",
+        "No rio Jordão",
+        "No tanque de Siloé",
+        "No ribeiro de Cedrom"
+      ],
+      "answer": 1,
+      "explanation": "Jesus veio de Nazaré da Galiléia e foi batizado por João no Jordão. (v. 9)",
+      "verse": 9
+    },
+    {
+      "id": "cq-mc-1-2",
+      "prompt": "Segundo o capítulo, do que João Batista se alimentava?",
+      "options": [
+        "Pão e peixe",
+        "Figos e azeitonas",
+        "Gafanhotos e mel silvestre",
+        "Maná e codornizes"
+      ],
+      "answer": 2,
+      "explanation": "João vestia roupas de pêlos de camelo e comia gafanhotos e mel silvestre. (v. 6)",
+      "verse": 6
+    },
+    {
+      "id": "cq-mc-1-3",
+      "prompt": "Por que o povo da sinagoga de Cafarnaum ficava maravilhado com o ensino de Jesus?",
+      "options": [
+        "Porque citava muitos rabinos antigos",
+        "Porque falava em várias línguas",
+        "Porque ensinava apenas por parábolas",
+        "Ensinava com autoridade, não como os mestres da lei"
+      ],
+      "answer": 3,
+      "explanation": "Jesus ensinava como alguém que tem autoridade, e não como os mestres da lei. (v. 22)",
+      "verse": 22
+    }
+  ],
+  "mc.2": [
+    {
+      "id": "cq-mc-2-1",
+      "prompt": "Como os amigos levaram o paralítico até Jesus, apesar da multidão?",
+      "options": [
+        "Abriram o teto e baixaram a maca",
+        "Entraram pela porta dos fundos",
+        "Pediram que a multidão saísse",
+        "Esperaram Jesus sair da casa"
+      ],
+      "answer": 0,
+      "explanation": "Removeram parte da cobertura e baixaram a maca por uma abertura no teto. (v. 4)",
+      "verse": 4
+    },
+    {
+      "id": "cq-mc-2-2",
+      "prompt": "Quem Jesus chamou quando estava sentado na coletoria?",
+      "options": [
+        "Zaqueu",
+        "Natanael",
+        "Tiago, filho de Zebedeu",
+        "Levi, filho de Alfeu"
+      ],
+      "answer": 3,
+      "explanation": "Jesus viu Levi, filho de Alfeu, na coletoria e disse: \"Siga-me\"; ele o seguiu. (v. 14)",
+      "verse": 14
+    },
+    {
+      "id": "cq-mc-2-3",
+      "prompt": "Que princípio Jesus ensinou aos fariseus depois que os discípulos colheram espigas no sábado?",
+      "options": [
+        "O sábado deve ser guardado acima de tudo",
+        "Os discípulos não precisam mais descansar",
+        "O sábado foi feito por causa do homem",
+        "Só sacerdotes podem colher no sábado"
+      ],
+      "answer": 2,
+      "explanation": "Jesus disse que o sábado foi feito por causa do homem, e não o homem por causa do sábado. (v. 27)",
+      "verse": 27
+    }
+  ],
+  "mc.3": [
+    {
+      "id": "cq-mc-3-1",
+      "prompt": "Quantos Jesus escolheu e designou como apóstolos no monte?",
+      "options": [
+        "Sete",
+        "Setenta",
+        "Doze",
+        "Três"
+      ],
+      "answer": 2,
+      "explanation": "Jesus escolheu doze, designando-os como apóstolos, para estarem com ele e pregarem. (v. 14)",
+      "verse": 14
+    },
+    {
+      "id": "cq-mc-3-2",
+      "prompt": "O que significa \"Boanerges\", nome que Jesus deu a Tiago e João?",
+      "options": [
+        "Filhos do trovão",
+        "Filhos da luz",
+        "Pescadores de homens",
+        "Filhos da consolação"
+      ],
+      "answer": 0,
+      "explanation": "Jesus deu a Tiago e João o nome de Boanerges, que significa filhos do trovão. (v. 17)",
+      "verse": 17
+    },
+    {
+      "id": "cq-mc-3-3",
+      "prompt": "Segundo Jesus, quem é seu irmão, sua irmã e sua mãe?",
+      "options": [
+        "Quem nasceu em Nazaré",
+        "Quem faz a vontade de Deus",
+        "Quem é descendente de Davi",
+        "Quem guarda a tradição dos líderes"
+      ],
+      "answer": 1,
+      "explanation": "Jesus ensinou que fazer a vontade de Deus nos torna parte da sua família. (v. 35)",
+      "verse": 35
+    }
+  ],
+  "mc.4": [
+    {
+      "id": "cq-mc-4-1",
+      "prompt": "O que Jesus fez quando os discípulos o acordaram durante o vendaval?",
+      "options": [
+        "Mandou os discípulos remarem mais",
+        "Voltou com o barco para a praia",
+        "Pediu que tirassem a água do barco",
+        "Repreendeu o vento e acalmou o mar"
+      ],
+      "answer": 3,
+      "explanation": "Jesus repreendeu o vento e disse ao mar \"Aquiete-se! Acalme-se!\", e houve completa bonança. (v. 39)",
+      "verse": 39
+    },
+    {
+      "id": "cq-mc-4-2",
+      "prompt": "A que Jesus compara o Reino de Deus por ser, quando plantado, a menor semente de todas?",
+      "options": [
+        "Um grão de trigo",
+        "Um grão de mostarda",
+        "Uma semente de figueira",
+        "Um grão de cevada"
+      ],
+      "answer": 1,
+      "explanation": "O Reino é como um grão de mostarda, a menor semente, que cresce e se torna a maior hortaliça. (v. 31-32)",
+      "verse": 31
+    },
+    {
+      "id": "cq-mc-4-3",
+      "prompt": "Na explicação da parábola do semeador, o que sufoca a palavra semeada entre espinhos?",
+      "options": [
+        "Preocupações da vida e engano das riquezas",
+        "A perseguição por causa da palavra",
+        "Satanás, que retira a palavra",
+        "A falta de raiz em si mesmas"
+      ],
+      "answer": 0,
+      "explanation": "As preocupações desta vida, o engano das riquezas e outros anseios sufocam a palavra. (v. 19)",
+      "verse": 19
+    }
+  ],
+  "mc.5": [
+    {
+      "id": "cq-mc-5-1",
+      "prompt": "Que nome o espírito imundo deu a si mesmo na região dos gerasenos?",
+      "options": [
+        "Belzebu",
+        "Legião",
+        "Abadom",
+        "Mamom"
+      ],
+      "answer": 1,
+      "explanation": "Ele respondeu: \"Meu nome é Legião, porque somos muitos\". (v. 9)",
+      "verse": 9
+    },
+    {
+      "id": "cq-mc-5-2",
+      "prompt": "Há quanto tempo a mulher que tocou no manto de Jesus sofria de hemorragia?",
+      "options": [
+        "Sete anos",
+        "Três anos",
+        "Doze anos",
+        "Dezoito anos"
+      ],
+      "answer": 2,
+      "explanation": "A mulher vinha sofrendo de uma hemorragia havia doze anos. (v. 25)",
+      "verse": 25
+    },
+    {
+      "id": "cq-mc-5-3",
+      "prompt": "Ao saber que a filha de Jairo havia morrido, o que Jesus disse a ele?",
+      "options": [
+        "Volte e prepare o sepultamento",
+        "Chame os líderes da sinagoga",
+        "Ore e jejue por sua filha",
+        "Não tenha medo; tão-somente creia"
+      ],
+      "answer": 3,
+      "explanation": "Jesus não fez caso da notícia e chamou Jairo a confiar: \"Não tenha medo; tão-somente creia\". (v. 36)",
+      "verse": 36
+    }
+  ],
+  "mc.6": [
+    {
+      "id": "cq-mc-6-1",
+      "prompt": "Com quantos pães e peixes Jesus alimentou os cinco mil homens?",
+      "options": [
+        "Cinco pães e dois peixes",
+        "Sete pães e alguns peixes",
+        "Doze pães e cinco peixes",
+        "Dois pães e cinco peixes"
+      ],
+      "answer": 0,
+      "explanation": "Os discípulos verificaram e disseram que tinham cinco pães e dois peixes. (v. 38)",
+      "verse": 38
+    },
+    {
+      "id": "cq-mc-6-2",
+      "prompt": "Quem orientou a filha de Herodias a pedir a cabeça de João Batista?",
+      "options": [
+        "Herodes",
+        "Filipe",
+        "Um comandante militar",
+        "Herodias, sua mãe"
+      ],
+      "answer": 3,
+      "explanation": "A jovem perguntou à mãe o que pedir, e Herodias respondeu: \"A cabeça de João Batista\". (v. 24)",
+      "verse": 24
+    },
+    {
+      "id": "cq-mc-6-3",
+      "prompt": "Por que Jesus teve compaixão da grande multidão ao sair do barco?",
+      "options": [
+        "Estavam doentes e feridos",
+        "Tinham sido expulsos das cidades",
+        "Eram como ovelhas sem pastor",
+        "Não tinham dinheiro para pão"
+      ],
+      "answer": 2,
+      "explanation": "Jesus teve compaixão porque eram como ovelhas sem pastor, e começou a ensinar-lhes. (v. 34)",
+      "verse": 34
+    }
+  ],
+  "mc.7": [
+    {
+      "id": "cq-mc-7-1",
+      "prompt": "Que palavra Jesus disse ao curar o homem surdo, que significa \"Abra-se\"?",
+      "options": [
+        "Talita cumi",
+        "Corbã",
+        "Efatá",
+        "Hosana"
+      ],
+      "answer": 2,
+      "explanation": "Jesus olhou para os céus, suspirou e disse: \"Efatá!\", que significa: Abra-se. (v. 34)",
+      "verse": 34
+    },
+    {
+      "id": "cq-mc-7-2",
+      "prompt": "Qual era a origem da mulher grega que pediu a Jesus que libertasse sua filha?",
+      "options": [
+        "Siro-fenícia",
+        "Samaritana",
+        "Moabita",
+        "Egípcia"
+      ],
+      "answer": 0,
+      "explanation": "A mulher era grega, siro-fenícia de origem, e rogava a Jesus pela filha. (v. 26)",
+      "verse": 26
+    },
+    {
+      "id": "cq-mc-7-3",
+      "prompt": "Segundo Jesus, o que torna o homem \"impuro\"?",
+      "options": [
+        "Comer sem lavar as mãos",
+        "O que sai de dentro do homem",
+        "Tocar em copos e jarros impuros",
+        "Comer alimentos de estrangeiros"
+      ],
+      "answer": 1,
+      "explanation": "Jesus ensinou que é o que sai do coração do homem que o torna impuro, não o que entra. (v. 20-21)",
+      "verse": 20
+    }
+  ],
+  "mc.8": [
+    {
+      "id": "cq-mc-8-1",
+      "prompt": "Quando Jesus perguntou \"Quem vocês dizem que eu sou?\", o que Pedro respondeu?",
+      "options": [
+        "Tu és João Batista",
+        "Tu és Elias",
+        "Tu és um dos profetas",
+        "Tu és o Cristo"
+      ],
+      "answer": 3,
+      "explanation": "Pedro respondeu: \"Tu és o Cristo\". (v. 29)",
+      "verse": 29
+    },
+    {
+      "id": "cq-mc-8-2",
+      "prompt": "Quantos pães os discípulos tinham quando Jesus alimentou cerca de quatro mil pessoas?",
+      "options": [
+        "Cinco",
+        "Sete",
+        "Doze",
+        "Três"
+      ],
+      "answer": 1,
+      "explanation": "Jesus perguntou quantos pães tinham, e eles responderam: \"Sete\". (v. 5)",
+      "verse": 5
+    },
+    {
+      "id": "cq-mc-8-3",
+      "prompt": "Segundo Jesus, o que deve fazer quem quiser acompanhá-lo?",
+      "options": [
+        "Negar-se a si mesmo e tomar a sua cruz",
+        "Ganhar o mundo inteiro",
+        "Guardar a tradição dos líderes",
+        "Pedir um sinal do céu"
+      ],
+      "answer": 0,
+      "explanation": "Jesus disse: \"negue-se a si mesmo, tome a sua cruz e siga-me\". (v. 34)",
+      "verse": 34
+    }
+  ]
+}

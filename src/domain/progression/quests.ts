@@ -24,6 +24,8 @@ const OTHER_QUESTS: QuestDefinition[] = [
   { id: "reflexao-1", title: "Escriba Moderno", description: "Escreva 1 reflexão sobre um versículo.", metric: "note_written", target: 1, xp: 20, href: "/biblia" },
   { id: "mentor-1", title: "Conselho Sábio", description: "Faça uma pergunta ao seu mentor.", metric: "mentor_question", target: 1, xp: 15, href: "/mentor" },
   { id: "versiculo-dia", title: "Pão Diário", description: "Medite no versículo do dia.", metric: "daily_verse_read", target: 1, xp: 10, href: "/" },
+  { id: "trilha-1", title: "Peregrino da Trilha", description: "Complete o quiz de um capítulo numa trilha.", metric: "chapter_quiz_completed", target: 1, xp: 20, href: "/trilhas" },
+  { id: "palavra-dia", title: "Decifrador", description: "Descubra a Palavra do Dia.", metric: "daily_word_solved", target: 1, xp: 15, href: "/jogos/palavra-do-dia" },
 ];
 
 export const ALL_QUESTS: readonly QuestDefinition[] = [...READING_QUESTS, ...OTHER_QUESTS];

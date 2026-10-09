@@ -25,7 +25,7 @@ function newSessionId() {
  * The quiz engine. One component serves every multiple-choice and
  * true/false pack; the score is recomputed by the server from the answers.
  */
-export function QuizGame({ pack }: { pack: QuizPack }) {
+export function QuizGame({ pack, backHref = "/jogos", backLabel = "Outros jogos" }: { pack: QuizPack; backHref?: string; backLabel?: string }) {
   const { record } = useScriptura();
   const [phase, setPhase] = useState<Phase>({ name: "intro" });
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
@@ -85,7 +85,7 @@ export function QuizGame({ pack }: { pack: QuizPack }) {
           <h1 className="font-display text-3xl font-bold">{pack.title}</h1>
           <p className="mt-2 text-muted">{pack.description}</p>
         </header>
-        {pack.variant === "true-false" ? (
+        {pack.variant === "true-false" || new Set(pack.questions.map((q) => q.difficulty)).size === 1 ? (
           <Button className="w-full py-3 text-base" onClick={() => start("all")}>
             Começar
           </Button>
@@ -124,8 +124,8 @@ export function QuizGame({ pack }: { pack: QuizPack }) {
           <Button variant="secondary" onClick={() => setPhase({ name: "intro" })}>
             <RotateCcw className="size-4" /> Jogar de novo
           </Button>
-          <Link href="/jogos" className="inline-flex items-center rounded-xl px-4 py-2.5 text-sm font-semibold text-primary hover:bg-surface-2">
-            Outros jogos
+          <Link href={backHref} className="inline-flex items-center rounded-xl px-4 py-2.5 text-sm font-semibold text-primary hover:bg-surface-2">
+            {backLabel}
           </Link>
         </div>
       </Card>

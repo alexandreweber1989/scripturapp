@@ -1,0 +1,330 @@
+{
+  "mc.9": [
+    {
+      "id": "cq-mc-9-1",
+      "prompt": "Quem apareceu e conversou com Jesus quando ele foi transfigurado no alto monte?",
+      "options": [
+        "Abraão e Davi",
+        "Elias e Moisés",
+        "Isaías e Jeremias",
+        "Samuel e Eliseu"
+      ],
+      "answer": 1,
+      "explanation": "Na transfiguração, Elias e Moisés apareceram diante dos discípulos e conversavam com Jesus (v. 4)",
+      "verse": 4
+    },
+    {
+      "id": "cq-mc-9-2",
+      "prompt": "Depois que Jesus disse que tudo é possível àquele que crê, o que o pai do menino exclamou?",
+      "options": [
+        "Senhor, não sou digno de que entres em minha casa",
+        "Mestre, eu quero ver!",
+        "Bendito é o que vem em nome do Senhor!",
+        "Creio, ajuda-me a vencer a minha incredulidade!"
+      ],
+      "answer": 3,
+      "explanation": "O pai respondeu com sinceridade, pedindo ajuda para vencer sua incredulidade (v. 24)",
+      "verse": 24
+    },
+    {
+      "id": "cq-mc-9-3",
+      "prompt": "Quando os discípulos discutiram quem era o maior, o que Jesus ensinou sobre ser o primeiro?",
+      "options": [
+        "Deve ser o último e servo de todos",
+        "Deve ocupar o lugar de honra",
+        "Deve expulsar mais demônios",
+        "Deve conhecer melhor a Lei"
+      ],
+      "answer": 0,
+      "explanation": "Jesus inverteu a lógica da grandeza: quem quer ser o primeiro deve ser o último e servo de todos (v. 35)",
+      "verse": 35
+    }
+  ],
+  "mc.10": [
+    {
+      "id": "cq-mc-10-1",
+      "prompt": "Como se chamava o cego que pedia esmolas à beira do caminho, ao saírem de Jericó?",
+      "options": [
+        "Zaqueu",
+        "Lázaro",
+        "Bartimeu",
+        "Jairo"
+      ],
+      "answer": 2,
+      "explanation": "O cego era Bartimeu, filho de Timeu, que estava sentado à beira do caminho pedindo esmolas (v. 46)",
+      "verse": 46
+    },
+    {
+      "id": "cq-mc-10-2",
+      "prompt": "O que Jesus disse que faltava ao homem rico que queria herdar a vida eterna?",
+      "options": [
+        "Vender tudo, dar aos pobres e segui-lo",
+        "Oferecer sacrifícios no templo",
+        "Guardar o sábado com mais rigor",
+        "Jejuar duas vezes por semana"
+      ],
+      "answer": 0,
+      "explanation": "Jesus o amou e disse que lhe faltava uma coisa: vender tudo, dar aos pobres e segui-lo (v. 21)",
+      "verse": 21
+    },
+    {
+      "id": "cq-mc-10-3",
+      "prompt": "Segundo Jesus, com que propósito o Filho do homem veio?",
+      "options": [
+        "Para ser servido pelos discípulos",
+        "Para dominar as nações como os reis",
+        "Para reinar sentado à direita de Davi",
+        "Para servir e dar a vida em resgate por muitos"
+      ],
+      "answer": 3,
+      "explanation": "Jesus apresentou a si mesmo como modelo de serviço: veio para servir e dar a sua vida em resgate por muitos (v. 45)",
+      "verse": 45
+    }
+  ],
+  "mc.11": [
+    {
+      "id": "cq-mc-11-1",
+      "prompt": "Em que animal Jesus montou ao entrar em Jerusalém?",
+      "options": [
+        "Um cavalo branco",
+        "Um camelo",
+        "Uma mula",
+        "Um jumentinho"
+      ],
+      "answer": 3,
+      "explanation": "Os discípulos trouxeram o jumentinho, puseram sobre ele os seus mantos, e Jesus montou (v. 7)",
+      "verse": 7
+    },
+    {
+      "id": "cq-mc-11-2",
+      "prompt": "No templo, Jesus derrubou as mesas dos cambistas e as cadeiras de quem?",
+      "options": [
+        "Dos que vendiam ovelhas",
+        "Dos que vendiam pombas",
+        "Dos sacerdotes",
+        "Dos mestres da lei"
+      ],
+      "answer": 1,
+      "explanation": "Jesus expulsou os que compravam e vendiam, derrubando as mesas dos cambistas e as cadeiras dos que vendiam pombas (v. 15)",
+      "verse": 15
+    },
+    {
+      "id": "cq-mc-11-3",
+      "prompt": "Segundo Jesus, o que devemos fazer quando estivermos orando e tivermos algo contra alguém?",
+      "options": [
+        "Perdoar essa pessoa",
+        "Esperar que ela peça perdão",
+        "Levar o caso aos sacerdotes",
+        "Afastar-se dela para sempre"
+      ],
+      "answer": 0,
+      "explanation": "Jesus ensinou a perdoar ao orar, para que também o Pai celestial perdoe os nossos pecados (v. 25)",
+      "verse": 25
+    }
+  ],
+  "mc.12": [
+    {
+      "id": "cq-mc-12-1",
+      "prompt": "Quanto a viúva pobre colocou na caixa de ofertas?",
+      "options": [
+        "Um denário de prata",
+        "Duas pequeninas moedas de cobre",
+        "Trinta moedas de prata",
+        "Cinco moedas de ouro"
+      ],
+      "answer": 1,
+      "explanation": "A viúva pobre colocou duas pequeninas moedas de cobre, de muito pouco valor (v. 42)",
+      "verse": 42
+    },
+    {
+      "id": "cq-mc-12-2",
+      "prompt": "Que grupo, que diz não haver ressurreição, perguntou a Jesus sobre a mulher dos sete irmãos?",
+      "options": [
+        "Os saduceus",
+        "Os fariseus",
+        "Os herodianos",
+        "Os samaritanos"
+      ],
+      "answer": 0,
+      "explanation": "Foram os saduceus, que dizem que não há ressurreição, que trouxeram essa questão a Jesus (v. 18)",
+      "verse": 18
+    },
+    {
+      "id": "cq-mc-12-3",
+      "prompt": "Além de amar a Deus de todo o coração, qual é o segundo mandamento mais importante, segundo Jesus?",
+      "options": [
+        "Guardar o sábado",
+        "Oferecer sacrifícios e ofertas",
+        "Amar o próximo como a si mesmo",
+        "Pagar imposto a César"
+      ],
+      "answer": 2,
+      "explanation": "Jesus disse que o segundo é amar o próximo como a si mesmo, e que não há mandamento maior do que estes (v. 31)",
+      "verse": 31
+    }
+  ],
+  "mc.13": [
+    {
+      "id": "cq-mc-13-1",
+      "prompt": "O que Jesus disse que aconteceria com as grandes construções do templo?",
+      "options": [
+        "Seriam ampliadas por Herodes",
+        "Durariam para sempre",
+        "Não ficaria pedra sobre pedra",
+        "Seriam entregues aos gentios"
+      ],
+      "answer": 2,
+      "explanation": "Diante das construções magníficas, Jesus afirmou que ali não ficaria pedra sobre pedra (v. 2)",
+      "verse": 2
+    },
+    {
+      "id": "cq-mc-13-2",
+      "prompt": "Quais discípulos perguntaram a Jesus em particular, no monte das Oliveiras, quando essas coisas aconteceriam?",
+      "options": [
+        "Pedro, Tiago, João e André",
+        "Pedro, Tiago e João",
+        "Tomé, Filipe, Mateus e André",
+        "Judas, Pedro, Tiago e Tomé"
+      ],
+      "answer": 0,
+      "explanation": "Pedro, Tiago, João e André lhe perguntaram em particular sobre o tempo e o sinal (v. 3)",
+      "verse": 3
+    },
+    {
+      "id": "cq-mc-13-3",
+      "prompt": "Já que ninguém sabe o dia nem a hora, qual é a principal instrução de Jesus aos discípulos?",
+      "options": [
+        "Calcular a data exata",
+        "Fugir imediatamente para os montes",
+        "Parar de trabalhar e esperar",
+        "Ficar atentos e vigiar"
+      ],
+      "answer": 3,
+      "explanation": "Como não sabemos quando virá esse tempo, Jesus ordena: \"Fiquem atentos! Vigiem!\" (v. 33)",
+      "verse": 33
+    }
+  ],
+  "mc.14": [
+    {
+      "id": "cq-mc-14-1",
+      "prompt": "Quantas vezes Pedro negou Jesus antes que o galo cantasse pela segunda vez?",
+      "options": [
+        "Duas vezes",
+        "Três vezes",
+        "Quatro vezes",
+        "Sete vezes"
+      ],
+      "answer": 1,
+      "explanation": "Quando o galo cantou pela segunda vez, Pedro lembrou que Jesus dissera que ele o negaria três vezes, e chorou (v. 72)",
+      "verse": 72
+    },
+    {
+      "id": "cq-mc-14-2",
+      "prompt": "Por quanto, segundo alguns presentes, o perfume derramado sobre Jesus poderia ser vendido?",
+      "options": [
+        "Trinta denários",
+        "Cem denários",
+        "Trezentos denários",
+        "Mil denários"
+      ],
+      "answer": 2,
+      "explanation": "Alguns, indignados, disseram que o perfume poderia ser vendido por trezentos denários e dado aos pobres (v. 5)",
+      "verse": 5
+    },
+    {
+      "id": "cq-mc-14-3",
+      "prompt": "Na oração no Getsêmani, que atitude Jesus demonstrou diante do Pai?",
+      "options": [
+        "Recusar o cálice a qualquer custo",
+        "Pedir que os anjos o livrassem",
+        "Orar apenas para ser visto",
+        "Submeter-se à vontade do Pai"
+      ],
+      "answer": 3,
+      "explanation": "Mesmo angustiado, Jesus orou: \"não seja o que eu quero, mas sim o que tu queres\" (v. 36)",
+      "verse": 36
+    }
+  ],
+  "mc.15": [
+    {
+      "id": "cq-mc-15-1",
+      "prompt": "Para agradar a multidão, qual prisioneiro Pilatos soltou?",
+      "options": [
+        "Simão de Cirene",
+        "José de Arimatéia",
+        "Barrabás",
+        "Alexandre"
+      ],
+      "answer": 2,
+      "explanation": "Desejando agradar a multidão, Pilatos soltou Barrabás e entregou Jesus para ser crucificado (v. 15)",
+      "verse": 15
+    },
+    {
+      "id": "cq-mc-15-2",
+      "prompt": "Quem os soldados forçaram a carregar a cruz de Jesus?",
+      "options": [
+        "José de Arimatéia",
+        "Simão de Cirene",
+        "Simão Pedro",
+        "Simão, o leproso"
+      ],
+      "answer": 1,
+      "explanation": "Simão de Cirene, pai de Alexandre e de Rufo, foi forçado a carregar a cruz (v. 21)",
+      "verse": 21
+    },
+    {
+      "id": "cq-mc-15-3",
+      "prompt": "Ao ver como Jesus morreu, o que o centurião declarou?",
+      "options": [
+        "Realmente este homem era o Filho de Deus!",
+        "Ele está chamando Elias",
+        "Este é um profeta da Galiléia",
+        "Salvou os outros, mas não a si mesmo"
+      ],
+      "answer": 0,
+      "explanation": "O centurião, ao ouvir o brado e ver como Jesus morreu, reconheceu: \"Realmente este homem era o Filho de Deus!\" (v. 39)",
+      "verse": 39
+    }
+  ],
+  "mc.16": [
+    {
+      "id": "cq-mc-16-1",
+      "prompt": "O que o jovem vestido de branco anunciou às mulheres no sepulcro?",
+      "options": [
+        "O corpo havia sido roubado",
+        "Jesus estava no templo",
+        "Os discípulos levaram o corpo",
+        "Jesus ressuscitou e não estava ali"
+      ],
+      "answer": 3,
+      "explanation": "O jovem disse: \"Ele ressuscitou! Não está aqui. Vejam o lugar onde o haviam posto\" (v. 6)",
+      "verse": 6
+    },
+    {
+      "id": "cq-mc-16-2",
+      "prompt": "A caminho do sepulcro, o que as mulheres perguntavam umas às outras?",
+      "options": [
+        "Onde comprariam especiarias",
+        "Quem removeria a pedra da entrada",
+        "Onde os discípulos estavam",
+        "Quem guardava o sepulcro"
+      ],
+      "answer": 1,
+      "explanation": "Elas se perguntavam: \"Quem removerá para nós a pedra da entrada do sepulcro?\" (v. 3)",
+      "verse": 3
+    },
+    {
+      "id": "cq-mc-16-3",
+      "prompt": "Que mensagem as mulheres deveriam levar aos discípulos e a Pedro?",
+      "options": [
+        "Deveriam esperar no templo",
+        "Deveriam voltar a pescar",
+        "Jesus ia adiante deles para a Galiléia",
+        "Deveriam guardar segredo"
+      ],
+      "answer": 2,
+      "explanation": "O jovem mandou dizer aos discípulos e a Pedro que Jesus ia adiante deles para a Galiléia, onde o veriam (v. 7)",
+      "verse": 7
+    }
+  ]
+}

@@ -1,13 +1,14 @@
 "use client";
 
 import clsx from "clsx";
-import { Heart, Lock, LogIn, LogOut, NotebookPen, Trophy } from "lucide-react";
+import { Gem, Heart, Lock, LogIn, LogOut, NotebookPen, Trophy } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { TOTAL_CHAPTERS, chapterHref, formatReference, parseVerseKey } from "@/domain/bible/books";
 import { COMPANIONS } from "@/domain/companions";
 import { ACHIEVEMENTS, type AchievementTier } from "@/domain/progression/achievements";
 import { levelProgress } from "@/domain/progression/levels";
+import { TRAILS } from "@/domain/trails";
 import { useScriptura } from "@/lib/client/store";
 import { CompanionAvatar } from "../companion-avatar";
 import { ThemeSelector } from "../theme-toggle";
@@ -111,6 +112,31 @@ export function ProfileView() {
                 </div>
                 <p className="text-sm font-semibold">{a.title}</p>
                 <p className="text-xs text-muted">{a.description}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      <section>
+        <SectionTitle eyebrow={`${progress.trailsMastered.length}/${TRAILS.length}`} title="Relíquias" />
+        <ul className="grid gap-3 sm:grid-cols-3">
+          {TRAILS.map((t) => {
+            const owned = progress.trailsMastered.includes(t.id);
+            return (
+              <li key={t.id}>
+                <Link
+                  href={`/trilhas/${t.id}`}
+                  className={clsx("glass premium-lift flex items-center gap-3 rounded-2xl border border-line p-4", !owned && "opacity-60")}
+                >
+                  <span className={clsx("grid size-11 shrink-0 place-items-center rounded-xl", owned ? "bg-gradient-gold text-white shadow-card" : "bg-surface-2 text-muted")}>
+                    {owned ? <Gem className="size-5" /> : <Lock className="size-4" />}
+                  </span>
+                  <span>
+                    <span className="block text-sm font-bold">{t.relic}</span>
+                    <span className="block text-xs text-muted">{owned ? `Trilha ${t.title} dominada` : `Domine a trilha ${t.title}`}</span>
+                  </span>
+                </Link>
               </li>
             );
           })}

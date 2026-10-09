@@ -1,0 +1,29 @@
+[
+  {
+    "id": "primeiros-passos",
+    "title": "Primeiros Passos",
+    "subtitle": "8 capítulos que todo cristão precisa conhecer",
+    "description": "Da criação à cruz: uma viagem pelos textos fundamentais da fé, do Gênesis ao Evangelho de João.",
+    "tone": "primary",
+    "steps": ["gn.1", "gn.3", "ex.14", "ps.23", "is.53", "mt.5", "lc.15", "jo.3"],
+    "relic": "Pergaminho do Peregrino"
+  },
+  {
+    "id": "evangelho-de-marcos",
+    "title": "Evangelho de Marcos",
+    "subtitle": "O livro inteiro, capítulo a capítulo",
+    "description": "O evangelho mais curto e mais rápido: siga Jesus da Galileia até o túmulo vazio em 16 etapas.",
+    "tone": "accent",
+    "steps": ["mc.1", "mc.2", "mc.3", "mc.4", "mc.5", "mc.6", "mc.7", "mc.8", "mc.9", "mc.10", "mc.11", "mc.12", "mc.13", "mc.14", "mc.15", "mc.16"],
+    "relic": "Rede do Pescador de Homens"
+  },
+  {
+    "id": "vida-de-davi",
+    "title": "Vida de Davi",
+    "subtitle": "Pastor, guerreiro, rei e salmista",
+    "description": "Da unção em Belém ao arrependimento diante de Deus: a história do homem segundo o coração de Deus.",
+    "tone": "gold",
+    "steps": ["1sm.16", "1sm.17", "1sm.24", "2sm.6", "2sm.11", "2sm.12", "ps.51", "ps.139"],
+    "relic": "Harpa de Davi"
+  }
+]

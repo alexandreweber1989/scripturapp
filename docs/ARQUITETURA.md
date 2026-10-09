@@ -44,6 +44,11 @@ Modos de execução:
 | Reflexão escrita | 5 | 5 | 1× por versículo por dia |
 | Versículo do dia | 3 | 1 | 1× por dia |
 | Pergunta ao mentor | 3 | 5 | registrada pelo servidor |
+| Quiz do capítulo | 5 por acerto **acima do melhor resultado anterior** + 5 no primeiro gabarito | 20 | por tentativa |
+| Palavra do Dia | 30 na 1ª tentativa, −4 por tentativa extra (mínimo 10); 3 se não acertar | 1 | 1× por dia, sempre a palavra de hoje pelo relógio do servidor |
+| Revisão de versículo | 2 | 20 | 1× por versículo por dia |
+
+- **Trilhas:** cada etapa vencida (2 de 3 no quiz do capítulo) avança a trilha. Concluir todas as etapas dá +50 XP. Acertar 70% no desafio final (10 perguntas sorteadas dos capítulos da trilha) domina a trilha, com +100 XP e uma relíquia. As estrelas vão de 1 a 3 conforme os gabaritos e o domínio.
 
 - **Níveis:** XP total para alcançar o nível *n* = `50 × (n−1)^1.5`. São 50 títulos e 9 patentes.
 - **Sequência:** um dia sem atividade zera a sequência, a menos que haja Escudos da Fé. Ganha-se 1 escudo a cada 7 dias seguidos, com máximo de 2.
@@ -74,6 +79,14 @@ Modos de execução:
 3. Pronto: a página `/jogos/<id>`, a pontuação no servidor e o XP já funcionam.
 
 Motores novos (ligar pares, linha do tempo etc.) seguem o mesmo padrão: um componente de motor, um tipo de pacote e uma função de pontuação em `domain/games`, que o servidor usa para validar.
+
+## Conteúdo gerado com IA
+
+As 96 perguntas dos quizzes de capítulo (`src/content/chapter-quizzes/`) foram redigidas com IA a partir do texto da NVI que está no repositório:
+- cada resposta foi conferida com o versículo que ela cita;
+- a validação de formato roda nos testes (`phase2.test.ts`).
+
+A regra é que esse conteúdo seja **gerado uma vez, versionado e revisado** por uma pessoa, nunca criado na hora para cada usuário. Antes de abrir para o público, vale uma revisão humana, de preferência de alguém da liderança de ensino.
 
 ## Tradução bíblica
 

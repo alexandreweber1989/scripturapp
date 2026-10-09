@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { BookOpen, Flame, Gamepad2, House, MessageCircle, User } from "lucide-react";
+import { BookOpen, Flame, Gamepad2, House, MessageCircle, Route, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
@@ -15,10 +15,13 @@ import { ThemeToggleButton } from "./theme-toggle";
 const NAV = [
   { href: "/", label: "Início", icon: House },
   { href: "/biblia", label: "Bíblia", icon: BookOpen },
+  { href: "/trilhas", label: "Trilhas", icon: Route },
   { href: "/jogos", label: "Jogos", icon: Gamepad2 },
   { href: "/mentor", label: "Mentor", icon: MessageCircle },
   { href: "/perfil", label: "Perfil", icon: User },
 ];
+/** The bottom bar fits five items; Perfil moves to the header on mobile. */
+const MOBILE_NAV = NAV.filter((item) => item.href !== "/perfil");
 
 function isActive(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -28,7 +31,7 @@ function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2" aria-label="Scriptura — início">
       <span className="bg-gradient-primary glow-primary grid size-9 place-items-center rounded-xl font-display text-lg font-extrabold text-white">S</span>
-      <span className="font-display text-xl font-extrabold tracking-tight">
+      <span className="hidden font-display text-xl font-extrabold tracking-tight min-[420px]:inline md:inline">
         Scriptura<span className="text-primary">.</span>
       </span>
     </Link>
@@ -41,7 +44,7 @@ function StatusChips() {
   const streak = effectiveStreak(progress.streak, dayKey());
   const activeToday = progress.streak.lastActiveDay === dayKey();
   return (
-    <div className="flex items-center gap-2 font-mono text-sm font-medium">
+    <div className="flex items-center gap-1.5 whitespace-nowrap font-mono text-sm font-medium">
       <span
         className={clsx("flex items-center gap-1 rounded-full px-2.5 py-1", activeToday ? "border-flame/30 bg-flame/10 text-flame" : "border-line bg-surface-2 text-muted", "border")}
         title={activeToday ? "Sequência mantida hoje" : "Estude hoje para manter a sequência"}
@@ -90,6 +93,16 @@ export function AppShell({ children }: { children: ReactNode }) {
           <div className="flex items-center gap-2">
             <StatusChips />
             <ThemeToggleButton />
+            <Link
+              href="/perfil"
+              className={clsx(
+                "grid size-8 place-items-center rounded-full border md:hidden",
+                isActive(pathname, "/perfil") ? "bg-gradient-primary border-transparent text-white" : "border-line bg-surface-2 text-muted",
+              )}
+              aria-label="Perfil"
+            >
+              <User className="size-4" />
+            </Link>
           </div>
         </header>
 
@@ -100,7 +113,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         className="glass fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-line pb-[env(safe-area-inset-bottom)] md:hidden"
         aria-label="Principal"
       >
-        {NAV.map(({ href, label, icon: Icon }) => (
+        {MOBILE_NAV.map(({ href, label, icon: Icon }) => (
           <Link
             key={href}
             href={href}

@@ -3,11 +3,13 @@
 import clsx from "clsx";
 import { Check, ChevronLeft, ChevronRight, Copy, Heart, MessageCircle, NotebookPen, Type, X } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { chapterKey, formatReference, getBook, verseKey } from "@/domain/bible/books";
+import type { ChapterQuestion } from "@/domain/games/chapter-quiz";
 import { HIGHLIGHT_COLORS, type HighlightColor, useScriptura } from "@/lib/client/store";
 import { Button } from "../ui";
+import { ChapterQuiz } from "./chapter-quiz";
 import { rememberLastRead } from "./reading-progress";
 
 interface Neighbor {
@@ -56,6 +58,7 @@ export function ChapterReader({
   translation,
   prev,
   next,
+  quiz,
 }: {
   bookId: string;
   chapter: number;
@@ -63,9 +66,11 @@ export function ChapterReader({
   translation: string;
   prev: Neighbor | null;
   next: Neighbor | null;
+  quiz?: ChapterQuestion[];
 }) {
   const book = getBook(bookId)!;
   const router = useRouter();
+  const trailId = useSearchParams().get("trilha");
   const { annotations, annotate, record, progress, mode } = useScriptura();
   const [selected, setSelected] = useState<number[]>([]);
   const fontSize = useSyncExternalStore(subscribeFontSize, readFontSize, () => 1);
@@ -211,9 +216,12 @@ export function ChapterReader({
 
       <section className="mt-12 flex flex-col items-center gap-4 rounded-2xl glass border border-line p-6 text-center">
         {completedNow ? (
-          <p className="flex items-center gap-2 font-semibold text-success">
-            <Check className="size-5" /> Leitura registrada. Que a Palavra frutifique em você!
-          </p>
+          <>
+            <p className="flex items-center gap-2 font-semibold text-success">
+              <Check className="size-5" /> Leitura registrada. Que a Palavra frutifique em você!
+            </p>
+            {quiz && <ChapterQuiz bookId={bookId} chapter={chapter} questions={quiz} trailId={trailId} />}
+          </>
         ) : (
           <>
             <p className="text-sm text-muted">{alreadyRead ? "Você já leu este capítulo antes. Ler de novo também conta hoje." : "Terminou a leitura?"}</p>

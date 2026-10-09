@@ -20,6 +20,10 @@ export interface ProgressState {
   totals: Counts;
   /** Chapter keys (`gn.1`) read at least once. */
   readChapters: string[];
+  /** Best score (correct answers) per chapter quiz, by chapter key. */
+  chapterQuizzes: Record<string, number>;
+  /** Trails whose final challenge was passed. */
+  trailsMastered: string[];
   achievements: string[];
 }
 
@@ -35,6 +39,8 @@ export function createProgressState(day: string): ProgressState {
     today: emptyToday(day),
     totals: {},
     readChapters: [],
+    chapterQuizzes: {},
+    trailsMastered: [],
     achievements: [],
   };
 }
@@ -59,6 +65,8 @@ export function normalizeProgressState(raw: unknown, day: string): ProgressState
       today: r.today ? { ...emptyToday(r.today.day ?? day), ...r.today } : base.today,
       totals: r.totals ?? {},
       readChapters: Array.isArray(r.readChapters) ? r.readChapters : [],
+      chapterQuizzes: r.chapterQuizzes && typeof r.chapterQuizzes === "object" ? r.chapterQuizzes : {},
+      trailsMastered: Array.isArray(r.trailsMastered) ? r.trailsMastered : [],
       achievements: Array.isArray(r.achievements) ? r.achievements : [],
     },
     day,

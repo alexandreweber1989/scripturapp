@@ -1,0 +1,338 @@
+[
+  {
+    "word": "JESUS",
+    "hint": "Personagem",
+    "clue": "O nome significa \"o Senhor salva\".",
+    "reference": "Mateus 1:21"
+  },
+  {
+    "word": "MARIA",
+    "hint": "Personagem",
+    "clue": "Guardava todas as coisas no coração.",
+    "reference": "Lucas 2:19"
+  },
+  {
+    "word": "PEDRO",
+    "hint": "Personagem",
+    "clue": "Andou sobre as águas por alguns passos.",
+    "reference": "Mateus 14:29"
+  },
+  {
+    "word": "PAULO",
+    "hint": "Personagem",
+    "clue": "Apóstolo que escreveu aos romanos.",
+    "reference": "Romanos 1:1"
+  },
+  {
+    "word": "SAULO",
+    "hint": "Personagem",
+    "clue": "Viu uma luz no caminho de Damasco.",
+    "reference": "Atos 9:3-4"
+  },
+  {
+    "word": "ESTER",
+    "hint": "Personagem",
+    "clue": "Rainha que salvou seu povo \"para um momento como este\".",
+    "reference": "Ester 4:14"
+  },
+  {
+    "word": "MARTA",
+    "hint": "Personagem",
+    "clue": "Irmã de Maria e de Lázaro, ocupada com o serviço.",
+    "reference": "Lucas 10:40"
+  },
+  {
+    "word": "TIAGO",
+    "hint": "Personagem",
+    "clue": "Filho de Zebedeu, irmão de João.",
+    "reference": "Marcos 1:19"
+  },
+  {
+    "word": "SIMAO",
+    "hint": "Personagem",
+    "clue": "Nome de Pedro antes de Jesus o chamar.",
+    "reference": "Marcos 1:16"
+  },
+  {
+    "word": "JONAS",
+    "hint": "Personagem",
+    "clue": "Profeta que passou três dias no ventre de um peixe.",
+    "reference": "Jonas 1:17"
+  },
+  {
+    "word": "ELIAS",
+    "hint": "Personagem",
+    "clue": "Profeta levado ao céu num redemoinho.",
+    "reference": "2 Reis 2:11"
+  },
+  {
+    "word": "JOSUE",
+    "hint": "Personagem",
+    "clue": "Liderou Israel na conquista de Jericó.",
+    "reference": "Josué 6:2"
+  },
+  {
+    "word": "JUDAS",
+    "hint": "Personagem",
+    "clue": "Entregou Jesus com um beijo.",
+    "reference": "Marcos 14:44-45"
+  },
+  {
+    "word": "GRACA",
+    "hint": "Conceito",
+    "clue": "Pela qual somos salvos, por meio da fé.",
+    "reference": "Efésios 2:8"
+  },
+  {
+    "word": "TRONO",
+    "hint": "Objeto",
+    "clue": "Isaías viu o Senhor assentado num alto e sublime.",
+    "reference": "Isaías 6:1"
+  },
+  {
+    "word": "SALMO",
+    "hint": "Escritura",
+    "clue": "Cântico de louvor; há 150 deles na Bíblia.",
+    "reference": "Salmos 150:6"
+  },
+  {
+    "word": "LEPRA",
+    "hint": "Doença",
+    "clue": "Naamã foi curado dela no rio Jordão.",
+    "reference": "2 Reis 5:14"
+  },
+  {
+    "word": "MIRRA",
+    "hint": "Presente",
+    "clue": "Oferecida pelos magos ao menino Jesus.",
+    "reference": "Mateus 2:11"
+  },
+  {
+    "word": "ALTAR",
+    "hint": "Lugar",
+    "clue": "Noé construiu um depois do dilúvio.",
+    "reference": "Gênesis 8:20"
+  },
+  {
+    "word": "ANJOS",
+    "hint": "Seres",
+    "clue": "Anunciaram aos pastores o nascimento de Jesus.",
+    "reference": "Lucas 2:13"
+  },
+  {
+    "word": "VINHO",
+    "hint": "Bebida",
+    "clue": "Jesus transformou água nele em Caná.",
+    "reference": "João 2:9"
+  },
+  {
+    "word": "PEIXE",
+    "hint": "Alimento",
+    "clue": "Dois deles, com cinco pães, alimentaram uma multidão.",
+    "reference": "Marcos 6:41"
+  },
+  {
+    "word": "REDES",
+    "hint": "Objeto",
+    "clue": "Os pescadores as deixaram para seguir Jesus.",
+    "reference": "Marcos 1:18"
+  },
+  {
+    "word": "BARCO",
+    "hint": "Objeto",
+    "clue": "Jesus dormia nele durante a tempestade.",
+    "reference": "Marcos 4:38"
+  },
+  {
+    "word": "MONTE",
+    "hint": "Lugar",
+    "clue": "Jesus subiu a um para ensinar as bem-aventuranças.",
+    "reference": "Mateus 5:1"
+  },
+  {
+    "word": "SINAI",
+    "hint": "Lugar",
+    "clue": "Monte onde Moisés recebeu a Lei.",
+    "reference": "Êxodo 19:20"
+  },
+  {
+    "word": "EGITO",
+    "hint": "Lugar",
+    "clue": "Terra de onde Deus tirou Israel da escravidão.",
+    "reference": "Êxodo 20:2"
+  },
+  {
+    "word": "BELEM",
+    "hint": "Lugar",
+    "clue": "Cidade onde Jesus nasceu.",
+    "reference": "Mateus 2:1"
+  },
+  {
+    "word": "CANAA",
+    "hint": "Lugar",
+    "clue": "A terra prometida a Abraão.",
+    "reference": "Gênesis 17:8"
+  },
+  {
+    "word": "TARSO",
+    "hint": "Lugar",
+    "clue": "Cidade natal de Paulo.",
+    "reference": "Atos 22:3"
+  },
+  {
+    "word": "MOABE",
+    "hint": "Lugar",
+    "clue": "Terra de onde veio Rute.",
+    "reference": "Rute 1:4"
+  },
+  {
+    "word": "BABEL",
+    "hint": "Lugar",
+    "clue": "Torre onde as línguas foram confundidas.",
+    "reference": "Gênesis 11:9"
+  },
+  {
+    "word": "BETEL",
+    "hint": "Lugar",
+    "clue": "Onde Jacó sonhou com uma escada até o céu.",
+    "reference": "Gênesis 28:19"
+  },
+  {
+    "word": "LIRIO",
+    "hint": "Natureza",
+    "clue": "Jesus mandou observar como crescem os do campo.",
+    "reference": "Mateus 6:28"
+  },
+  {
+    "word": "TRIGO",
+    "hint": "Natureza",
+    "clue": "Na parábola, cresceu junto com o joio.",
+    "reference": "Mateus 13:30"
+  },
+  {
+    "word": "VERBO",
+    "hint": "Conceito",
+    "clue": "\"No princípio era o...\"",
+    "reference": "João 1:1"
+  },
+  {
+    "word": "SANTO",
+    "hint": "Conceito",
+    "clue": "\"Sejam ..., porque eu sou ...\"",
+    "reference": "1 Pedro 1:16"
+  },
+  {
+    "word": "REINO",
+    "hint": "Conceito",
+    "clue": "Busquem em primeiro lugar o ... de Deus.",
+    "reference": "Mateus 6:33"
+  },
+  {
+    "word": "JEJUM",
+    "hint": "Prática",
+    "clue": "Jesus o fez por quarenta dias no deserto.",
+    "reference": "Mateus 4:2"
+  },
+  {
+    "word": "HARPA",
+    "hint": "Instrumento",
+    "clue": "Davi a tocava para acalmar Saul.",
+    "reference": "1 Samuel 16:23"
+  },
+  {
+    "word": "FUNDA",
+    "hint": "Objeto",
+    "clue": "Arma que Davi usou contra Golias.",
+    "reference": "1 Samuel 17:50"
+  },
+  {
+    "word": "PEDRA",
+    "hint": "Objeto",
+    "clue": "Foi removida da entrada do sepulcro.",
+    "reference": "Marcos 16:4"
+  },
+  {
+    "word": "POMBA",
+    "hint": "Animal",
+    "clue": "Voltou à arca com uma folha de oliveira.",
+    "reference": "Gênesis 8:11"
+  },
+  {
+    "word": "CORVO",
+    "hint": "Animal",
+    "clue": "Alimentou Elias junto ao riacho de Querite.",
+    "reference": "1 Reis 17:6"
+  },
+  {
+    "word": "MANTO",
+    "hint": "Objeto",
+    "clue": "Elias o deixou cair e Eliseu o pegou.",
+    "reference": "2 Reis 2:13"
+  },
+  {
+    "word": "COROA",
+    "hint": "Objeto",
+    "clue": "A de espinhos foi posta na cabeça de Jesus.",
+    "reference": "Marcos 15:17"
+  },
+  {
+    "word": "TRIBO",
+    "hint": "Povo",
+    "clue": "Israel tinha doze delas.",
+    "reference": "Gênesis 49:28"
+  },
+  {
+    "word": "SERVO",
+    "hint": "Conceito",
+    "clue": "O Filho do homem veio para servir, não para ser...",
+    "reference": "Marcos 10:45"
+  },
+  {
+    "word": "AMIGO",
+    "hint": "Conceito",
+    "clue": "Ninguém tem maior amor do que dar a vida pelos seus...",
+    "reference": "João 15:13"
+  },
+  {
+    "word": "TERRA",
+    "hint": "Criação",
+    "clue": "\"No princípio Deus criou os céus e a...\"",
+    "reference": "Gênesis 1:1"
+  },
+  {
+    "word": "NUVEM",
+    "hint": "Natureza",
+    "clue": "De dia, ela guiava Israel no deserto.",
+    "reference": "Êxodo 13:21"
+  },
+  {
+    "word": "CHUVA",
+    "hint": "Natureza",
+    "clue": "Caiu por quarenta dias e quarenta noites.",
+    "reference": "Gênesis 7:12"
+  },
+  {
+    "word": "SARCA",
+    "hint": "Natureza",
+    "clue": "Ardia em fogo sem se consumir.",
+    "reference": "Êxodo 3:2"
+  },
+  {
+    "word": "MAGOS",
+    "hint": "Personagens",
+    "clue": "Vieram do Oriente seguindo uma estrela.",
+    "reference": "Mateus 2:1-2"
+  },
+  {
+    "word": "OUVIR",
+    "hint": "Ação",
+    "clue": "\"Quem tem ouvidos para..., ouça!\"",
+    "reference": "Marcos 4:9"
+  },
+  {
+    "word": "LOUVE",
+    "hint": "Ação",
+    "clue": "\"Tudo o que tem vida ... o Senhor!\"",
+    "reference": "Salmos 150:6"
+  }
+]
