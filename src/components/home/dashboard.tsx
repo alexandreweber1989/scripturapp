@@ -1,21 +1,28 @@
 "use client";
 
 import clsx from "clsx";
-import { BookOpen, Brain, Check, Flame, Gamepad2, MessageCircle, Puzzle, Route, Shield, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Brain, Check, Flame, Puzzle, Route, Shield, Sparkles, UserPlus } from "lucide-react";
 import Link from "next/link";
 import { useSyncExternalStore } from "react";
 import dailyVerses from "@/content/daily-verses.json";
 import { getCompanion } from "@/domain/companions";
+import { CHAPTER_QUIZ_PERFECT_BONUS, CHAPTER_QUIZ_XP_PER_CORRECT } from "@/domain/games/chapter-quiz";
+import { CHAPTER_XP, REVIEW_XP } from "@/domain/progression/activities";
 import { levelProgress } from "@/domain/progression/levels";
 import { FULL_DAY_BONUS, questStatuses } from "@/domain/progression/quests";
-import { effectiveStreak, streakAtRisk } from "@/domain/progression/streak";
+import { MAX_SHIELDS, effectiveStreak, streakAtRisk } from "@/domain/progression/streak";
 import { isDue } from "@/domain/memory/srs";
-import { dayKey, dayOfYear } from "@/domain/time";
+import { daysBetween, dayKey, dayOfYear } from "@/domain/time";
 import { TRAILS, stepHref, stepLabel, trailProgress } from "@/domain/trails";
 import { useScriptura } from "@/lib/client/store";
 import { ContinueReading } from "../bible/reading-progress";
 import { CompanionAvatar } from "../companion-avatar";
-import { Button, Card, ProgressBar, SectionTitle, Skeleton } from "../ui";
+import { TrailCard } from "../trails/trail-views";
+import { Button, ButtonLink, SectionTitle, Skeleton } from "../ui";
+
+/** Most XP a trail step pays: reading plus a perfect chapter quiz. */
+const STEP_XP = CHAPTER_XP + 3 * CHAPTER_QUIZ_XP_PER_CORRECT + CHAPTER_QUIZ_PERFECT_BONUS;
+const WEEKDAY_INITIALS = ["D", "S", "T", "Q", "Q", "S", "S"];
 
 function greeting(hour: number) {
   if (hour < 5) return "Boa madrugada";
@@ -42,113 +49,83 @@ function useToday(): { day: string; hour: number } | null {
   return { day, hour: Number(hour) };
 }
 
+const asDate = (day: string) => new Date(`${day}T12:00:00Z`);
+
+function shiftDay(day: string, by: number): string {
+  return new Date(asDate(day).getTime() + by * 86_400_000).toISOString().slice(0, 10);
+}
+
+function longDate(day: string) {
+  return new Intl.DateTimeFormat("pt-BR", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" }).format(asDate(day));
+}
+
 export function HomeDashboard() {
   const { mode, profile, progress } = useScriptura();
   const today = useToday();
-  const companion = getCompanion(profile.companionId);
 
   if (mode === "loading" || !today) {
     return (
       <div className="space-y-4">
-        <Skeleton className="h-44" />
-        <div className="grid gap-4 md:grid-cols-2">
-          <Skeleton className="h-56" />
-          <Skeleton className="h-56" />
+        <Skeleton className="h-64" />
+        <div className="grid gap-3 md:grid-cols-3">
+          <Skeleton className="h-20" />
+          <Skeleton className="h-20" />
+          <Skeleton className="h-20" />
         </div>
       </div>
     );
   }
 
-  // The companion's line rotates through the day.
-  const messageIndex = (dayOfYear(today.day) + today.hour) % companion.messages.length;
-  const level = levelProgress(progress.xp);
-  const streak = effectiveStreak(progress.streak, today.day);
-  const atRisk = streakAtRisk(progress.streak, today.day);
+  const companion = getCompanion(profile.companionId);
   const counts = progress.today.day === today.day ? progress.today.counts : {};
   const quests = questStatuses(today.day, counts);
+  const questsLeft = quests.filter((q) => !q.completed).length;
+  // The companion's line rotates through the day.
+  const message = companion.messages[(dayOfYear(today.day) + today.hour) % companion.messages.length];
+  const next = nextTrailStep(progress);
 
   return (
     <div className="space-y-8">
-      {/* Hero */}
-      <section className="gradient-border relative overflow-hidden rounded-3xl p-6 shadow-card">
-        <div className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-violet/20 blur-3xl" aria-hidden />
-        <div className="pointer-events-none absolute -bottom-28 left-10 size-64 rounded-full bg-primary/15 blur-3xl" aria-hidden />
-        <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center">
-          <div className="relative shrink-0 self-center">
-            <div className="absolute inset-3 rounded-full bg-gradient-primary opacity-30 blur-2xl" aria-hidden />
-            <CompanionAvatar id={companion.id} size={112} float className="relative" />
-          </div>
-          <div className="min-w-0 flex-1 space-y-3">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">{greeting(today.hour)},</p>
-              <h1 className="text-gradient font-display text-4xl font-extrabold">{profile.displayName}</h1>
-            </div>
-            <p className="glass rounded-2xl rounded-tl-sm border border-line px-4 py-2 text-sm">
-              <span className="font-semibold text-primary">{companion.name}:</span> {companion.messages[messageIndex]}
-            </p>
-            <div>
-              <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2 text-sm">
-                <span className="font-bold">
-                  Nível {level.level} · <span className="text-primary">{level.rank.name}</span>
-                </span>
-                <span className="font-mono text-xs text-muted">
-                  {level.current}/{level.needed} XP
-                </span>
-              </div>
-              <ProgressBar value={level.ratio} className="h-2.5" />
-              <p className="mt-1 text-xs italic text-muted">“{level.title}”</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {mode === "guest" && (
-        <Card className="flex flex-col items-start justify-between gap-3 border-primary/30 sm:flex-row sm:items-center">
-          <p className="text-sm">
-            Você está no <strong>modo visitante</strong>: seu progresso fica salvo só neste aparelho.
-          </p>
-          <Link href="/entrar" className="text-sm font-semibold text-primary">
-            Criar conta grátis →
+        <div className="glass flex items-center justify-between gap-3 rounded-full border border-dashed border-line py-1 pl-4 pr-1 text-xs text-muted sm:text-sm">
+          <span>
+            <strong className="text-ink">Modo visitante.</strong> Seu progresso fica só neste aparelho.
+          </span>
+          <Link href="/entrar" className="flex min-h-10 shrink-0 items-center gap-1.5 rounded-full px-3 font-bold text-primary hover:bg-primary-soft">
+            <UserPlus className="size-4" /> Criar conta
           </Link>
-        </Card>
+        </div>
       )}
 
-      <div className="grid gap-6 md:grid-cols-2">
-        {/* Streak */}
-        <Card className="space-y-4">
-          <div className="flex items-center gap-4">
-            <div className={clsx("grid size-14 place-items-center rounded-2xl", streak > 0 ? "bg-gradient-gold text-white glow-primary" : "bg-surface-2 text-muted")}>
-              <Flame className="size-8" />
-            </div>
-            <div>
-              <p className="font-display text-3xl font-extrabold">
-                <span className="font-mono">{streak}</span> {streak === 1 ? "dia" : "dias"}
-              </p>
-              <p className="text-sm text-muted">Fogo Santo · recorde {progress.streak.longest}</p>
-            </div>
-          </div>
-          <p className="text-sm">
-            {progress.streak.lastActiveDay === today.day
-              ? "Sequência garantida hoje. Volte amanhã!"
-              : atRisk
-                ? "Faça qualquer atividade hoje para não perder sua sequência."
-                : "Comece hoje uma nova sequência de estudos."}
-          </p>
-          <div className="flex items-center gap-2 text-sm text-muted">
-            {[0, 1].map((i) => (
-              <Shield key={i} className={clsx("size-5", i < progress.streak.shields ? "fill-primary/20 text-primary" : "opacity-30")} />
-            ))}
-            <span>Escudos da Fé: protegem um dia perdido (ganhe 1 a cada 7 dias seguidos)</span>
-          </div>
-        </Card>
+      <Hero
+        day={today.day}
+        hello={`${greeting(today.hour)},`}
+        name={profile.displayName}
+        subtitle={
+          questsLeft === 0
+            ? "Dia completo! Todas as missões feitas. Volte amanhã para manter a ofensiva."
+            : `${questsLeft === 1 ? "Falta 1 missão" : `Faltam ${questsLeft} missões`} para fechar o dia.`
+        }
+        cta={next ? { href: next.href, label: next.passed > 0 ? "Continuar trilha" : "Começar uma trilha" } : { href: "/biblia", label: "Ler a Bíblia" }}
+      />
 
-        {/* Quests */}
-        <Card className="space-y-3">
+      <TodayStrip day={today.day} />
+
+      <section className="flex items-end gap-3">
+        <CompanionAvatar id={companion.id} size={88} float className="shrink-0" />
+        <p className="glass mb-4 flex-1 rounded-2xl rounded-bl-sm border border-line px-4 py-3 text-sm shadow-card sm:text-base">
+          <span className="block font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-violet">{companion.name}</span>
+          {message}
+        </p>
+      </section>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        <section className="glass rounded-2xl border border-line p-5 shadow-card">
           <SectionTitle eyebrow="Renovam à meia-noite" title="Missões do dia" />
-          <ul className="space-y-2.5">
+          <ul className="space-y-1.5">
             {quests.map(({ quest, progress: done, completed }) => (
               <li key={quest.id}>
-                <Link href={quest.href} className={clsx("flex items-center gap-3 rounded-xl p-2 transition hover:bg-surface-2", completed && "opacity-70")}>
+                <Link href={quest.href} className={clsx("flex min-h-12 items-center gap-3 rounded-xl p-2 transition hover:bg-surface-2", completed && "opacity-70")}>
                   <span className={clsx("grid size-9 shrink-0 place-items-center rounded-full", completed ? "bg-gradient-accent text-white" : "bg-primary-soft text-primary")}>
                     {completed ? <Check className="size-5" /> : <Sparkles className="size-4" />}
                   </span>
@@ -166,76 +143,211 @@ export function HomeDashboard() {
               </li>
             ))}
           </ul>
-          <p className="text-xs text-muted">Complete as três para ganhar +{FULL_DAY_BONUS} XP de bônus.</p>
-        </Card>
+          <p className="mt-2 text-xs text-muted">Complete as três para ganhar +{FULL_DAY_BONUS} XP de bônus.</p>
+        </section>
+        <DailyVerse day={today.day} />
       </div>
 
-      <TodayStrip day={today.day} />
-      <DailyVerse day={today.day} />
-      <ContinueReading />
-
       <section>
-        <SectionTitle title="Para onde vamos hoje?" />
-        <div className="grid gap-3 sm:grid-cols-3">
-          <Shortcut href="/biblia" icon={<BookOpen className="size-6" />} title="Ler a Bíblia" text="10 XP por capítulo" tone="primary" />
-          <Shortcut href="/jogos" icon={<Gamepad2 className="size-6" />} title="Jogar" text="Quiz e desafios" tone="gold" />
-          <Shortcut href="/mentor" icon={<MessageCircle className="size-6" />} title={`Falar com ${companion.name}`} text="Tire suas dúvidas" tone="accent" />
-        </div>
+        <SectionTitle
+          title="Suas trilhas"
+          action={
+            <Link href="/trilhas" className="flex min-h-11 items-center text-sm font-bold text-primary">
+              Ver todas
+            </Link>
+          }
+        />
+        <ul className="-mx-4 grid snap-x snap-mandatory auto-cols-[minmax(15rem,78%)] grid-flow-col gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:auto-cols-auto sm:grid-flow-row sm:grid-cols-3 sm:overflow-visible sm:px-0">
+          {TRAILS.map((trail) => (
+            <li key={trail.id} className="snap-start">
+              <TrailCard trail={trail} compact />
+            </li>
+          ))}
+        </ul>
       </section>
+
+      <ContinueReading />
     </div>
+  );
+}
+
+function nextTrailStep(progress: ReturnType<typeof useScriptura>["progress"]) {
+  const all = TRAILS.map((trail) => ({ trail, p: trailProgress(trail, progress) }));
+  const pick = all.find(({ p }) => p.passed > 0 && !p.completed) ?? all.find(({ p }) => !p.completed);
+  if (!pick) return null;
+  const key = pick.trail.steps[pick.p.current];
+  return { trail: pick.trail, key, passed: pick.p.passed, total: pick.p.total, href: stepHref(key, pick.trail.id) };
+}
+
+function Hero({ day, hello, name, subtitle, cta }: { day: string; hello: string; name: string; subtitle: string; cta: { href: string; label: string } }) {
+  const { progress } = useScriptura();
+  const level = levelProgress(progress.xp);
+  const streak = effectiveStreak(progress.streak, day);
+  const atRisk = streakAtRisk(progress.streak, day);
+  const { lastActiveDay, current } = progress.streak;
+
+  // The last 7 days, marking those inside the current run.
+  const week = Array.from({ length: 7 }, (_, i) => {
+    const d = shiftDay(day, i - 6);
+    const back = lastActiveDay ? daysBetween(d, lastActiveDay) : -1;
+    return { day: d, label: WEEKDAY_INITIALS[asDate(d).getUTCDay()], active: back >= 0 && back < current, today: d === day };
+  });
+
+  return (
+    <section className="glass relative grid grid-cols-1 gap-6 overflow-hidden rounded-3xl border border-line p-5 shadow-card sm:p-6 md:grid-cols-[1.3fr_1fr] md:p-8">
+      <div className="pointer-events-none absolute -right-20 -top-28 size-80 rounded-full bg-violet/20 blur-3xl" aria-hidden />
+      <div className="relative flex min-w-0 flex-col items-start gap-2">
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">{longDate(day)}</p>
+        <h1 className="break-words font-display text-[clamp(1.75rem,8vw,3rem)] font-extrabold leading-[1.02] tracking-tight">
+          {hello} <span className="text-gradient">{name}</span>
+        </h1>
+        <p className="mb-2 max-w-md text-muted">{subtitle}</p>
+        <ButtonLink href={cta.href} className="min-h-12 px-5 text-base">
+          {cta.label} <ArrowRight className="size-5" />
+        </ButtonLink>
+      </div>
+
+      <div className="relative grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-x-4 gap-y-3">
+        <div
+          className="size-24 rounded-full p-1.5"
+          style={{ background: `conic-gradient(var(--primary), var(--violet) ${level.ratio * 100}%, var(--surface-2) ${level.ratio * 100}%)` }}
+          role="img"
+          aria-label={`Nível ${level.level}, ${Math.round(level.ratio * 100)}% para o próximo`}
+        >
+          <div className="grid size-full place-items-center rounded-full bg-bg">
+            <div className="text-center leading-none">
+              <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-primary">Nível</span>
+              <span className="font-mono text-3xl font-bold">{level.level}</span>
+            </div>
+          </div>
+        </div>
+        <div className="min-w-0">
+          <p className="font-display text-lg font-extrabold leading-tight">{level.rank.name}</p>
+          <p className="truncate text-sm italic text-muted">“{level.title}”</p>
+          <p className="font-mono text-xs text-muted">
+            {level.current}/{level.needed} XP
+          </p>
+        </div>
+
+        <div className="col-span-2 space-y-2 rounded-2xl border border-gold-bright/30 bg-gold-soft p-3">
+          <div className="flex items-center gap-2">
+            <Flame className="size-5 text-gold-bright" aria-hidden />
+            <span className="font-mono font-bold text-gold">
+              {streak} {streak === 1 ? "dia" : "dias"}
+            </span>
+            <span className="text-sm text-muted">de ofensiva</span>
+            <span className="ml-auto flex gap-0.5" title="Escudos da Fé: protegem um dia perdido (ganhe 1 a cada 7 dias seguidos)">
+              {Array.from({ length: MAX_SHIELDS }, (_, i) => (
+                <Shield key={i} className={clsx("size-4", i < progress.streak.shields ? "fill-primary/20 text-primary" : "text-muted opacity-40")} aria-hidden />
+              ))}
+              <span className="sr-only">{progress.streak.shields} escudos</span>
+            </span>
+          </div>
+          <ol className="grid grid-cols-7 gap-1.5" aria-label="Últimos 7 dias">
+            {week.map((d) => (
+              <li
+                key={d.day}
+                className={clsx(
+                  "grid h-8 place-items-center rounded-lg border font-mono text-xs font-bold",
+                  d.active ? "bg-gradient-gold border-transparent text-[#2a1d05]" : d.today ? "border-2 border-dashed border-gold-bright text-gold" : "border-line bg-surface text-muted",
+                )}
+                aria-label={`${d.day}${d.active ? ": estudou" : ""}`}
+              >
+                {d.label}
+              </li>
+            ))}
+          </ol>
+          {atRisk && <p className="text-xs font-semibold text-gold">Estude hoje para não perder a ofensiva.</p>}
+        </div>
+      </div>
+    </section>
   );
 }
 
 /** The three daily loops: continue a trail, the word of the day, memorization reviews. */
 function TodayStrip({ day }: { day: string }) {
   const { progress, annotations } = useScriptura();
-  const inProgress = TRAILS.map((t) => ({ trail: t, p: trailProgress(t, progress) }));
-  const next = inProgress.find(({ p }) => p.passed > 0 && !p.completed) ?? inProgress.find(({ p }) => !p.completed);
+  const next = nextTrailStep(progress);
   const wordDone = progress.today.day === day && (progress.today.counts.daily_word_solved ?? 0) > 0;
   const deck = Object.entries(annotations).filter(([, a]) => a.favorite);
   const due = deck.filter(([, a]) => isDue(a.review ?? undefined, day)).length;
+  const reviewedToday = progress.today.day === day && (progress.today.counts.verse_reviewed ?? 0) > 0;
 
   const tiles = [
     next
       ? {
-          href: stepHref(next.trail.steps[next.p.current], next.trail.id),
-          icon: Route,
+          href: next.href,
+          icon: BookOpen,
           tone: "bg-gradient-primary",
-          title: next.trail.title,
-          text: `Etapa ${next.p.passed + 1}/${next.p.total} · ${stepLabel(next.trail.steps[next.p.current])}`,
+          eyebrow: `${next.trail.title} · etapa ${next.passed + 1}/${next.total}`,
+          title: `Ler ${stepLabel(next.key)}`,
+          meta: "Leitura + quiz de 3 perguntas",
+          pill: `até +${STEP_XP} XP`,
+          done: false,
         }
-      : { href: "/trilhas", icon: Route, tone: "bg-gradient-primary", title: "Trilhas dominadas", text: "Revise quando quiser" },
+      : { href: "/trilhas", icon: Route, tone: "bg-gradient-primary", eyebrow: "Trilhas", title: "Todas concluídas", meta: "Revise quando quiser", pill: "", done: true },
     {
       href: "/jogos/palavra-do-dia",
-      icon: wordDone ? Check : Puzzle,
-      tone: "bg-gradient-gold",
+      icon: Puzzle,
+      tone: "bg-gradient-gold text-[#2a1d05]",
+      eyebrow: "Desafio diário",
       title: "Palavra do Dia",
-      text: wordDone ? "Resolvida hoje · volte amanhã" : "Descubra em 6 tentativas",
+      meta: wordDone ? "Resolvida · volte amanhã" : "Adivinhe em 6 tentativas",
+      pill: "até +30 XP",
+      done: wordDone,
     },
     {
       href: "/memorizar",
       icon: Brain,
       tone: "bg-gradient-accent",
-      title: "Memorização",
-      text: deck.length === 0 ? "Monte seu baralho de versículos" : due > 0 ? `${due} versículo${due > 1 ? "s" : ""} para revisar` : "Revisão em dia",
+      eyebrow: "Memorização",
+      title: deck.length === 0 ? "Monte seu baralho" : due > 0 ? `Revisar ${due} versículo${due > 1 ? "s" : ""}` : "Revisão em dia",
+      meta: "Repetição espaçada",
+      pill: `+${REVIEW_XP} XP/cartão`,
+      done: deck.length > 0 && due === 0 && reviewedToday,
     },
   ];
+  const doneCount = tiles.filter((t) => t.done).length;
 
   return (
     <section>
-      <SectionTitle eyebrow="Seus desafios" title="Hoje no Scriptura" />
-      <div className="grid gap-3 sm:grid-cols-3">
-        {tiles.map(({ href, icon: Icon, tone, title, text }) => (
-          <Link key={title} href={href} className="sheen glass premium-lift flex items-center gap-4 rounded-2xl border border-line p-4">
-            <span className={clsx("grid size-12 shrink-0 place-items-center rounded-xl text-white shadow-card", tone)}>
-              <Icon className="size-6" />
-            </span>
-            <span className="min-w-0">
-              <span className="block truncate font-bold">{title}</span>
-              <span className="block text-sm text-muted">{text}</span>
-            </span>
-          </Link>
-        ))}
+      <SectionTitle
+        title="Hoje no Scriptura"
+        action={
+          <span className="font-mono text-xs text-muted">
+            {doneCount}/{tiles.length} feitas
+          </span>
+        }
+      />
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+        {tiles.map(({ href, icon: Icon, tone, eyebrow, title, meta, pill, done }) => {
+          const badge = (done || pill) && (
+            <span className="shrink-0 whitespace-nowrap rounded-full bg-gold-soft px-2.5 py-1 font-mono text-[11px] font-bold text-gold">{done ? "✓ feito" : pill}</span>
+          );
+          return (
+            <Link
+              key={eyebrow}
+              href={href}
+              className={clsx(
+                "glass premium-lift flex min-h-20 items-center gap-3 rounded-2xl border border-line p-3 pr-4 shadow-card md:flex-col md:items-stretch md:p-4",
+                done && "opacity-65",
+              )}
+            >
+              <span className="flex items-center justify-between gap-2">
+                <span className={clsx("grid size-12 shrink-0 place-items-center rounded-xl text-white shadow-card", tone)}>
+                  <Icon className="size-6" />
+                </span>
+                <span className="hidden md:inline">{badge}</span>
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block truncate font-mono text-[10px] uppercase tracking-[0.16em] text-primary">{eyebrow}</span>
+                <span className="block truncate font-bold">{title}</span>
+                <span className="block truncate text-xs text-muted">{meta}</span>
+              </span>
+              <span className="md:hidden">{badge}</span>
+            </Link>
+          );
+        })}
       </div>
     </section>
   );
@@ -246,51 +358,21 @@ function DailyVerse({ day }: { day: string }) {
   const verse = dailyVerses[(dayOfYear(day) - 1) % dailyVerses.length];
   const done = progress.today.day === day && (progress.today.counts.daily_verse_read ?? 0) > 0;
   return (
-    <section className="rounded-3xl glass gradient-border p-6 text-center shadow-card sm:p-8">
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Versículo do dia</p>
-      <blockquote className="mx-auto mt-3 max-w-2xl font-scripture text-xl leading-relaxed sm:text-2xl">“{verse.text}”</blockquote>
-      <p className="mt-3 font-semibold text-primary">{verse.reference}</p>
-      <div className="mt-5">
+    <section className="glass gradient-border flex flex-col justify-center rounded-2xl p-6 text-center shadow-card">
+      <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">Versículo do dia</p>
+      <blockquote className="mx-auto mt-3 max-w-xl font-scripture text-lg leading-relaxed sm:text-xl">“{verse.text}”</blockquote>
+      <p className="mt-2 font-semibold text-primary">{verse.reference}</p>
+      <div className="mt-4">
         {done ? (
           <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-success">
             <Check className="size-4" /> Você meditou neste versículo hoje
           </p>
         ) : (
-          <Button variant="gold" onClick={() => record({ type: "daily_verse_read" })}>
+          <Button variant="gold" className="min-h-11" onClick={() => record({ type: "daily_verse_read" })}>
             Meditei nesta palavra
           </Button>
         )}
       </div>
     </section>
-  );
-}
-
-const SHORTCUT_TONE = {
-  primary: "bg-gradient-primary",
-  gold: "bg-gradient-gold",
-  accent: "bg-gradient-accent",
-};
-
-function Shortcut({
-  href,
-  icon,
-  title,
-  text,
-  tone,
-}: {
-  href: string;
-  icon: React.ReactNode;
-  title: string;
-  text: string;
-  tone: keyof typeof SHORTCUT_TONE;
-}) {
-  return (
-    <Link href={href} className="sheen flex items-center gap-4 rounded-2xl glass border border-line p-4 premium-lift">
-      <span className={clsx("grid size-12 place-items-center rounded-xl text-white shadow-card", SHORTCUT_TONE[tone])}>{icon}</span>
-      <span>
-        <span className="block font-bold">{title}</span>
-        <span className="text-sm text-muted">{text}</span>
-      </span>
-    </Link>
   );
 }

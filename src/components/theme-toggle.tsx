@@ -11,7 +11,7 @@ export function ThemeToggleButton() {
   return (
     <button
       onClick={() => setThemePreference(dark ? "light" : "dark")}
-      className="grid size-8 place-items-center rounded-full border border-line bg-surface-2 text-muted transition hover:text-primary"
+      className="grid size-10 place-items-center rounded-full border border-line bg-surface-2 text-muted transition hover:text-primary"
       aria-label={dark ? "Usar tema claro" : "Usar tema escuro"}
       title={dark ? "Tema claro" : "Tema escuro"}
     >

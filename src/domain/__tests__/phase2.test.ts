@@ -83,6 +83,10 @@ describe("chapter quiz", () => {
     const better = apply(same.state, { type: "chapter_quiz_completed", book: "jo", chapter: 3, sessionId: "session-a3", score: { correct: 3, total: 3 } });
     expect(better.reward.lines.slice(0, 2).map((l) => l.xp)).toEqual([CHAPTER_QUIZ_XP_PER_CORRECT, CHAPTER_QUIZ_PERFECT_BONUS]);
     expect(better.state.chapterQuizzes["jo.3"]).toBe(3);
+    expect(first.reward.perfectQuiz).toBe(false);
+    expect(better.reward.perfectQuiz).toBe(true);
+    const again = apply(better.state, { type: "chapter_quiz_completed", book: "jo", chapter: 3, sessionId: "session-a4", score: { correct: 3, total: 3 } });
+    expect(again.reward.perfectQuiz).toBe(false);
   });
 });
 
@@ -114,6 +118,8 @@ describe("trails", () => {
     const done = passAll(createProgressState(day)).state;
     const boss = apply(done, { type: "quiz_completed", sessionId: "boss-final-1", score });
     expect(boss.state.trailsMastered).toEqual(["primeiros-passos"]);
+    expect(boss.reward.relics).toEqual(["primeiros-passos"]);
+    expect(early.reward.relics).toEqual([]);
     expect(boss.reward.lines.some((l) => l.xp === TRAIL_MASTERY_BONUS)).toBe(true);
     expect(trailProgress(trail, boss.state).stars).toBe(3);
   });

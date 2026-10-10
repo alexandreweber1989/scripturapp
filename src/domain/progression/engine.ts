@@ -44,6 +44,10 @@ export interface Reward {
   questsCompleted: QuestDefinition[];
   fullDay: boolean;
   achievements: Achievement[];
+  /** Trails mastered by this activity (their relic was just earned). */
+  relics: string[];
+  /** First perfect score on a chapter quiz. */
+  perfectQuiz: boolean;
   streak: { current: number; advanced: boolean; shieldEarned: boolean; shieldsUsed: number };
 }
 
@@ -146,11 +150,13 @@ export function applyActivity(previous: ProgressState, activity: Activity, ctx: 
 
   // The final challenge of a completed trail masters it.
   let trailsMastered = state.trailsMastered;
+  const relics: string[] = [];
   if (activity.type === "quiz_completed") {
     const trail = trailFromBossPack(activity.score.packId);
     const { correct, total } = activity.score;
     if (trail && !trailsMastered.includes(trail.id) && correct / total >= MASTERY_RATIO && trailProgress(trail, { ...state, chapterQuizzes }).completed) {
       trailsMastered = [...trailsMastered, trail.id];
+      relics.push(trail.id);
       lines.push({ label: `Trilha dominada: ${trail.title} · relíquia ${trail.relic}`, xp: TRAIL_MASTERY_BONUS });
     }
   }
@@ -225,6 +231,11 @@ export function applyActivity(previous: ProgressState, activity: Activity, ctx: 
       questsCompleted,
       fullDay,
       achievements: unlocked,
+      relics,
+      perfectQuiz:
+        activity.type === "chapter_quiz_completed" &&
+        activity.score.correct === activity.score.total &&
+        (previous.chapterQuizzes[chapterKey(activity.book, activity.chapter)] ?? 0) < activity.score.total,
       streak: {
         current: state.streak.current,
         advanced: streakUpdate.advanced,
