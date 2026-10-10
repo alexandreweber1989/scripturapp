@@ -44,7 +44,7 @@ npm run build   # build de produção (gera as 1.338 páginas estáticas)
 
 1. Crie um projeto em [supabase.com](https://supabase.com).
 2. Aplique as migrations de `supabase/migrations/`, em ordem: `20261009000000_initial_schema.sql`, `20261010000000_verse_review.sql` e `20261011000000_lock_trigger_function.sql`. Use o SQL Editor ou `supabase db push` com a CLI.
-3. Em **Authentication → URL Configuration**, adicione `https://SEU-DOMINIO/auth/callback` às Redirect URLs.
+3. Em **Authentication → URL Configuration**, defina a **Site URL** como `https://SEU-DOMINIO` e adicione `https://SEU-DOMINIO/**` às Redirect URLs (e `http://localhost:3000/**` para desenvolvimento). O curinga cobre a confirmação de cadastro e a redefinição de senha, que voltam por `/auth/callback?next=...`.
 4. Preencha no `.env.local` (e na Vercel):
    - `NEXT_PUBLIC_SUPABASE_URL`
    - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`

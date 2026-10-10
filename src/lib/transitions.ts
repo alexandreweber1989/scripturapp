@@ -19,6 +19,7 @@ const SECTION_ORDER: Record<string, number> = {
   mentor: 4,
   perfil: 5,
   entrar: 5,
+  "redefinir-senha": 5,
 };
 
 function segments(path: string): string[] {

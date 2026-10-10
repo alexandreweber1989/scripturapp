@@ -91,7 +91,7 @@ export function HomeDashboard() {
           <span>
             <strong className="text-ink">Modo visitante.</strong> Seu progresso fica só neste aparelho.
           </span>
-          <Link href="/entrar" className="flex min-h-10 shrink-0 items-center gap-1.5 rounded-full px-3 font-bold text-primary hover:bg-primary-soft">
+          <Link href="/entrar?modo=criar" className="flex min-h-10 shrink-0 items-center gap-1.5 rounded-full px-3 font-bold text-primary hover:bg-primary-soft">
             <UserPlus className="size-4" /> Criar conta
           </Link>
         </div>
