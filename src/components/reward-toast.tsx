@@ -104,7 +104,7 @@ function Celebration({ reward }: { reward: Reward }) {
         };
 
   return (
-    <div className="fixed inset-0 z-[60] grid place-items-center overflow-hidden bg-bg/70 p-4 backdrop-blur-sm" onClick={dismissReward}>
+    <div className="fixed inset-0 z-[60] grid grid-cols-[minmax(0,1fr)] place-items-center overflow-hidden bg-bg/70 p-4 backdrop-blur-sm" onClick={dismissReward}>
       <div className="celebration-rays pointer-events-none absolute left-1/2 top-1/2 size-[42rem] -translate-x-1/2 -translate-y-[58%]" aria-hidden />
       <div className="confetti pointer-events-none absolute inset-0" aria-hidden>
         {CONFETTI.map((i) => (
