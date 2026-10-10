@@ -43,7 +43,7 @@ npm run build   # build de produção (gera as 1.338 páginas estáticas)
 ## Configurando o Supabase (contas e progresso na nuvem)
 
 1. Crie um projeto em [supabase.com](https://supabase.com).
-2. Aplique as migrations de `supabase/migrations/`, em ordem: `20261009000000_initial_schema.sql` e depois `20261010000000_verse_review.sql`. Use o SQL Editor ou `supabase db push` com a CLI.
+2. Aplique as migrations de `supabase/migrations/`, em ordem: `20261009000000_initial_schema.sql`, `20261010000000_verse_review.sql` e `20261011000000_lock_trigger_function.sql`. Use o SQL Editor ou `supabase db push` com a CLI.
 3. Em **Authentication → URL Configuration**, adicione `https://SEU-DOMINIO/auth/callback` às Redirect URLs.
 4. Preencha no `.env.local` (e na Vercel):
    - `NEXT_PUBLIC_SUPABASE_URL`
