@@ -2,12 +2,14 @@
 
 import clsx from "clsx";
 import { BookOpen, Flame, Gamepad2, House, MessageCircle, Route, User } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { levelFromXp } from "@/domain/progression/levels";
 import { effectiveStreak } from "@/domain/progression/streak";
 import { dayKey } from "@/domain/time";
+import { BRAND_MARK } from "@/lib/assets";
 import { useScriptura } from "@/lib/client/store";
 import { RewardToast } from "./reward-toast";
 import { ThemeToggleButton } from "./theme-toggle";
@@ -30,10 +32,8 @@ function isActive(pathname: string, href: string) {
 function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2" aria-label="Scriptura — início">
-      <span className="bg-gradient-primary glow-primary grid size-9 place-items-center rounded-xl font-display text-lg font-extrabold text-white">S</span>
-      <span className="hidden font-display text-xl font-extrabold tracking-tight min-[420px]:inline md:inline">
-        Scriptura<span className="text-primary">.</span>
-      </span>
+      <Image src={BRAND_MARK} alt="" width={40} height={40} className="glow-primary size-10 rounded-xl" priority />
+      <span className="hidden font-display text-xl font-extrabold tracking-tight min-[420px]:inline md:inline">Scriptura</span>
     </Link>
   );
 }
@@ -46,13 +46,13 @@ function StatusChips() {
   return (
     <div className="flex items-center gap-1.5 whitespace-nowrap font-mono text-sm font-medium">
       <span
-        className={clsx("flex items-center gap-1 rounded-full px-2.5 py-1", activeToday ? "border-flame/30 bg-flame/10 text-flame" : "border-line bg-surface-2 text-muted", "border")}
+        className={clsx("flex h-9 items-center gap-1 rounded-full px-3", activeToday ? "border-flame/30 bg-flame/10 text-flame" : "border-line bg-surface-2 text-muted", "border")}
         title={activeToday ? "Sequência mantida hoje" : "Estude hoje para manter a sequência"}
       >
         <Flame className="size-4" aria-hidden />
         {streak}
       </span>
-      <span className="rounded-full border border-primary/30 bg-primary-soft px-2.5 py-1 text-primary" title={`${progress.xp} XP`}>
+      <span className="bg-gradient-primary flex h-9 items-center rounded-full px-3 font-bold text-white" title={`${progress.xp} XP`}>
         LV {levelFromXp(progress.xp)}
       </span>
     </div>
@@ -74,7 +74,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               key={href}
               href={href}
               className={clsx(
-                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition",
+                "flex min-h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition",
                 isActive(pathname, href) ? "bg-gradient-primary glow-primary font-bold text-white" : "text-muted hover:bg-surface-2 hover:text-ink",
               )}
             >
@@ -96,7 +96,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <Link
               href="/perfil"
               className={clsx(
-                "grid size-8 place-items-center rounded-full border md:hidden",
+                "grid size-10 place-items-center rounded-full border md:hidden",
                 isActive(pathname, "/perfil") ? "bg-gradient-primary border-transparent text-white" : "border-line bg-surface-2 text-muted",
               )}
               aria-label="Perfil"
@@ -117,7 +117,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <Link
             key={href}
             href={href}
-            className={clsx("flex flex-col items-center gap-0.5 py-2 text-[11px] font-semibold", isActive(pathname, href) ? "text-primary" : "text-muted")}
+            className={clsx("flex min-h-14 flex-col items-center justify-center gap-0.5 py-1.5 text-[11px] font-semibold", isActive(pathname, href) ? "text-primary" : "text-muted")}
           >
             <span className={clsx("grid h-7 w-12 place-items-center rounded-full transition", isActive(pathname, href) && "bg-gradient-primary text-white glow-primary")}>
               <Icon className="size-[18px]" aria-hidden />

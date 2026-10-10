@@ -88,6 +88,12 @@ As 96 perguntas dos quizzes de capítulo (`src/content/chapter-quizzes/`) foram 
 
 A regra é que esse conteúdo seja **gerado uma vez, versionado e revisado** por uma pessoa, nunca criado na hora para cada usuário. Antes de abrir para o público, vale uma revisão humana, de preferência de alguém da liderança de ensino.
 
+### Ilustrações
+
+O logo, as capas das trilhas e as relíquias foram geradas com IA no laboratório de design do Floot (projeto "Scriptura · Design Lab"), onde as telas foram prototipadas e aprovadas antes de virem para cá.
+- Ficam em `public/img/` como WebP: `marca.webp`, `trilhas/<id>.webp` e `reliquias/<id>.webp`.
+- Os caminhos ficam centralizados em `src/lib/assets.ts`. Uma trilha nova precisa de uma capa e de uma relíquia com o mesmo `id`.
+
 ## Tradução bíblica
 
 O texto usado é a **NVI**, a mesma que o projeto anterior já tinha. A NVI é protegida por direitos autorais (Biblica). Para uso comercial, é preciso licenciá-la ou trocar por uma tradução de domínio público ou com licença livre. O código é independente da tradução: basta colocar outros arquivos em `src/content/bible/<id>/` e ajustar `src/lib/server/bible.ts`.
