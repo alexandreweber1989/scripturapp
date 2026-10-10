@@ -109,6 +109,26 @@ A regra é que esse conteúdo seja **gerado uma vez, versionado e revisado** por
 O logo, as capas das trilhas e as relíquias foram geradas com IA no laboratório de design do Floot (projeto "Scriptura · Design Lab"), onde as telas foram prototipadas e aprovadas antes de virem para cá.
 - Ficam em `public/img/` como WebP: `marca.webp`, `trilhas/<id>.webp` e `reliquias/<id>.webp`.
 - Os caminhos ficam centralizados em `src/lib/assets.ts`. Uma trilha nova precisa de uma capa e de uma relíquia com o mesmo `id`.
+- Cada companheiro tem três poses além da padrão, em `public/companions/poses/<id>-{wave,cheer,hide}.webp`: acenando, comemorando e tapando os olhos. Elas foram geradas a partir do sprite original, para manter o mesmo personagem.
+
+### Palco dos companheiros (tela de entrar)
+
+`src/components/auth/companion-stage.tsx` coloca os cinco companheiros num pequeno palco. Ele fica no painel da marca no computador e no topo do cartão no celular.
+
+| Situação no formulário (`mood`) | O que os companheiros fazem |
+|---|---|
+| Sem interação | Pulam, giram, andam, acenam e falam frases curtas, um de cada vez |
+| Digitando nome ou e-mail | A cada tecla, um deles dá um pulinho, em revezamento |
+| Campo de senha | Tapam os olhos ("Não estou olhando!") |
+| Erro | Balançam a cabeça |
+| Login concluído ou e-mail enviado | Comemoram com confete |
+
+- **Como o estado é calculado:** o estado do formulário entra como prop e as reações são calculadas na renderização. O estado interno guarda só os movimentos passageiros (aceno, ação, posição, balão).
+- **CSS:** fica em `globals.css` com o prefixo `stage-`. Neste projeto, todo `.css` passa pelo Tailwind como CSS global, então módulos CSS não funcionam.
+- **Acessibilidade:**
+  - o palco é decorativo (`aria-hidden`) e fica fora da ordem do Tab, mas responde a cliques e toques;
+  - com "reduzir movimento", os bonecos ficam parados;
+  - o palco que não está visível pausa a animação.
 
 ## Tradução bíblica
 

@@ -4,19 +4,21 @@ import clsx from "clsx";
 import { ArrowLeft, Cloud, Eye, EyeOff, Flame, LoaderCircle, LockKeyhole, Mail, MailCheck, MessageCircle, User, Users } from "lucide-react";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "@/components/transition-link";
-import { COMPANIONS } from "@/domain/companions";
 import { MIN_PASSWORD_LENGTH, authErrorMessage, passwordStrength, safeNext } from "@/lib/auth-errors";
 import { BRAND_MARK } from "@/lib/assets";
 import { useScriptura } from "@/lib/client/store";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 import { navigationTypes } from "@/lib/transitions";
-import { CompanionAvatar } from "../companion-avatar";
 import { Button, ButtonLink, Skeleton } from "../ui";
+import { CompanionStage, type StageMood } from "./companion-stage";
 
 type View = "entrar" | "criar" | "recuperar" | "enviado";
 type Notice = { tone: "error" | "info"; text: string };
+
+/** Long enough for the companions to celebrate before the page changes. */
+const CELEBRATE_MS = 900;
 
 const BENEFITS = [
   { icon: Cloud, title: "Seu progresso em qualquer aparelho", text: "XP, nível, trilhas e relíquias salvos na nuvem." },
@@ -44,7 +46,32 @@ export function AuthForm() {
     searchParams.get("erro") ? { tone: "error", text: "O link expirou ou já foi usado. Peça um novo abaixo." } : null,
   );
 
+  // The companions watch the form: typing, the password field, errors and success.
+  const [mood, setMood] = useState<StageMood>("idle");
+  const [pulse, setPulse] = useState(0);
+  const bump = () => setPulse((n) => n + 1);
+  const watch = (focus: StageMood) => ({
+    onFocus: () => setMood((m) => (m === "success" ? m : focus)),
+    onBlur: () => setMood((m) => (m === focus ? "idle" : m)),
+  });
+
+  // Errors fade back to calm after a moment.
+  useEffect(() => {
+    if (mood !== "error") return;
+    const timer = setTimeout(() => setMood("idle"), 2600);
+    return () => clearTimeout(timer);
+  }, [mood]);
+
   const go = (href: string) => router.push(href, { transitionTypes: navigationTypes(pathname, href) });
+  const celebrateThenGo = (href: string) => {
+    setBusy(true); // no second submit while they party
+    setMood("success");
+    setTimeout(() => go(href), CELEBRATE_MS);
+  };
+  const fail = (text: string) => {
+    setNotice({ tone: "error", text });
+    setMood("error");
+  };
   const switchTo = (v: View) => {
     setView(v);
     setNotice(null);
@@ -60,8 +87,8 @@ export function AuthForm() {
     if (view === "entrar") {
       const { error } = await supabase.auth.signInWithPassword({ email: address, password });
       setBusy(false);
-      if (error) return setNotice({ tone: "error", text: authErrorMessage(error) });
-      return go(next);
+      if (error) return fail(authErrorMessage(error));
+      return celebrateThenGo(next);
     }
 
     if (view === "recuperar") {
@@ -69,14 +96,15 @@ export function AuthForm() {
         redirectTo: `${window.location.origin}/auth/callback?next=/redefinir-senha`,
       });
       setBusy(false);
-      if (error) return setNotice({ tone: "error", text: authErrorMessage(error) });
+      if (error) return fail(authErrorMessage(error));
       setSentTo({ email: address, reason: "recuperar" });
-      return setView("enviado");
+      setView("enviado");
+      return setMood("success");
     }
 
     if (!passwordStrength(password).acceptable) {
       setBusy(false);
-      return setNotice({ tone: "error", text: `A senha precisa ter pelo menos ${MIN_PASSWORD_LENGTH} caracteres.` });
+      return fail(`A senha precisa ter pelo menos ${MIN_PASSWORD_LENGTH} caracteres.`);
     }
     const { data, error } = await supabase.auth.signUp({
       email: address,
@@ -87,16 +115,18 @@ export function AuthForm() {
       },
     });
     setBusy(false);
-    if (error) return setNotice({ tone: "error", text: authErrorMessage(error) });
-    if (data.session) return go(next);
+    if (error) return fail(authErrorMessage(error));
+    if (data.session) return celebrateThenGo(next);
     setSentTo({ email: address, reason: "confirmar" });
     setView("enviado");
+    setMood("success");
   };
 
   return (
     <div className="mx-auto grid max-w-5xl items-stretch gap-6 lg:grid-cols-[1.05fr_1fr]">
-      <BrandPanel />
+      <BrandPanel mood={mood} pulse={pulse} />
       <section className="glass relative flex flex-col justify-center rounded-3xl border border-line p-6 shadow-card sm:p-8">
+        {supabase && mode !== "loading" && <CompanionStage mood={mood} pulse={pulse} compact className="-mt-2 mb-4 lg:hidden" />}
         {!supabase ? (
           <Unavailable />
         ) : mode === "loading" ? (
@@ -104,7 +134,13 @@ export function AuthForm() {
         ) : mode === "account" ? (
           <SignedIn name={profile.displayName} email={signedInEmail} onContinue={() => go(next)} onSignOut={signOut} />
         ) : view === "enviado" && sentTo ? (
-          <Sent sentTo={sentTo} onBack={() => switchTo("entrar")} />
+          <Sent
+            sentTo={sentTo}
+            onBack={() => {
+              switchTo("entrar");
+              setMood("idle");
+            }}
+          />
         ) : (
           <>
             {view === "recuperar" ? (
@@ -151,9 +187,34 @@ export function AuthForm() {
 
             <form onSubmit={submit} className="space-y-4">
               {view === "criar" && (
-                <Field icon={User} label="Como quer ser chamado?" value={name} onChange={setName} autoComplete="nickname" maxLength={60} placeholder="Seu nome" />
+                <Field
+                  icon={User}
+                  label="Como quer ser chamado?"
+                  value={name}
+                  onChange={(v) => {
+                    setName(v);
+                    bump();
+                  }}
+                  {...watch("typing")}
+                  autoComplete="nickname"
+                  maxLength={60}
+                  placeholder="Seu nome"
+                />
               )}
-              <Field icon={Mail} label="E-mail" type="email" value={email} onChange={setEmail} autoComplete="email" required placeholder="voce@email.com" />
+              <Field
+                icon={Mail}
+                label="E-mail"
+                type="email"
+                value={email}
+                onChange={(v) => {
+                  setEmail(v);
+                  bump();
+                }}
+                {...watch("typing")}
+                autoComplete="email"
+                required
+                placeholder="voce@email.com"
+              />
               {view !== "recuperar" && (
                 <div className="space-y-2">
                   <Field
@@ -162,6 +223,7 @@ export function AuthForm() {
                     type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={setPassword}
+                    {...watch("password")}
                     autoComplete={view === "entrar" ? "current-password" : "new-password"}
                     minLength={view === "criar" ? MIN_PASSWORD_LENGTH : undefined}
                     required
@@ -211,19 +273,19 @@ export function AuthForm() {
   );
 }
 
-function BrandPanel() {
+function BrandPanel({ mood, pulse }: { mood: StageMood; pulse: number }) {
   return (
     <section className="relative isolate hidden overflow-hidden rounded-3xl p-8 text-white shadow-card lg:flex lg:flex-col lg:justify-between">
       <div className="bg-gradient-primary absolute inset-0 -z-20" />
       <div className="absolute -right-24 -top-24 -z-10 size-80 rounded-full bg-white/15 blur-3xl" aria-hidden />
       <div className="absolute -bottom-32 -left-16 -z-10 size-80 rounded-full bg-[hsl(38_90%_55%/0.35)] blur-3xl" aria-hidden />
-      <div className="space-y-6">
+      <div className="space-y-5">
         <div className="flex items-center gap-3">
           <Image src={BRAND_MARK} alt="" width={48} height={48} className="size-12 rounded-2xl shadow-card" />
           <span className="font-display text-2xl font-extrabold tracking-tight">Scriptura</span>
         </div>
-        <h2 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight">Sua jornada pelas Escrituras, guardada passo a passo.</h2>
-        <ul className="space-y-4">
+        <h2 className="font-display text-3xl font-extrabold leading-[1.05] tracking-tight xl:text-[2rem]">Sua jornada pelas Escrituras, guardada passo a passo.</h2>
+        <ul className="space-y-3">
           {BENEFITS.map(({ icon: Icon, title, text }) => (
             <li key={title} className="flex gap-3">
               <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-white/15 backdrop-blur">
@@ -237,11 +299,7 @@ function BrandPanel() {
           ))}
         </ul>
       </div>
-      <div className="mt-8 flex items-end gap-1">
-        {COMPANIONS.map((c, i) => (
-          <CompanionAvatar key={c.id} id={c.id} size={64} className="animate-float drop-shadow-lg" style={{ animationDelay: `${i * 0.35}s` }} />
-        ))}
-      </div>
+      <CompanionStage mood={mood} pulse={pulse} className="mt-2" />
     </section>
   );
 }
