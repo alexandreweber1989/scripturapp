@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { Fragment, type ReactNode } from "react";
 import { chapterHref } from "@/domain/bible/books";
 import { findReferences } from "@/domain/bible/reference";

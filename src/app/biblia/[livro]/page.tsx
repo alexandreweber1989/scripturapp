@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { BookProgress, ChapterGrid } from "@/components/bible/reading-progress";
 import { Card, Skeleton } from "@/components/ui";
 import { BOOKS, getBookBySlug } from "@/domain/bible/books";
+import { PageTransition } from "@/components/page-transition";
 
 export function generateStaticParams() {
   return BOOKS.map((b) => ({ livro: b.slug }));
@@ -47,8 +48,10 @@ async function BookDetails({ params }: { params: PageProps<"/biblia/[livro]">["p
 
 export default function BookPage({ params }: PageProps<"/biblia/[livro]">) {
   return (
-    <Suspense fallback={<Skeleton className="h-96" />}>
-      <BookDetails params={params} />
-    </Suspense>
+    <PageTransition>
+      <Suspense fallback={<Skeleton className="h-96" />}>
+        <BookDetails params={params} />
+      </Suspense>
+    </PageTransition>
   );
 }

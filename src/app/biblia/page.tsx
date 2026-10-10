@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { BookReadCount, ContinueReading } from "@/components/bible/reading-progress";
 import { SectionTitle } from "@/components/ui";
 import { BOOKS, type BibleBook } from "@/domain/bible/books";
+import { PageTransition } from "@/components/page-transition";
 
 export const metadata: Metadata = { title: "Bíblia" };
 
@@ -42,14 +43,16 @@ function Testament({ title, books }: { title: string; books: BibleBook[] }) {
 
 export default function BiblePage() {
   return (
-    <div className="space-y-10">
-      <header>
-        <h1 className="font-display text-3xl font-bold">Bíblia Sagrada</h1>
-        <p className="mt-1 text-muted">Cada capítulo lido vale XP — e o primeiro de cada um vale um bônus.</p>
-      </header>
-      <ContinueReading />
-      <Testament title="Antigo Testamento" books={BOOKS.filter((b) => b.testament === "old")} />
-      <Testament title="Novo Testamento" books={BOOKS.filter((b) => b.testament === "new")} />
-    </div>
+    <PageTransition>
+      <div className="space-y-10">
+        <header>
+          <h1 className="font-display text-3xl font-bold">Bíblia Sagrada</h1>
+          <p className="mt-1 text-muted">Cada capítulo lido vale XP — e o primeiro de cada um vale um bônus.</p>
+        </header>
+        <ContinueReading />
+        <Testament title="Antigo Testamento" books={BOOKS.filter((b) => b.testament === "old")} />
+        <Testament title="Novo Testamento" books={BOOKS.filter((b) => b.testament === "new")} />
+      </div>
+    </PageTransition>
   );
 }

@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { Delete, Lightbulb, Share2 } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useEffect, useEffectEvent, useState, useSyncExternalStore } from "react";
 import words from "@/content/daily-words.json";
 import { chapterHref } from "@/domain/bible/books";

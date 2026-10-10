@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { LoaderCircle } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { getBrowserSupabase } from "@/lib/supabase/browser";

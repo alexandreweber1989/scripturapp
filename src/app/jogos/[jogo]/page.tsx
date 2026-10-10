@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { QuizGame } from "@/components/games/quiz-game";
 import { Skeleton } from "@/components/ui";
 import { QUIZ_PACKS, getQuizPack } from "@/content/games";
+import { PageTransition } from "@/components/page-transition";
 
 export function generateStaticParams() {
   return QUIZ_PACKS.map((p) => ({ jogo: p.id }));
@@ -21,8 +22,10 @@ async function Game({ params }: { params: PageProps<"/jogos/[jogo]">["params"] }
 
 export default function GamePage({ params }: PageProps<"/jogos/[jogo]">) {
   return (
-    <Suspense fallback={<Skeleton className="h-96" />}>
-      <Game params={params} />
-    </Suspense>
+    <PageTransition>
+      <Suspense fallback={<Skeleton className="h-96" />}>
+        <Game params={params} />
+      </Suspense>
+    </PageTransition>
   );
 }

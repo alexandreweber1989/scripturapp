@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DailyWordGame } from "@/components/games/daily-word-game";
+import { PageTransition } from "@/components/page-transition";
 
 export const metadata: Metadata = {
   title: "Palavra do Dia",
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function DailyWordPage() {
-  return <DailyWordGame />;
+  return (
+    <PageTransition>
+      <DailyWordGame />
+    </PageTransition>
+  );
 }

@@ -55,6 +55,22 @@ Modos de execução:
 - **Missões:** 3 por dia (sempre uma de leitura), sorteadas de forma determinística pela data. Concluir as três dá +25 XP.
 - **Dia:** é calculado no fuso `America/Sao_Paulo`, igual no cliente e no servidor.
 
+## Transições entre páginas
+
+As navegações usam as View Transitions do React 19 (`<ViewTransition>`), suportadas nativamente pelo Next 16. Cada movimento tem um significado:
+- **Trocar de menu:** o conteúdo desliza na direção do item escolhido (`tab-next`/`tab-prev`), e o destaque do menu desliza até ele.
+- **Entrar num detalhe:** a página atual recua e a nova entra pela direita (`nav-forward`); voltar faz o inverso (`nav-back`).
+- **Virar capítulo:** desliza para o lado, como uma página.
+- **Capa da trilha:** o cartão se transforma na capa da página da trilha.
+- **Âncoras:** cabeçalho, menu lateral e barra inferior nunca se movem.
+
+Como funciona:
+- `src/lib/transitions.ts` decide o tipo pela origem e pelo destino (testado em `src/lib/__tests__/transitions.test.ts`).
+- `components/transition-link.tsx` substitui o `next/link` e aplica o tipo em cada navegação.
+- `components/page-transition.tsx` envolve o conteúdo de cada `page.tsx`. Uma página nova precisa usá-lo.
+- As animações ficam no fim de `globals.css`. Com "reduzir movimento" ativado no sistema, a troca é instantânea.
+- Navegadores sem suporte simplesmente trocam a página sem animar.
+
 ## Segurança (resumo)
 
 - RLS em todas as tabelas. Políticas só do dono.

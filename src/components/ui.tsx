@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import type { ComponentProps, ReactNode } from "react";
 
 type Variant = "primary" | "secondary" | "ghost" | "gold";

@@ -6,6 +6,7 @@ import { Skeleton } from "@/components/ui";
 import { BOOKS, getBookBySlug, isValidChapter, nextChapter, previousChapter } from "@/domain/bible/books";
 import { getChapterQuiz } from "@/content/chapter-quizzes";
 import { TRANSLATION, getChapterVerses } from "@/lib/server/bible";
+import { PageTransition } from "@/components/page-transition";
 
 type Params = PageProps<"/biblia/[livro]/[capitulo]">["params"];
 
@@ -54,8 +55,10 @@ async function Chapter({ params }: { params: Params }) {
 
 export default function ChapterPage({ params }: PageProps<"/biblia/[livro]/[capitulo]">) {
   return (
-    <Suspense fallback={<Skeleton className="h-[70vh]" />}>
-      <Chapter params={params} />
-    </Suspense>
+    <PageTransition>
+      <Suspense fallback={<Skeleton className="h-[70vh]" />}>
+        <Chapter params={params} />
+      </Suspense>
+    </PageTransition>
   );
 }

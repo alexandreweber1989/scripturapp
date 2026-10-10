@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { ArrowRight, Check, Route, Sparkles, X } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useRef, useState } from "react";
 import { chapterKey } from "@/domain/bible/books";
 import { CHAPTER_QUIZ_PASS, type ChapterQuestion } from "@/domain/games/chapter-quiz";

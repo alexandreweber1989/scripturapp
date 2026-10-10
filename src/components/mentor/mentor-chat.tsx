@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { LoaderCircle, Send } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { getCompanion } from "@/domain/companions";

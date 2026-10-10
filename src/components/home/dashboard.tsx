@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { ArrowRight, BookOpen, Brain, Check, Flame, Puzzle, Route, Shield, Sparkles, UserPlus } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useSyncExternalStore } from "react";
 import dailyVerses from "@/content/daily-verses.json";
 import { getCompanion } from "@/domain/companions";

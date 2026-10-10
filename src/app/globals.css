@@ -428,3 +428,129 @@ h3 {
     display: none;
   }
 }
+
+/* ─── Page transitions (React <ViewTransition>, see src/lib/transitions.ts) ───
+ * Old content leaves fast, new content arrives a beat later and settles gently.
+ * - tab-next / tab-prev: sideways slide following the menu order (and Bible page turns);
+ * - nav-forward: the old page recedes, the new one is pushed in from the right;
+ * - nav-back: the reverse, the previous page comes back from behind;
+ * - morph: an element that exists on both pages (trail cover) flies to its new place. */
+:root {
+  --vt-exit: 160ms;
+  --vt-enter: 300ms;
+  --vt-move: 440ms;
+  --vt-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Clicks during an animation reach the live page. */
+::view-transition {
+  pointer-events: none;
+}
+
+/* Header, sidebar and tab bar are the fixed reference: they never slide. */
+::view-transition-group(site-header),
+::view-transition-group(site-sidebar),
+::view-transition-group(site-tabbar) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header),
+::view-transition-old(site-sidebar),
+::view-transition-old(site-tabbar) {
+  display: none;
+}
+::view-transition-new(site-header),
+::view-transition-new(site-sidebar),
+::view-transition-new(site-tabbar) {
+  animation: none;
+}
+
+::view-transition-old(.tab-next),
+::view-transition-old(.tab-prev),
+::view-transition-old(.nav-forward),
+::view-transition-old(.nav-back) {
+  animation:
+    var(--vt-exit) ease-in both vt-fade reverse,
+    var(--vt-move) var(--vt-ease) both vt-move reverse;
+}
+::view-transition-new(.tab-next),
+::view-transition-new(.tab-prev),
+::view-transition-new(.nav-forward),
+::view-transition-new(.nav-back) {
+  animation:
+    var(--vt-enter) ease-out var(--vt-exit) both vt-fade,
+    var(--vt-move) var(--vt-ease) both vt-move;
+}
+
+::view-transition-old(.tab-next) {
+  --vt-x: -48px;
+}
+::view-transition-new(.tab-next) {
+  --vt-x: 48px;
+}
+::view-transition-old(.tab-prev) {
+  --vt-x: 48px;
+}
+::view-transition-new(.tab-prev) {
+  --vt-x: -48px;
+}
+::view-transition-old(.nav-forward) {
+  --vt-x: -24px;
+  --vt-scale: 0.96;
+}
+::view-transition-new(.nav-forward) {
+  --vt-x: 72px;
+  --vt-blur: 4px;
+}
+::view-transition-old(.nav-back) {
+  --vt-x: 72px;
+  --vt-blur: 4px;
+}
+::view-transition-new(.nav-back) {
+  --vt-x: -24px;
+  --vt-scale: 0.96;
+}
+
+::view-transition-group(.morph) {
+  animation-duration: 520ms;
+  animation-timing-function: var(--vt-ease);
+}
+::view-transition-image-pair(.morph) {
+  animation-name: vt-via-blur;
+}
+
+@keyframes vt-fade {
+  from {
+    opacity: 0;
+    filter: blur(var(--vt-blur, 2px));
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes vt-move {
+  from {
+    translate: var(--vt-x, 0) 0;
+    scale: var(--vt-scale, 1);
+  }
+  to {
+    translate: 0 0;
+    scale: 1;
+  }
+}
+@keyframes vt-via-blur {
+  35% {
+    filter: blur(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*),
+  ::view-transition-image-pair(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}

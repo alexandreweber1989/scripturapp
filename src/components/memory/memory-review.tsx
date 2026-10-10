@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { Brain, Check, Eye, Heart, Sparkles } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { chapterHref, formatReference, parseVerseKey } from "@/domain/bible/books";
 import { GRADES, type ReviewGrade, clozeVerse, gradeReview, isDue, isMemorized, newReview } from "@/domain/memory/srs";

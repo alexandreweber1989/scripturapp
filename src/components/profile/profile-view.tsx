@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import { Heart, Lock, LogIn, LogOut, NotebookPen, Trophy } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useState } from "react";
 import { TOTAL_CHAPTERS, chapterHref, formatReference, parseVerseKey } from "@/domain/bible/books";
 import { COMPANIONS } from "@/domain/companions";
