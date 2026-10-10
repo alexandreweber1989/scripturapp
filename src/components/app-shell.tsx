@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import { BookOpen, Flame, Gamepad2, House, MessageCircle, Route, User } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { levelFromXp } from "@/domain/progression/levels";
@@ -44,7 +44,7 @@ function StatusChips() {
   const streak = effectiveStreak(progress.streak, dayKey());
   const activeToday = progress.streak.lastActiveDay === dayKey();
   return (
-    <div className="flex items-center gap-1.5 whitespace-nowrap font-mono text-sm font-medium">
+    <div className="flex items-center gap-1.5 whitespace-nowrap tabular-nums text-sm font-medium">
       <span
         className={clsx("flex h-9 items-center gap-1 rounded-full px-3", activeToday ? "border-flame/30 bg-flame/10 text-flame" : "border-line bg-surface-2 text-muted", "border")}
         title={activeToday ? "Sequência mantida hoje" : "Estude hoje para manter a sequência"}
@@ -62,20 +62,32 @@ function StatusChips() {
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const immersive = /^\/biblia\/[^/]+\/\d+/.test(pathname);
+  const sideIndex = NAV.findIndex((item) => isActive(pathname, item.href));
+  const tabIndex = MOBILE_NAV.findIndex((item) => isActive(pathname, item.href));
 
   return (
     <div className="min-h-dvh md:grid md:grid-cols-[15rem_1fr]">
       <div className="app-backdrop" aria-hidden />
-      <aside className="glass sticky top-0 hidden h-dvh flex-col gap-8 border-r border-line px-4 py-6 md:flex">
+      <aside className="glass sticky top-0 hidden h-dvh flex-col gap-8 border-r border-line px-4 py-6 md:flex" style={{ viewTransitionName: "site-sidebar" }}>
         <Logo />
-        <nav className="flex flex-col gap-1" aria-label="Principal">
-          {NAV.map(({ href, label, icon: Icon }) => (
+        <nav className="relative flex flex-col gap-1" aria-label="Principal">
+          {/* One highlight that glides to the active item (the shell persists across navigations). */}
+          <span
+            aria-hidden
+            className={clsx(
+              "bg-gradient-primary glow-primary absolute inset-x-0 top-0 h-11 rounded-xl transition-[translate,opacity] duration-500 ease-[cubic-bezier(0.34,1.36,0.64,1)] motion-reduce:transition-none",
+              sideIndex < 0 && "opacity-0",
+            )}
+            style={{ translate: `0 ${Math.max(sideIndex, 0) * 48}px` }}
+          />
+          {NAV.map(({ href, label, icon: Icon }, i) => (
             <Link
               key={href}
               href={href}
+              aria-current={i === sideIndex ? "page" : undefined}
               className={clsx(
-                "flex min-h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition",
-                isActive(pathname, href) ? "bg-gradient-primary glow-primary font-bold text-white" : "text-muted hover:bg-surface-2 hover:text-ink",
+                "relative flex h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition-colors duration-300",
+                i === sideIndex ? "font-bold text-white" : "text-muted hover:bg-surface-2 hover:text-ink",
               )}
             >
               <Icon className="size-5" aria-hidden />
@@ -86,7 +98,10 @@ export function AppShell({ children }: { children: ReactNode }) {
       </aside>
 
       <div className="flex min-w-0 flex-col">
-        <header className="glass sticky top-0 z-30 flex items-center justify-between border-b border-line px-4 py-3 md:px-8">
+        <header
+          className="glass sticky top-0 z-30 flex items-center justify-between border-b border-line px-4 py-3 md:px-8"
+          style={{ viewTransitionName: "site-header" }}
+        >
           <div className="md:invisible">
             <Logo />
           </div>
@@ -111,15 +126,28 @@ export function AppShell({ children }: { children: ReactNode }) {
 
       <nav
         className="glass fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-line pb-[env(safe-area-inset-bottom)] md:hidden"
+        style={{ viewTransitionName: "site-tabbar" }}
         aria-label="Principal"
       >
-        {MOBILE_NAV.map(({ href, label, icon: Icon }) => (
+        <span
+          aria-hidden
+          className={clsx(
+            "bg-gradient-primary glow-primary absolute top-2 h-7 w-12 -translate-x-1/2 rounded-full transition-[left,opacity] duration-500 ease-[cubic-bezier(0.34,1.36,0.64,1)] motion-reduce:transition-none",
+            tabIndex < 0 && "opacity-0",
+          )}
+          style={{ left: `${(Math.max(tabIndex, 0) + 0.5) * (100 / MOBILE_NAV.length)}%` }}
+        />
+        {MOBILE_NAV.map(({ href, label, icon: Icon }, i) => (
           <Link
             key={href}
             href={href}
-            className={clsx("flex min-h-14 flex-col items-center justify-center gap-0.5 py-1.5 text-[11px] font-semibold", isActive(pathname, href) ? "text-primary" : "text-muted")}
+            aria-current={i === tabIndex ? "page" : undefined}
+            className={clsx(
+              "relative flex min-h-14 flex-col items-center gap-0.5 pb-1.5 pt-2 text-[11px] font-semibold transition-colors duration-300",
+              i === tabIndex ? "text-primary" : "text-muted",
+            )}
           >
-            <span className={clsx("grid h-7 w-12 place-items-center rounded-full transition", isActive(pathname, href) && "bg-gradient-primary text-white glow-primary")}>
+            <span className={clsx("grid h-7 w-12 place-items-center transition-colors duration-300", i === tabIndex && "text-white")}>
               <Icon className="size-[18px]" aria-hidden />
             </span>
             {label}

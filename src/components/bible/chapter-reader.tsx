@@ -2,12 +2,13 @@
 
 import clsx from "clsx";
 import { Check, ChevronLeft, ChevronRight, Copy, Heart, MessageCircle, NotebookPen, Type, X } from "lucide-react";
-import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import Link from "@/components/transition-link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { chapterKey, formatReference, getBook, verseKey } from "@/domain/bible/books";
 import type { ChapterQuestion } from "@/domain/games/chapter-quiz";
 import { HIGHLIGHT_COLORS, type HighlightColor, useScriptura } from "@/lib/client/store";
+import { navigationTypes } from "@/lib/transitions";
 import { Button } from "../ui";
 import { ChapterQuiz } from "./chapter-quiz";
 import { rememberLastRead } from "./reading-progress";
@@ -70,6 +71,7 @@ export function ChapterReader({
 }) {
   const book = getBook(bookId)!;
   const router = useRouter();
+  const pathname = usePathname();
   const trailId = useSearchParams().get("trilha");
   const { annotations, annotate, record, progress, mode } = useScriptura();
   const [selected, setSelected] = useState<number[]>([]);
@@ -127,7 +129,7 @@ export function ChapterReader({
   const askMentor = () => {
     const text = selected.map((v) => verses[v - 1]).join(" ");
     const question = `Me ajude a entender ${reference}: "${text}"`;
-    router.push(`/mentor?pergunta=${encodeURIComponent(question)}`);
+    router.push(`/mentor?pergunta=${encodeURIComponent(question)}`, { transitionTypes: navigationTypes(pathname, "/mentor") });
   };
 
   const saveNote = async () => {

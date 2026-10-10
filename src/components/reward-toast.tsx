@@ -40,7 +40,7 @@ function Toast({ reward }: { reward: Reward }) {
       <div className="animate-rise pointer-events-auto w-full max-w-sm rounded-2xl glass gradient-border p-4 shadow-card" role="status">
         <div className="flex items-start gap-3">
           <div className="grid size-11 shrink-0 place-items-center rounded-xl bg-gold-soft text-gold">
-            {reward.achievements.length ? <Trophy className="size-6" /> : <span className="font-mono font-bold">+{reward.xp}</span>}
+            {reward.achievements.length ? <Trophy className="size-6" /> : <span className="tabular-nums font-bold">+{reward.xp}</span>}
           </div>
           <div className="min-w-0 flex-1">
             <p className="font-semibold">+{reward.xp} XP</p>
@@ -48,7 +48,7 @@ function Toast({ reward }: { reward: Reward }) {
               {reward.lines.slice(0, 4).map((line, i) => (
                 <li key={i} className="flex justify-between gap-3">
                   <span className="min-w-0 truncate">{line.label}</span>
-                  {line.xp > 0 && <span className="font-mono font-medium text-gold">+{line.xp}</span>}
+                  {line.xp > 0 && <span className="tabular-nums font-medium text-gold">+{line.xp}</span>}
                 </li>
               ))}
             </ul>
@@ -126,7 +126,7 @@ function Celebration({ reward }: { reward: Reward }) {
             <Sparkles className="size-6" />
           </span>
         )}
-        <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.2em] text-gold">{view.eyebrow}</p>
+        <p className="mt-2 tabular-nums text-[11px] uppercase tracking-[0.2em] text-gold">{view.eyebrow}</p>
         <h2
           id="celebration-title"
           className={clsx(
@@ -145,19 +145,19 @@ function Celebration({ reward }: { reward: Reward }) {
             .map((line, i) => (
               <li key={i} className="animate-rise flex justify-between gap-3 rounded-xl bg-surface-2 px-3 py-2" style={{ animationDelay: `${300 + i * 120}ms` }}>
                 <span className="min-w-0 truncate text-left">{line.label}</span>
-                <strong className="font-mono text-gold">+{line.xp}</strong>
+                <strong className="tabular-nums text-gold">+{line.xp}</strong>
               </li>
             ))}
           <li className="animate-rise flex justify-between rounded-xl bg-gold-soft px-3 py-2 font-extrabold" style={{ animationDelay: "800ms" }}>
             <span>Total</span>
-            <strong className="font-mono text-gold">+{reward.xp} XP</strong>
+            <strong className="tabular-nums text-gold">+{reward.xp} XP</strong>
           </li>
         </ul>
 
         <div className="mt-2 flex w-full items-end gap-2 text-left">
           <CompanionAvatar id={companion.id} size={72} className="animate-hop shrink-0" />
           <p className="glass mb-3 flex-1 rounded-2xl rounded-bl-sm border border-line px-3 py-2 text-sm">
-            <span className="block font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-violet">{companion.name}</span>
+            <span className="block tabular-nums text-[10px] font-bold uppercase tracking-[0.16em] text-violet">{companion.name}</span>
             {view.speech}
           </p>
         </div>

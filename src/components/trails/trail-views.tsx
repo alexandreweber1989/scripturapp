@@ -3,7 +3,8 @@
 import clsx from "clsx";
 import { ArrowRight, Check, Lock, Star, Swords } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { ViewTransition } from "react";
+import Link from "@/components/transition-link";
 import { CHAPTER_QUIZ_PASS } from "@/domain/games/chapter-quiz";
 import {
   MASTERY_RATIO,
@@ -18,6 +19,9 @@ import {
 import { relicImage, trailCover } from "@/lib/assets";
 import { useScriptura } from "@/lib/client/store";
 import { ButtonLink, Skeleton } from "../ui";
+
+/** Shared by the trail card cover and the trail page cover, which morph into each other. */
+const coverTransitionName = (trailId: string) => `trail-cover-${trailId}`;
 
 export function Stars({ count, className, size = "size-4", onDark = false }: { count: number; className?: string; size?: string; onDark?: boolean }) {
   return (
@@ -45,12 +49,15 @@ export function TrailCard({ trail, compact = false }: { trail: Trail; compact?: 
       href={`/trilhas/${trail.id}`}
       className="glass premium-lift flex h-full flex-col overflow-hidden rounded-2xl border border-line shadow-card"
     >
-      <div className="relative aspect-video">
-        <Image src={trailCover(trail.id)} alt="" fill sizes="(min-width: 1024px) 22rem, (min-width: 640px) 50vw, 80vw" className="object-cover" />
-        <span className="absolute bottom-3 left-3 rounded-full bg-black/60 px-2.5 py-0.5 font-mono text-[11px] text-white backdrop-blur">
-          {trail.steps.length} etapas
-        </span>
-      </div>
+      {/* Morphs into the trail page's cover (same name there). */}
+      <ViewTransition name={coverTransitionName(trail.id)} share="morph" default="none">
+        <div className="relative aspect-video">
+          <Image src={trailCover(trail.id)} alt="" fill sizes="(min-width: 1024px) 22rem, (min-width: 640px) 50vw, 80vw" className="object-cover" />
+          <span className="absolute bottom-3 left-3 rounded-full bg-black/60 px-2.5 py-0.5 tabular-nums text-[11px] text-white backdrop-blur">
+            {trail.steps.length} etapas
+          </span>
+        </div>
+      </ViewTransition>
       <div className="flex flex-1 flex-col gap-2 p-4">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-display text-lg font-extrabold leading-tight">{trail.title}</h3>
@@ -58,7 +65,7 @@ export function TrailCard({ trail, compact = false }: { trail: Trail; compact?: 
         </div>
         {!compact && <p className="flex-1 text-sm text-muted">{trail.subtitle}</p>}
         <TrailBar value={p.passed / p.total} className="bg-surface-2" />
-        <div className="flex justify-between font-mono text-xs text-muted">
+        <div className="flex justify-between tabular-nums text-xs text-muted">
           <span>{p.mastered ? "Dominada" : p.completed ? "Concluída" : p.passed > 0 ? `Etapa ${p.passed + 1}` : "Começar"}</span>
           <span>
             {p.passed}/{p.total}
@@ -96,22 +103,24 @@ export function TrailPath({ trail }: { trail: Trail }) {
 
   return (
     <div className="space-y-6">
-      <section className="relative isolate flex min-h-72 items-end overflow-hidden rounded-3xl shadow-card">
-        <Image src={trailCover(trail.id)} alt="" fill priority sizes="(min-width: 1024px) 60rem, 100vw" className="-z-10 object-cover" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[hsl(232_45%_6%/0.95)] via-[hsl(232_45%_6%/0.55)] to-[hsl(232_45%_6%/0.1)]" />
-        <div className="w-full space-y-2 p-6 text-white">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[hsl(230_90%_82%)]">Trilha · {total} etapas</p>
-          <h1 className="font-display text-4xl font-extrabold leading-none tracking-tight sm:text-5xl">{trail.title}</h1>
-          <p className="max-w-xl text-white/80">{trail.description}</p>
-          <div className="flex items-center gap-3 pt-1">
-            <Stars count={p.stars} size="size-5" onDark />
-            <span className="font-mono text-sm">
-              {p.passed}/{total} concluídas
-            </span>
+      <ViewTransition name={coverTransitionName(trail.id)} share="morph" default="none">
+        <section className="relative isolate flex min-h-72 items-end overflow-hidden rounded-3xl shadow-card">
+          <Image src={trailCover(trail.id)} alt="" fill priority sizes="(min-width: 1024px) 60rem, 100vw" className="-z-10 object-cover" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[hsl(232_45%_6%/0.95)] via-[hsl(232_45%_6%/0.55)] to-[hsl(232_45%_6%/0.1)]" />
+          <div className="w-full space-y-2 p-6 text-white">
+            <p className="tabular-nums text-[11px] uppercase tracking-[0.18em] text-[hsl(230_90%_82%)]">Trilha · {total} etapas</p>
+            <h1 className="font-display text-4xl font-extrabold leading-none tracking-tight sm:text-5xl">{trail.title}</h1>
+            <p className="max-w-xl text-white/80">{trail.description}</p>
+            <div className="flex items-center gap-3 pt-1">
+              <Stars count={p.stars} size="size-5" onDark />
+              <span className="tabular-nums text-sm">
+                {p.passed}/{total} concluídas
+              </span>
+            </div>
+            <TrailBar value={p.passed / total} className="bg-white/20" />
           </div>
-          <TrailBar value={p.passed / total} className="bg-white/20" />
-        </div>
-      </section>
+        </section>
+      </ViewTransition>
 
       <div className="grid gap-6 lg:grid-cols-[1fr_20rem]">
         <ol className="relative mx-auto w-full max-w-sm" style={{ height }} aria-label="Etapas da trilha">
@@ -151,7 +160,7 @@ export function TrailPath({ trail }: { trail: Trail }) {
                   locked && "border-line bg-surface-2 text-muted",
                 )}
               >
-                {passed ? <Check className="size-7" /> : locked ? <Lock className="size-5" /> : <span className="font-mono text-xl font-bold">{i + 1}</span>}
+                {passed ? <Check className="size-7" /> : locked ? <Lock className="size-5" /> : <span className="tabular-nums text-xl font-bold">{i + 1}</span>}
               </span>
             );
             return (
@@ -176,7 +185,7 @@ export function TrailPath({ trail }: { trail: Trail }) {
                 <span className={clsx("rounded-md bg-bg px-1.5 text-sm font-bold", locked && "text-muted")}>{stepLabel(key)}</span>
                 {passed && <Stars count={best} size="size-3" />}
                 {current && (
-                  <span className="whitespace-nowrap rounded-full bg-primary-soft px-2 py-0.5 font-mono text-[11px] font-bold text-primary">
+                  <span className="whitespace-nowrap rounded-full bg-primary-soft px-2 py-0.5 tabular-nums text-[11px] font-bold text-primary">
                     LER + QUIZ
                   </span>
                 )}
@@ -232,7 +241,7 @@ function RelicCard({ trail }: { trail: Trail }) {
 
   return (
     <aside className="glass flex flex-col gap-3 self-start rounded-3xl border border-line p-5 shadow-card lg:sticky lg:top-24">
-      <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-gold">Relíquia da trilha</p>
+      <p className="tabular-nums text-[11px] uppercase tracking-[0.18em] text-gold">Relíquia da trilha</p>
       <div className="relative mx-auto aspect-square w-full max-w-56 overflow-hidden rounded-2xl bg-[radial-gradient(circle,var(--gold-soft),transparent_70%)]">
         <Image
           src={relicImage(trail.id)}
@@ -256,11 +265,11 @@ function RelicCard({ trail }: { trail: Trail }) {
       <ul className="space-y-2 text-sm">
         <li className="flex justify-between rounded-xl bg-surface-2 px-3 py-2">
           <span>Concluir a trilha {p.completed && <Check className="inline size-4 text-success" aria-label="feito" />}</span>
-          <strong className="font-mono text-gold">+{TRAIL_COMPLETE_BONUS} XP</strong>
+          <strong className="tabular-nums text-gold">+{TRAIL_COMPLETE_BONUS} XP</strong>
         </li>
         <li className="flex justify-between rounded-xl bg-surface-2 px-3 py-2">
           <span>Dominar no desafio {p.mastered && <Check className="inline size-4 text-success" aria-label="feito" />}</span>
-          <strong className="font-mono text-gold">+{TRAIL_MASTERY_BONUS} XP</strong>
+          <strong className="tabular-nums text-gold">+{TRAIL_MASTERY_BONUS} XP</strong>
         </li>
       </ul>
       <p className="text-center text-xs text-muted">Cada etapa: ler o capítulo e acertar {CHAPTER_QUIZ_PASS} de 3 perguntas.</p>

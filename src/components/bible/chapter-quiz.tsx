@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { ArrowRight, Check, Route, Sparkles, X } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useRef, useState } from "react";
 import { chapterKey } from "@/domain/bible/books";
 import { CHAPTER_QUIZ_PASS, type ChapterQuestion } from "@/domain/games/chapter-quiz";
@@ -49,7 +49,7 @@ export function ChapterQuiz({ bookId, chapter, questions, trailId }: { bookId: s
   if (!started) {
     return (
       <div className="glass gradient-border w-full space-y-3 rounded-2xl p-5 text-left">
-        <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-primary">
+        <p className="flex items-center gap-2 tabular-nums text-[11px] uppercase tracking-[0.18em] text-primary">
           <Sparkles className="size-4" /> Desafio do capítulo
         </p>
         <p className="font-display text-lg font-bold">Você entendeu o que leu? 3 perguntas rápidas.</p>
@@ -73,7 +73,7 @@ export function ChapterQuiz({ bookId, chapter, questions, trailId }: { bookId: s
         <fieldset key={q.id} className="glass space-y-2 rounded-2xl border border-line p-4">
           <legend className="sr-only">Pergunta {qi + 1}</legend>
           <p className="font-semibold">
-            <span className="mr-2 font-mono text-primary">{qi + 1}.</span>
+            <span className="mr-2 tabular-nums text-primary">{qi + 1}.</span>
             {q.prompt}
           </p>
           <div className="grid gap-2 sm:grid-cols-2">
@@ -112,7 +112,7 @@ export function ChapterQuiz({ bookId, chapter, questions, trailId }: { bookId: s
       ) : (
         <div className="glass flex flex-col items-center gap-3 rounded-2xl border border-line p-4 text-center">
           <p className="font-display text-2xl font-bold">
-            <span className="font-mono">{correct}/3</span> {correct === 3 ? "· Gabarito!" : correct >= CHAPTER_QUIZ_PASS ? "· Etapa vencida" : "· Quase lá"}
+            <span className="tabular-nums">{correct}/3</span> {correct === 3 ? "· Gabarito!" : correct >= CHAPTER_QUIZ_PASS ? "· Etapa vencida" : "· Quase lá"}
           </p>
           {correct < CHAPTER_QUIZ_PASS && <p className="text-sm text-muted">Releia o capítulo e tente de novo: acerte 2 de 3 para avançar.</p>}
           <div className="flex flex-wrap justify-center gap-2">

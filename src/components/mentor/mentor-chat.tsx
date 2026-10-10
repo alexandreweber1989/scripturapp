@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { LoaderCircle, Send } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { getCompanion } from "@/domain/companions";
@@ -153,7 +153,7 @@ export function MentorChat() {
         <p className="mt-3 rounded-xl bg-danger-soft px-4 py-2 text-sm text-danger">
           {error}{" "}
           {error.includes("Entre") && (
-            <Link href="/entrar" className="font-semibold underline">
+            <Link href="/entrar?next=/mentor" className="font-semibold underline">
               Entrar
             </Link>
           )}

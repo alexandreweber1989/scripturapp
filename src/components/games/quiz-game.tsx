@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { ArrowRight, Check, RotateCcw, Timer, Trophy, X } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { type Difficulty, type QuizAnswer, type QuizPack, type QuizQuestion, pickRound } from "@/domain/games/quiz";
 import { useScriptura } from "@/lib/client/store";

@@ -114,10 +114,9 @@
   --color-hl-ceu: var(--hl-ceu);
   --color-hl-rosa: var(--hl-rosa);
   --color-hl-lavanda: var(--hl-lavanda);
-  --font-sans: var(--font-syne);
+  --font-sans: var(--font-manrope);
   --font-display: var(--font-syne);
   --font-scripture: var(--font-literata);
-  --font-mono: var(--font-jetbrains);
   --shadow-card: var(--shadow);
   --radius-xl: 0.875rem;
   --radius-2xl: 1.125rem;
@@ -131,15 +130,14 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-syne), system-ui, sans-serif;
-  letter-spacing: 0.005em;
-  /* Syne defaults to old-style figures ("3oo"); lining figures read better in a UI. */
+  font-family: var(--font-manrope), system-ui, sans-serif;
   font-variant-numeric: lining-nums;
 }
 
 h1,
 h2,
 h3 {
+  font-family: var(--font-syne), system-ui, sans-serif;
   letter-spacing: -0.02em;
 }
 
@@ -428,5 +426,497 @@ h3 {
   }
   .confetti {
     display: none;
+  }
+}
+
+/* ─── Page transitions (React <ViewTransition>, see src/lib/transitions.ts) ───
+ * Old content leaves fast, new content arrives a beat later and settles gently.
+ * - tab-next / tab-prev: sideways slide following the menu order (and Bible page turns);
+ * - nav-forward: the old page recedes, the new one is pushed in from the right;
+ * - nav-back: the reverse, the previous page comes back from behind;
+ * - morph: an element that exists on both pages (trail cover) flies to its new place. */
+:root {
+  --vt-exit: 160ms;
+  --vt-enter: 300ms;
+  --vt-move: 440ms;
+  --vt-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Clicks during an animation reach the live page. */
+::view-transition {
+  pointer-events: none;
+}
+
+/* Header, sidebar and tab bar are the fixed reference: they never slide. */
+::view-transition-group(site-header),
+::view-transition-group(site-sidebar),
+::view-transition-group(site-tabbar) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header),
+::view-transition-old(site-sidebar),
+::view-transition-old(site-tabbar) {
+  display: none;
+}
+::view-transition-new(site-header),
+::view-transition-new(site-sidebar),
+::view-transition-new(site-tabbar) {
+  animation: none;
+}
+
+::view-transition-old(.tab-next),
+::view-transition-old(.tab-prev),
+::view-transition-old(.nav-forward),
+::view-transition-old(.nav-back) {
+  animation:
+    var(--vt-exit) ease-in both vt-fade reverse,
+    var(--vt-move) var(--vt-ease) both vt-move reverse;
+}
+::view-transition-new(.tab-next),
+::view-transition-new(.tab-prev),
+::view-transition-new(.nav-forward),
+::view-transition-new(.nav-back) {
+  animation:
+    var(--vt-enter) ease-out var(--vt-exit) both vt-fade,
+    var(--vt-move) var(--vt-ease) both vt-move;
+}
+
+::view-transition-old(.tab-next) {
+  --vt-x: -48px;
+}
+::view-transition-new(.tab-next) {
+  --vt-x: 48px;
+}
+::view-transition-old(.tab-prev) {
+  --vt-x: 48px;
+}
+::view-transition-new(.tab-prev) {
+  --vt-x: -48px;
+}
+::view-transition-old(.nav-forward) {
+  --vt-x: -24px;
+  --vt-scale: 0.96;
+}
+::view-transition-new(.nav-forward) {
+  --vt-x: 72px;
+  --vt-blur: 4px;
+}
+::view-transition-old(.nav-back) {
+  --vt-x: 72px;
+  --vt-blur: 4px;
+}
+::view-transition-new(.nav-back) {
+  --vt-x: -24px;
+  --vt-scale: 0.96;
+}
+
+::view-transition-group(.morph) {
+  animation-duration: 520ms;
+  animation-timing-function: var(--vt-ease);
+}
+::view-transition-image-pair(.morph) {
+  animation-name: vt-via-blur;
+}
+
+@keyframes vt-fade {
+  from {
+    opacity: 0;
+    filter: blur(var(--vt-blur, 2px));
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes vt-move {
+  from {
+    translate: var(--vt-x, 0) 0;
+    scale: var(--vt-scale, 1);
+  }
+  to {
+    translate: 0 0;
+    scale: 1;
+  }
+}
+@keyframes vt-via-blur {
+  35% {
+    filter: blur(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*),
+  ::view-transition-image-pair(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* ─── Companion stage (sign-in page) ─── */
+
+.stage {
+  position: relative;
+  height: 10rem;
+  width: 100%;
+  user-select: none;
+  --size: 6rem;
+}
+
+.stage-compact {
+  height: 8.5rem;
+  --size: min(4.25rem, 17vw);
+}
+
+.stage-ground {
+  position: absolute;
+  left: 2%;
+  right: 2%;
+  bottom: 0.4rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, hsl(0 0% 100% / 0.28), hsl(0 0% 100% / 0.06) 60%, transparent 72%);
+}
+
+/* On the form card the ground is tinted, since white would vanish. */
+.stage-compact .stage-ground {
+  background: radial-gradient(ellipse at center, color-mix(in srgb, var(--primary) 22%, transparent), transparent 70%);
+}
+
+.stage-actor {
+  position: absolute;
+  bottom: 0.9rem;
+  width: var(--size);
+  height: var(--size);
+  translate: -50% 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: left 1.15s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.stage-actor:hover .stage-sprite.stage-on {
+  filter: drop-shadow(0 0 10px hsl(45 100% 75% / 0.75));
+}
+
+.stage-body {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 100%;
+  animation: stage-breathe 2.6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.45s);
+}
+
+.stage-sprite {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  opacity: 0;
+  transition: opacity 70ms linear;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 6px hsl(232 50% 10% / 0.25));
+}
+
+.stage-on {
+  opacity: 1;
+}
+
+.stage-flip .stage-sprite {
+  transform: scaleX(-1);
+}
+
+.stage-shadow {
+  position: absolute;
+  left: 22%;
+  right: 22%;
+  bottom: -0.25rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: hsl(232 60% 8% / 0.35);
+  filter: blur(2px);
+}
+
+/* ─── actions ─── */
+.stage-hop {
+  animation: stage-hop 0.7s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+.stage-shadow-hop {
+  animation: stage-shadow-hop 0.7s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+.stage-spin {
+  animation: stage-spin 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.stage-shadow-spin {
+  animation: stage-shadow-hop 0.8s ease;
+}
+.stage-wiggle {
+  animation: stage-wiggle 0.9s ease-in-out;
+}
+.stage-walk {
+  animation: stage-walk 0.38s ease-in-out 3;
+}
+.stage-shake {
+  animation: stage-shake 0.6s ease-in-out 2;
+}
+
+/* ─── moods ─── */
+.stage-error .stage-body {
+  animation: stage-shake 0.6s ease-in-out 2;
+}
+
+.stage-password .stage-body {
+  animation: stage-peek 1.4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.2s);
+}
+
+.stage-success .stage-body {
+  animation: stage-party 0.9s cubic-bezier(0.3, 0.7, 0.4, 1) infinite;
+  animation-delay: calc(var(--i) * 0.12s);
+}
+.stage-success .stage-shadow {
+  animation: stage-shadow-hop 0.9s cubic-bezier(0.3, 0.7, 0.4, 1) infinite;
+  animation-delay: calc(var(--i) * 0.12s);
+}
+
+/* ─── speech bubble ─── */
+.stage-bubble {
+  position: absolute;
+  bottom: calc(100% + 0.4rem);
+  left: 50%;
+  translate: -50% 0;
+  z-index: 2;
+  width: max-content;
+  max-width: 11rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 0.9rem;
+  background: white;
+  color: hsl(232 30% 14%);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  box-shadow: 0 8px 20px -6px hsl(232 60% 10% / 0.45);
+  animation: stage-pop 0.35s cubic-bezier(0.2, 1.5, 0.4, 1) both;
+}
+.stage-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50% -1px;
+  border: 7px solid transparent;
+  border-top-color: white;
+}
+/* A mood's line stays while the mood does, so CSS takes it away. */
+.stage-mood-bubble {
+  animation:
+    stage-pop 0.35s cubic-bezier(0.2, 1.5, 0.4, 1) both,
+    stage-bubble-out 0.3s ease-in 2.4s forwards;
+}
+.stage-success .stage-mood-bubble {
+  animation-delay: 0s, 3s;
+}
+
+/* Speakers at the edges keep their bubble inside the stage. */
+.stage-bubble-start {
+  left: 0;
+  translate: 0 0;
+}
+.stage-bubble-start::after {
+  left: 2.2rem;
+}
+.stage-bubble-end {
+  left: auto;
+  right: 0;
+  translate: 0 0;
+}
+.stage-bubble-end::after {
+  left: auto;
+  right: 1.4rem;
+  translate: 0 -1px;
+}
+.stage-compact .stage-bubble {
+  font-size: 0.7rem;
+  max-width: 8.5rem;
+}
+
+/* ─── confetti ─── */
+.stage-confetti {
+  position: absolute;
+  inset: -3rem 0 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.stage-confetti span {
+  position: absolute;
+  top: 0;
+  left: calc(var(--k) * 4.5%);
+  width: 0.45rem;
+  height: 0.8rem;
+  border-radius: 2px;
+  background: hsl(calc(var(--k) * 47) 85% 62%);
+  animation: stage-fall 1.8s ease-in calc(var(--k) * 70ms) infinite;
+}
+
+@keyframes stage-breathe {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.025, 0.975) translateY(1px);
+  }
+}
+@keyframes stage-hop {
+  0% {
+    transform: none;
+  }
+  15% {
+    transform: scale(1.14, 0.84);
+  }
+  45% {
+    transform: translateY(-36%) scale(0.92, 1.1);
+  }
+  72% {
+    transform: translateY(0) scale(1.12, 0.88);
+  }
+  86% {
+    transform: scale(0.97, 1.03);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes stage-shadow-hop {
+  45% {
+    transform: scale(0.55);
+    opacity: 0.45;
+  }
+}
+@keyframes stage-spin {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-22%) rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes stage-wiggle {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(-9deg);
+  }
+  40% {
+    transform: rotate(8deg);
+  }
+  60% {
+    transform: rotate(-6deg);
+  }
+  80% {
+    transform: rotate(4deg);
+  }
+}
+@keyframes stage-walk {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(-7%) rotate(-4deg);
+  }
+  75% {
+    transform: translateY(-7%) rotate(4deg);
+  }
+}
+@keyframes stage-shake {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+  20% {
+    transform: translateX(-9%) rotate(-6deg);
+  }
+  40% {
+    transform: translateX(8%) rotate(5deg);
+  }
+  60% {
+    transform: translateX(-6%) rotate(-3deg);
+  }
+  80% {
+    transform: translateX(4%) rotate(2deg);
+  }
+}
+@keyframes stage-peek {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg) translateY(2%);
+  }
+}
+@keyframes stage-party {
+  0%,
+  100% {
+    transform: none;
+  }
+  20% {
+    transform: scale(1.1, 0.88);
+  }
+  50% {
+    transform: translateY(-40%) scale(0.94, 1.08) rotate(-4deg);
+  }
+  78% {
+    transform: translateY(0) scale(1.08, 0.9);
+  }
+}
+@keyframes stage-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes stage-bubble-out {
+  to {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.9);
+  }
+}
+@keyframes stage-fall {
+  0% {
+    transform: translateY(-1rem) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(16rem) rotate(600deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-body,
+  .stage-shadow,
+  .stage-bubble,
+  .stage-confetti span {
+    animation: none !important;
+  }
+  .stage-actor {
+    transition: none;
   }
 }

@@ -55,6 +55,22 @@ Modos de execução:
 - **Missões:** 3 por dia (sempre uma de leitura), sorteadas de forma determinística pela data. Concluir as três dá +25 XP.
 - **Dia:** é calculado no fuso `America/Sao_Paulo`, igual no cliente e no servidor.
 
+## Transições entre páginas
+
+As navegações usam as View Transitions do React 19 (`<ViewTransition>`), suportadas nativamente pelo Next 16. Cada movimento tem um significado:
+- **Trocar de menu:** o conteúdo desliza na direção do item escolhido (`tab-next`/`tab-prev`), e o destaque do menu desliza até ele.
+- **Entrar num detalhe:** a página atual recua e a nova entra pela direita (`nav-forward`); voltar faz o inverso (`nav-back`).
+- **Virar capítulo:** desliza para o lado, como uma página.
+- **Capa da trilha:** o cartão se transforma na capa da página da trilha.
+- **Âncoras:** cabeçalho, menu lateral e barra inferior nunca se movem.
+
+Como funciona:
+- `src/lib/transitions.ts` decide o tipo pela origem e pelo destino (testado em `src/lib/__tests__/transitions.test.ts`).
+- `components/transition-link.tsx` substitui o `next/link` e aplica o tipo em cada navegação.
+- `components/page-transition.tsx` envolve o conteúdo de cada `page.tsx`. Uma página nova precisa usá-lo.
+- As animações ficam no fim de `globals.css`. Com "reduzir movimento" ativado no sistema, a troca é instantânea.
+- Navegadores sem suporte simplesmente trocam a página sem animar.
+
 ## Segurança (resumo)
 
 - RLS em todas as tabelas. Políticas só do dono.
@@ -93,6 +109,26 @@ A regra é que esse conteúdo seja **gerado uma vez, versionado e revisado** por
 O logo, as capas das trilhas e as relíquias foram geradas com IA no laboratório de design do Floot (projeto "Scriptura · Design Lab"), onde as telas foram prototipadas e aprovadas antes de virem para cá.
 - Ficam em `public/img/` como WebP: `marca.webp`, `trilhas/<id>.webp` e `reliquias/<id>.webp`.
 - Os caminhos ficam centralizados em `src/lib/assets.ts`. Uma trilha nova precisa de uma capa e de uma relíquia com o mesmo `id`.
+- Cada companheiro tem três poses além da padrão, em `public/companions/poses/<id>-{wave,cheer,hide}.webp`: acenando, comemorando e tapando os olhos. Elas foram geradas a partir do sprite original, para manter o mesmo personagem.
+
+### Palco dos companheiros (tela de entrar)
+
+`src/components/auth/companion-stage.tsx` coloca os cinco companheiros num pequeno palco. Ele fica no painel da marca no computador e no topo do cartão no celular.
+
+| Situação no formulário (`mood`) | O que os companheiros fazem |
+|---|---|
+| Sem interação | Pulam, giram, andam, acenam e falam frases curtas, um de cada vez |
+| Digitando nome ou e-mail | A cada tecla, um deles dá um pulinho, em revezamento |
+| Campo de senha | Tapam os olhos ("Não estou olhando!") |
+| Erro | Balançam a cabeça |
+| Login concluído ou e-mail enviado | Comemoram com confete |
+
+- **Como o estado é calculado:** o estado do formulário entra como prop e as reações são calculadas na renderização. O estado interno guarda só os movimentos passageiros (aceno, ação, posição, balão).
+- **CSS:** fica em `globals.css` com o prefixo `stage-`. Neste projeto, todo `.css` passa pelo Tailwind como CSS global, então módulos CSS não funcionam.
+- **Acessibilidade:**
+  - o palco é decorativo (`aria-hidden`) e fica fora da ordem do Tab, mas responde a cliques e toques;
+  - com "reduzir movimento", os bonecos ficam parados;
+  - o palco que não está visível pausa a animação.
 
 ## Tradução bíblica
 

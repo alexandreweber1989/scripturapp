@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import { Heart, Lock, LogIn, LogOut, NotebookPen, Trophy } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useState } from "react";
 import { TOTAL_CHAPTERS, chapterHref, formatReference, parseVerseKey } from "@/domain/bible/books";
 import { COMPANIONS } from "@/domain/companions";
@@ -91,7 +91,7 @@ export function ProfileView() {
           {stats.map((s) => (
             <div key={s.label} className="rounded-2xl glass border border-line p-4">
               <dt className="text-xs text-muted">{s.label}</dt>
-              <dd className="font-mono text-2xl font-semibold">{s.value}</dd>
+              <dd className="tabular-nums text-2xl font-semibold">{s.value}</dd>
             </div>
           ))}
         </dl>

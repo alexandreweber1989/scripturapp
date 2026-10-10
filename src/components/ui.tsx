@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import type { ComponentProps, ReactNode } from "react";
 
 type Variant = "primary" | "secondary" | "ghost" | "gold";
@@ -30,7 +30,7 @@ export function SectionTitle({ eyebrow, title, action }: { eyebrow?: string; tit
   return (
     <div className="mb-3 flex items-end justify-between gap-3">
       <div>
-        {eyebrow && <p className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-primary">{eyebrow}</p>}
+        {eyebrow && <p className="tabular-nums text-[11px] font-medium uppercase tracking-[0.18em] text-primary">{eyebrow}</p>}
         <h2 className="font-display text-xl font-bold text-ink">{title}</h2>
         <div className="gradient-rule mt-1.5" />
       </div>

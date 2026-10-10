@@ -21,7 +21,7 @@ Esta é a **nova versão**, reconstruída do zero a partir da análise do projet
 | **Memorização** | Os versículos favoritos viram cartões com lacunas e repetição espaçada: os que você lembra voltam cada vez menos. |
 | **Mentor (IA)** | Chat em streaming com Claude, persona do companheiro escolhido e perspectiva teológica batista. As referências bíblicas da resposta viram links. Há cota diária por plano. |
 | **Contas** | Supabase Auth com e-mail e senha. Sem Supabase configurado, o app funciona em **modo visitante**, salvando o progresso no navegador. |
-| **Visual** | Paleta do Scriptura original (índigo, gradiente azul→roxo, dourado e verde-água) com acabamento tecnológico: vidro fosco, brilhos de "aurora", grade sutil e números em fonte mono. Tipografia **Syne** na interface e **Literata** no texto bíblico. Modo escuro automático, responsivo, com navegação inferior no celular. |
+| **Visual** | Paleta do Scriptura original (índigo, gradiente azul→roxo, dourado e verde-água) com acabamento tecnológico: vidro fosco, brilhos de "aurora", grade sutil. Tipografia **Syne** nos títulos, **Manrope** no restante da interface e **Literata** no texto bíblico. Modo escuro automático, responsivo, com navegação inferior no celular. |
 
 ## Rodando localmente
 
@@ -43,8 +43,8 @@ npm run build   # build de produção (gera as 1.338 páginas estáticas)
 ## Configurando o Supabase (contas e progresso na nuvem)
 
 1. Crie um projeto em [supabase.com](https://supabase.com).
-2. Aplique as migrations de `supabase/migrations/`, em ordem: `20261009000000_initial_schema.sql` e depois `20261010000000_verse_review.sql`. Use o SQL Editor ou `supabase db push` com a CLI.
-3. Em **Authentication → URL Configuration**, adicione `https://SEU-DOMINIO/auth/callback` às Redirect URLs.
+2. Aplique as migrations de `supabase/migrations/`, em ordem: `20261009000000_initial_schema.sql`, `20261010000000_verse_review.sql` e `20261011000000_lock_trigger_function.sql`. Use o SQL Editor ou `supabase db push` com a CLI.
+3. Em **Authentication → URL Configuration**, defina a **Site URL** como `https://SEU-DOMINIO` e adicione `https://SEU-DOMINIO/**` às Redirect URLs (e `http://localhost:3000/**` para desenvolvimento). O curinga cobre a confirmação de cadastro e a redefinição de senha, que voltam por `/auth/callback?next=...`.
 4. Preencha no `.env.local` (e na Vercel):
    - `NEXT_PUBLIC_SUPABASE_URL`
    - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`

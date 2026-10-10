@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { TrailPath } from "@/components/trails/trail-views";
 import { Skeleton } from "@/components/ui";
 import { TRAILS, getTrail } from "@/domain/trails";
+import { PageTransition } from "@/components/page-transition";
 
 export function generateStaticParams() {
   return TRAILS.map((t) => ({ id: t.id }));
@@ -21,8 +22,10 @@ async function Trail({ params }: { params: PageProps<"/trilhas/[id]">["params"] 
 
 export default function TrailPage({ params }: PageProps<"/trilhas/[id]">) {
   return (
-    <Suspense fallback={<Skeleton className="h-[60vh]" />}>
-      <Trail params={params} />
-    </Suspense>
+    <PageTransition>
+      <Suspense fallback={<Skeleton className="h-[60vh]" />}>
+        <Trail params={params} />
+      </Suspense>
+    </PageTransition>
   );
 }

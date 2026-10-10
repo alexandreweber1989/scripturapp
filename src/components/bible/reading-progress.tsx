@@ -1,7 +1,7 @@
 "use client";
 
 import { BookOpen, Check } from "lucide-react";
-import Link from "next/link";
+import Link from "@/components/transition-link";
 import { useSyncExternalStore } from "react";
 import { type BibleBook, chapterHref, chapterKey, getBook } from "@/domain/bible/books";
 import { useScriptura } from "@/lib/client/store";
