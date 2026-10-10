@@ -8,7 +8,7 @@ export default function TrailsPage() {
   return (
     <div className="space-y-8">
       <header>
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">Jornadas guiadas</p>
+        <p className="tabular-nums text-[11px] uppercase tracking-[0.18em] text-primary">Jornadas guiadas</p>
         <h1 className="font-display text-3xl font-bold">Trilhas</h1>
         <p className="mt-1 max-w-2xl text-muted">
           Leia cada capítulo, responda 3 perguntas sobre ele e avance. No fim, vença o desafio final para dominar a trilha e ganhar uma relíquia.

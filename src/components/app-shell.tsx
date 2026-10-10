@@ -44,7 +44,7 @@ function StatusChips() {
   const streak = effectiveStreak(progress.streak, dayKey());
   const activeToday = progress.streak.lastActiveDay === dayKey();
   return (
-    <div className="flex items-center gap-1.5 whitespace-nowrap font-mono text-sm font-medium">
+    <div className="flex items-center gap-1.5 whitespace-nowrap tabular-nums text-sm font-medium">
       <span
         className={clsx("flex h-9 items-center gap-1 rounded-full px-3", activeToday ? "border-flame/30 bg-flame/10 text-flame" : "border-line bg-surface-2 text-muted", "border")}
         title={activeToday ? "Sequência mantida hoje" : "Estude hoje para manter a sequência"}

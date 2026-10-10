@@ -80,7 +80,7 @@ export function MemoryReview() {
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <header>
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">Repetição espaçada</p>
+        <p className="tabular-nums text-[11px] uppercase tracking-[0.18em] text-primary">Repetição espaçada</p>
         <h1 className="font-display text-3xl font-bold">Memorização</h1>
         <p className="mt-1 text-muted">
           Seus versículos favoritos voltam no momento certo: os que você lembra aparecem cada vez menos; os que esquece, voltam amanhã.
@@ -95,7 +95,7 @@ export function MemoryReview() {
         ].map((s) => (
           <div key={s.label} className="glass rounded-2xl border border-line p-4">
             <dt className="text-xs text-muted">{s.label}</dt>
-            <dd className="font-mono text-2xl font-semibold">{s.value}</dd>
+            <dd className="tabular-nums text-2xl font-semibold">{s.value}</dd>
           </div>
         ))}
       </dl>
@@ -120,7 +120,7 @@ export function MemoryReview() {
           <p className="font-display text-xl font-bold">{reviewedNow > 0 ? "Revisão do dia concluída!" : "Nada para revisar hoje"}</p>
           <p className="text-sm text-muted">Volte amanhã. Quanto mais você lembra, mais espaçadas ficam as revisões.</p>
           <ProgressBar value={deck.length ? memorized / deck.length : 0} tone="success" />
-          <p className="font-mono text-xs text-muted">
+          <p className="tabular-nums text-xs text-muted">
             {memorized}/{deck.length} memorizados
           </p>
         </Card>
@@ -130,7 +130,7 @@ export function MemoryReview() {
             <Link href={chapterHref(parseVerseKey(active)!.book, parseVerseKey(active)!.chapter)} className="font-display text-xl font-bold hover:text-primary">
               {label(active)}
             </Link>
-            <span className="flex items-center gap-1 font-mono text-xs text-muted">
+            <span className="flex items-center gap-1 tabular-nums text-xs text-muted">
               <Brain className="size-4" /> {due.length} restantes
             </span>
           </div>

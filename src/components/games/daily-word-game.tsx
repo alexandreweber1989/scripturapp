@@ -142,7 +142,7 @@ function Game({ day }: { day: string }) {
   return (
     <div className="mx-auto max-w-md space-y-5">
       <header className="text-center">
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">Desafio diário · igual para todos</p>
+        <p className="tabular-nums text-[11px] uppercase tracking-[0.18em] text-primary">Desafio diário · igual para todos</p>
         <h1 className="font-display text-3xl font-extrabold">Palavra do Dia</h1>
         <p className="mt-1 text-sm text-muted">Descubra a palavra bíblica de 5 letras em até 6 tentativas.</p>
       </header>
@@ -165,7 +165,7 @@ function Game({ day }: { day: string }) {
                 <div
                   key={c}
                   className={clsx(
-                    "grid aspect-square place-items-center rounded-xl border-2 font-mono text-2xl font-bold transition",
+                    "grid aspect-square place-items-center rounded-xl border-2 tabular-nums text-2xl font-bold transition",
                     states ? TILE[states[c]] : row[c] ? "border-primary bg-surface text-ink" : "border-line bg-surface/60",
                   )}
                 >
@@ -183,7 +183,7 @@ function Game({ day }: { day: string }) {
         <Card className="animate-rise space-y-3 text-center">
           <p className="font-display text-2xl font-bold">{solved ? `Acertou em ${game.guesses.length}!` : "Não foi dessa vez"}</p>
           <p>
-            A palavra era <strong className="font-mono text-primary">{answer}</strong>
+            A palavra era <strong className="tabular-nums text-primary">{answer}</strong>
             {reference && (
               <>
                 {" · "}
@@ -210,7 +210,7 @@ function Game({ day }: { day: string }) {
                     key={k}
                     onClick={() => press(k)}
                     className={clsx(
-                      "grid h-12 place-items-center rounded-lg font-mono text-sm font-bold transition active:scale-95",
+                      "grid h-12 place-items-center rounded-lg tabular-nums text-sm font-bold transition active:scale-95",
                       wide ? "px-3" : "w-8 sm:w-9",
                       state ? TILE[state] : "border border-line bg-surface text-ink",
                     )}

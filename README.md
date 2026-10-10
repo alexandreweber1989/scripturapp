@@ -21,7 +21,7 @@ Esta é a **nova versão**, reconstruída do zero a partir da análise do projet
 | **Memorização** | Os versículos favoritos viram cartões com lacunas e repetição espaçada: os que você lembra voltam cada vez menos. |
 | **Mentor (IA)** | Chat em streaming com Claude, persona do companheiro escolhido e perspectiva teológica batista. As referências bíblicas da resposta viram links. Há cota diária por plano. |
 | **Contas** | Supabase Auth com e-mail e senha. Sem Supabase configurado, o app funciona em **modo visitante**, salvando o progresso no navegador. |
-| **Visual** | Paleta do Scriptura original (índigo, gradiente azul→roxo, dourado e verde-água) com acabamento tecnológico: vidro fosco, brilhos de "aurora", grade sutil e números em fonte mono. Tipografia **Syne** na interface e **Literata** no texto bíblico. Modo escuro automático, responsivo, com navegação inferior no celular. |
+| **Visual** | Paleta do Scriptura original (índigo, gradiente azul→roxo, dourado e verde-água) com acabamento tecnológico: vidro fosco, brilhos de "aurora", grade sutil. Tipografia **Syne** nos títulos, **Manrope** no restante da interface e **Literata** no texto bíblico. Modo escuro automático, responsivo, com navegação inferior no celular. |
 
 ## Rodando localmente
 

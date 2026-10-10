@@ -91,7 +91,7 @@ export function ProfileView() {
           {stats.map((s) => (
             <div key={s.label} className="rounded-2xl glass border border-line p-4">
               <dt className="text-xs text-muted">{s.label}</dt>
-              <dd className="font-mono text-2xl font-semibold">{s.value}</dd>
+              <dd className="tabular-nums text-2xl font-semibold">{s.value}</dd>
             </div>
           ))}
         </dl>

@@ -114,7 +114,7 @@ export function HomeDashboard() {
       <section className="flex items-end gap-3">
         <CompanionAvatar id={companion.id} size={88} float className="shrink-0" />
         <p className="glass mb-4 flex-1 rounded-2xl rounded-bl-sm border border-line px-4 py-3 text-sm shadow-card sm:text-base">
-          <span className="block font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-violet">{companion.name}</span>
+          <span className="block tabular-nums text-[11px] font-bold uppercase tracking-[0.16em] text-violet">{companion.name}</span>
           {message}
         </p>
       </section>
@@ -134,8 +134,8 @@ export function HomeDashboard() {
                     <span className="block text-xs text-muted">{quest.description}</span>
                   </span>
                   <span className="text-right text-xs">
-                    <span className="block font-mono font-semibold text-gold">+{quest.xp}</span>
-                    <span className="font-mono text-muted">
+                    <span className="block tabular-nums font-semibold text-gold">+{quest.xp}</span>
+                    <span className="tabular-nums text-muted">
                       {done}/{quest.target}
                     </span>
                   </span>
@@ -197,7 +197,7 @@ function Hero({ day, hello, name, subtitle, cta }: { day: string; hello: string;
     <section className="glass relative grid grid-cols-1 gap-6 overflow-hidden rounded-3xl border border-line p-5 shadow-card sm:p-6 md:grid-cols-[1.3fr_1fr] md:p-8">
       <div className="pointer-events-none absolute -right-20 -top-28 size-80 rounded-full bg-violet/20 blur-3xl" aria-hidden />
       <div className="relative flex min-w-0 flex-col items-start gap-2">
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">{longDate(day)}</p>
+        <p className="tabular-nums text-[11px] uppercase tracking-[0.18em] text-primary">{longDate(day)}</p>
         <h1 className="break-words font-display text-[clamp(1.75rem,8vw,3rem)] font-extrabold leading-[1.02] tracking-tight">
           {hello} <span className="text-gradient">{name}</span>
         </h1>
@@ -216,15 +216,15 @@ function Hero({ day, hello, name, subtitle, cta }: { day: string; hello: string;
         >
           <div className="grid size-full place-items-center rounded-full bg-bg">
             <div className="text-center leading-none">
-              <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-primary">Nível</span>
-              <span className="font-mono text-3xl font-bold">{level.level}</span>
+              <span className="block tabular-nums text-[10px] uppercase tracking-[0.14em] text-primary">Nível</span>
+              <span className="tabular-nums text-3xl font-bold">{level.level}</span>
             </div>
           </div>
         </div>
         <div className="min-w-0">
           <p className="font-display text-lg font-extrabold leading-tight">{level.rank.name}</p>
           <p className="truncate text-sm italic text-muted">“{level.title}”</p>
-          <p className="font-mono text-xs text-muted">
+          <p className="tabular-nums text-xs text-muted">
             {level.current}/{level.needed} XP
           </p>
         </div>
@@ -232,7 +232,7 @@ function Hero({ day, hello, name, subtitle, cta }: { day: string; hello: string;
         <div className="col-span-2 space-y-2 rounded-2xl border border-gold-bright/30 bg-gold-soft p-3">
           <div className="flex items-center gap-2">
             <Flame className="size-5 text-gold-bright" aria-hidden />
-            <span className="font-mono font-bold text-gold">
+            <span className="tabular-nums font-bold text-gold">
               {streak} {streak === 1 ? "dia" : "dias"}
             </span>
             <span className="text-sm text-muted">de ofensiva</span>
@@ -248,7 +248,7 @@ function Hero({ day, hello, name, subtitle, cta }: { day: string; hello: string;
               <li
                 key={d.day}
                 className={clsx(
-                  "grid h-8 place-items-center rounded-lg border font-mono text-xs font-bold",
+                  "grid h-8 place-items-center rounded-lg border tabular-nums text-xs font-bold",
                   d.active ? "bg-gradient-gold border-transparent text-[#2a1d05]" : d.today ? "border-2 border-dashed border-gold-bright text-gold" : "border-line bg-surface text-muted",
                 )}
                 aria-label={`${d.day}${d.active ? ": estudou" : ""}`}
@@ -314,7 +314,7 @@ function TodayStrip({ day }: { day: string }) {
       <SectionTitle
         title="Hoje no Scriptura"
         action={
-          <span className="font-mono text-xs text-muted">
+          <span className="tabular-nums text-xs text-muted">
             {doneCount}/{tiles.length} feitas
           </span>
         }
@@ -322,7 +322,7 @@ function TodayStrip({ day }: { day: string }) {
       <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
         {tiles.map(({ href, icon: Icon, tone, eyebrow, title, meta, pill, done }) => {
           const badge = (done || pill) && (
-            <span className="shrink-0 whitespace-nowrap rounded-full bg-gold-soft px-2.5 py-1 font-mono text-[11px] font-bold text-gold">{done ? "✓ feito" : pill}</span>
+            <span className="shrink-0 whitespace-nowrap rounded-full bg-gold-soft px-2.5 py-1 tabular-nums text-[11px] font-bold text-gold">{done ? "✓ feito" : pill}</span>
           );
           return (
             <Link
@@ -340,7 +340,7 @@ function TodayStrip({ day }: { day: string }) {
                 <span className="hidden md:inline">{badge}</span>
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block truncate font-mono text-[10px] uppercase tracking-[0.16em] text-primary">{eyebrow}</span>
+                <span className="block truncate tabular-nums text-[10px] uppercase tracking-[0.16em] text-primary">{eyebrow}</span>
                 <span className="block truncate font-bold">{title}</span>
                 <span className="block truncate text-xs text-muted">{meta}</span>
               </span>
@@ -359,7 +359,7 @@ function DailyVerse({ day }: { day: string }) {
   const done = progress.today.day === day && (progress.today.counts.daily_verse_read ?? 0) > 0;
   return (
     <section className="glass gradient-border flex flex-col justify-center rounded-2xl p-6 text-center shadow-card">
-      <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">Versículo do dia</p>
+      <p className="tabular-nums text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">Versículo do dia</p>
       <blockquote className="mx-auto mt-3 max-w-xl font-scripture text-lg leading-relaxed sm:text-xl">“{verse.text}”</blockquote>
       <p className="mt-2 font-semibold text-primary">{verse.reference}</p>
       <div className="mt-4">

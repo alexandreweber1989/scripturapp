@@ -114,10 +114,9 @@
   --color-hl-ceu: var(--hl-ceu);
   --color-hl-rosa: var(--hl-rosa);
   --color-hl-lavanda: var(--hl-lavanda);
-  --font-sans: var(--font-syne);
+  --font-sans: var(--font-manrope);
   --font-display: var(--font-syne);
   --font-scripture: var(--font-literata);
-  --font-mono: var(--font-jetbrains);
   --shadow-card: var(--shadow);
   --radius-xl: 0.875rem;
   --radius-2xl: 1.125rem;
@@ -131,15 +130,14 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-syne), system-ui, sans-serif;
-  letter-spacing: 0.005em;
-  /* Syne defaults to old-style figures ("3oo"); lining figures read better in a UI. */
+  font-family: var(--font-manrope), system-ui, sans-serif;
   font-variant-numeric: lining-nums;
 }
 
 h1,
 h2,
 h3 {
+  font-family: var(--font-syne), system-ui, sans-serif;
   letter-spacing: -0.02em;
 }
 
